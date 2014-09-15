@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Island Naval Defender</title>
+<script language="javascript">
+
+var x = 0, s = 0, hits = 0, p = 0, p1 = 0, b = 0, i = 0;
+var ships = [ ]; //Container for ships
+var fired = [ ]; //Shots fired
+var fires = 15;  //Fires left
+var rvl = 0;     //Has the reveal function been clicked?
+
+
+function type(){
+var a = "Welcome, Gamer!";
+//var m = x % a.length;
+document.getElementById("welcome").innerHTML = a.slice(0, x);
+x += 1;
+if (x <= (a.length)){
+setTimeout(type,160);
+} else { clearTimeout(type)
+}
+
+}
+
+window.onload = start;
+
+
+function start() {
+placeShips();
+type();
+
+}
+
+
+function placeShips() {   //Finish this.
+b = Math.round(Math.random()); //Randomly select horizontal or vertical
+
+
+
+p  = Math.ceil(Math.random() * 9);
+p1 = Math.ceil(Math.random() * 4);
+
+if (b) {
+for (i=1;i<6;i++) {
+ships[i + (p * 10) + p1] = 1;
+}
+} else {
+
+for (i=1;i<6;i++) {
+ships[(i * 10) + p + (p1 * 10)] = 1;
+} 
+}
+
+} 
+
+
+
+ function fire(s){  
+if (fired[s] != 1) {
+fired[s] = 1;
+fires -= 1;
+ 
+if (ships[s]) {
+document.getElementById(s).innerHTML = '<center><div id="h"></div></center>';
+hits += 1;
+} else {
+document.getElementById(s).innerHTML = '<center><div id="m"></div></center>';
+}
+}
+
+if (fires >= 0 && hits === 5 && rvl === 0) {
+document.write("<!DOCTYPE html><head><style type='text/css'> big { font-size:200px; } </style></head><body>");
+document.write("<br><br><br><center><big>You Won!</big></center>");
+document.write("</body></html>");
+} 
+
+else if (fires > 0 && rvl === 0) {
+document.getElementById("shots").innerHTML = "You have " + fires + " shots left.";
+} 
+
+else if (fires === 0 && hits < 5){
+document.write("<!DOCTYPE html><head><style type='text/css'> big { font-size:200px; } </style></head><body>");
+document.write("<br><br><br><center><big>You Lost</big></center>");
+document.write("</body></html>");
+}
+}
+
+
+
+function reveal() {
+(rvl === 1)? fires = 81: fires = 0;
+rvl = 1;
+for (i=11;i < 100;i++) {
+if (i % 10 != 0) {
+fire(i);
+}
+}
+}
+
+</script>
+<style type="text/css">
+
+#welcome {
+color:red; 
+font-size: 30px;
+}
+
+#welcome:hover {
+color:green;
+}
+
+td:hover {background-color:blue;}
+td { 
+background-color:tan;
+width:40px;
+height:40px;}
+#w { background-color:white; text-align:right; padding:6px;}
+
+#h {
+background-color:red;
+width:20px;
+height:20px;
+border-radius:100%;
+}
+
+#m {
+background-color:white;
+width:20px;
+height:20px;
+border-radius:100%;
+}
+
+
+</style>
+<body>
+<br>
+<center><span id="welcome"></span></center>
+<br><span id="g"></span><br>
+<center>
+<div>
+<table>
+<tr><th></th><th> 1 </th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+<tr><td id='w'>A</td><td id="11" onclick="fire(11)"></td> <td id="12" onclick="fire(12)"></td> <td id="13" onclick="fire(13)"></td> <td id="14" onclick="fire(14)"></td> <td id="15" onclick="fire(15)"></td> <td id="16" onclick="fire(16)"></td> <td id="17" onclick="fire(17)"></td> <td id="18" onclick="fire(18)"></td> <td id="19" onclick="fire(19)"></td></tr>
+<tr><td id='w'>B</td><td id="21" onclick="fire(21)"></td> <td id="22" onclick="fire(22)"></td> <td id="23" onclick="fire(23)"></td> <td id="24" onclick="fire(24)"></td> <td id="25" onclick="fire(25)"></td> <td id="26" onclick="fire(26)"></td> <td id="27" onclick="fire(27)"></td> <td id="28" onclick="fire(28)"></td> <td id="29" onclick="fire(29)"></td></tr>
+<tr><td id='w'>C</td><td id="31" onclick="fire(31)"></td> <td id="32" onclick="fire(32)"></td> <td id="33" onclick="fire(33)"></td> <td id="34" onclick="fire(34)"></td> <td id="35" onclick="fire(35)"></td> <td id="36" onclick="fire(36)"></td> <td id="37" onclick="fire(37)"></td> <td id="38" onclick="fire(38)"></td> <td id="39" onclick="fire(39)"></td></tr>
+<tr><td id='w'>D</td><td id="41" onclick="fire(41)"></td> <td id="42" onclick="fire(42)"></td> <td id="43" onclick="fire(43)"></td> <td id="44" onclick="fire(44)"></td> <td id="45" onclick="fire(45)"></td> <td id="46" onclick="fire(46)"></td> <td id="47" onclick="fire(47)"></td> <td id="48" onclick="fire(48)"></td> <td id="49" onclick="fire(49)"></td></tr>
+<tr><td id='w'>E</td><td id="51" onclick="fire(51)"></td> <td id="52" onclick="fire(52)"></td> <td id="53" onclick="fire(53)"></td> <td id="54" onclick="fire(54)"></td> <td id="55" onclick="fire(55)"></td> <td id="56" onclick="fire(56)"></td> <td id="57" onclick="fire(57)"></td> <td id="58" onclick="fire(58)"></td> <td id="59" onclick="fire(59)"></td></tr>
+<tr><td id='w'>F</td><td id="61" onclick="fire(61)"></td> <td id="62" onclick="fire(62)"></td> <td id="63" onclick="fire(63)"></td> <td id="64" onclick="fire(64)"></td> <td id="65" onclick="fire(65)"></td> <td id="66" onclick="fire(66)"></td> <td id="67" onclick="fire(67)"></td> <td id="68" onclick="fire(68)"></td> <td id="69" onclick="fire(69)"></td></tr>
+<tr><td id='w'>G</td><td id="71" onclick="fire(71)"></td> <td id="72" onclick="fire(72)"></td> <td id="73" onclick="fire(73)"></td> <td id="74" onclick="fire(74)"></td> <td id="75" onclick="fire(75)"></td> <td id="76" onclick="fire(76)"></td> <td id="77" onclick="fire(77)"></td> <td id="78" onclick="fire(78)"></td> <td id="79" onclick="fire(79)"></td></tr>
+<tr><td id='w'>H</td><td id="81" onclick="fire(81)"></td> <td id="82" onclick="fire(82)"></td> <td id="83" onclick="fire(83)"></td> <td id="84" onclick="fire(84)"></td> <td id="85" onclick="fire(85)"></td> <td id="86" onclick="fire(86)"></td> <td id="87" onclick="fire(87)"></td> <td id="88" onclick="fire(88)"></td> <td id="89" onclick="fire(89)"></td></tr>
+<tr><td id='w'>I</td><td id="91" onclick="fire(91)"></td> <td id="92" onclick="fire(92)"></td> <td id="93" onclick="fire(93)"></td> <td id="94" onclick="fire(94)"></td> <td id="95" onclick="fire(95)"></td> <td id="96" onclick="fire(96)"></td> <td id="97" onclick="fire(97)"></td> <td id="98" onclick="fire(98)"></td> <td id="99" onclick="fire(99)"></td></tr>
+
+</table>
+<span id="shots"></span>
+</div>
+</center>
+<center><button type="button" id="reveal" onclick="reveal()" >Reveal</button></center>
+</body>
+</html>
