@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Letter Stats</title>
+
+<script language="javascript">
+
+var an = ['a','b','c','d','e','f','g','h','i','j',
+'k','l','m','n','o','p','q','r','s','t','u','v','w','x','y',
+'z'];
+
+
+
+function stat(){
+    var bn = [a=0,b=0,c=0,d=0,e=0,f=0,g=0,h=0,i=0,j=0,k=0,l=0,m=0,
+n=0,o=0,p=0,q=0,r=0,s=0,t=0,u=0,v=0,w=0,x=0,y=0,z=0];
+
+    var letters = 0;
+    var string = document.getElementById("txt").value;
+    string = string.toLowerCase();
+    string = string.trim();
+    for (var ii in string){
+        for (var jj in an){
+            if (string[ii] === an[jj]){
+                bn[jj] += 1;
+                letters += 1;
+            }
+        }
+    }
+    for (var gg in bn){
+        document.getElementById(gg).innerHTML = (an[gg] + ": " + bn[gg] + "   - " +
+        (100 * (bn[gg]/string.length)).toFixed(1) + "%");
+        
+    } 
+      document.getElementById("28").innerHTML = ("Total number of letters: " + letters);
+}
+
+</script>
+
+</head>
+<body>
+<textarea name="t" id="txt" rows=20 cols=200></textarea>
+<input type="button" onclick="stat()" value="Get Text Stats"></input>
+<br>
+<div id="0"></div>
+<div id="1"></div>
+<div id="2"></div>
+<div id="3"></div>
+<div id="4"></div>
+<div id="5"></div>
+<div id="6"></div>
+<div id="7"></div>
+<div id="8"></div>
+<div id="9"></div>
+<div id="10"></div>
+<div id="11"></div>
+<div id="12"></div>
+<div id="13"></div>
+<div id="14"></div>
+<div id="15"></div>
+<div id="16"></div>
+<div id="17"></div>
+<div id="18"></div>
+<div id="19"></div>
+<div id="20"></div>
+<div id="21"></div>
+<div id="22"></div>
+<div id="23"></div>
+<div id="24"></div>
+<div id="25"></div>
+<div id="26"></div>
+<div id="27"></div>
+<div id="28"></div>
+
+
+
+</body>
+</html>
