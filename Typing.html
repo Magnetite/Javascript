@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Typing program</title>
+<script language="javascript">
+var x = 0;
+function type(){
+var a = "Welcome, programmer!";
+document.getElementById("type").innerHTML = a.slice(0,x);
+x += 1;
+if (x <= a.length){
+setTimeout(type,200);
+} else { clearTimeout(type)
+}
+}
+window.onload = type;
+
+</script>
+<style type="text/css">
+body { background-color:black}
+span { color: red; font-size: 150px; font-family: garamond;}
+</style>
+</head>
+<body>
+<center><span id="type"></span></center>
+</body>
+</html>
