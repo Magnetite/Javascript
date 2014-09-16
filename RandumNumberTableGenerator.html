@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Memory Trainer</title>
+<script>
+
+function two() {
+var D = Math.floor(Math.random() * 100);
+return (D > 9)? D : "0" + D;
+}
+
+function line() {
+return "<li>" + two() + " " + two() + " " + two() + " " + two() + " " + two() + "</li>";
+}
+
+function box() {
+echo("<td><ol>");
+for (i=0;i<10;i++) {
+echo(line());
+}
+echo("</ol></td>");
+}
+
+function mTest() {
+echo("<tr>");
+for (i=0;i<6;i++) {
+return box() + " " + box() + " " + box() + " " + box() + " " + box() + " " + box();
+}
+echo("</tr>");
+}
+function echo(p) {
+document.write(p);
+}
+</script>
+</head>
+<body>
+<script>
+echo("<table>");
+mTest();
+mTest();
+mTest();
+mTest();
+mTest();
+echo("</table>");
+</script>
+</body>
+</html>
