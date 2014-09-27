@@ -1,4 +1,4 @@
-//Program to check if a integer up to 1,000,000 is prime.
+//Program to check if a integer up to 100,000,000 is prime.
 
 //Set value of array before defining function
 var primeSet=[3,     5,     7,    11,    13,    17,    19,    23,    29, 
