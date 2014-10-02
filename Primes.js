@@ -163,3 +163,36 @@ for (var i = 0; i <= a; i++){
 
 }
 
+function Factorize(a){
+
+var b = Math.floor(Math.sqrt(a));
+var index = 0;
+var m = 1;
+var factors = [];
+
+for (var i = 0; primeSet[i] <= b; i++){
+    
+        
+   
+        for (var j = 1; a % Math.pow(primeSet[i], j) === 0; j++ ){
+        factors[index] = primeSet[i];
+        index += 1;
+    }
+   
+}
+
+
+for (var k = 0; k < factors.length; k++){
+    m *= factors[k];
+}
+
+ if (a/m >= b){
+     index += 1;
+     factors[index] = a/m;
+ }
+
+return factors;
+
+}
+
+
