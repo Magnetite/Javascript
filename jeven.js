@@ -1,12 +1,17 @@
-var test = function(){ 
-alert("It Works!");}
 var doc = document;
+
 var j = {
-in: function(e){alert(doc.getElementById(e).innerHTML);},
-val: function(e){ alert(doc.getElementById(e).value);},
-w: function(e){ doc.write(e);},
-wl: function(e){ doc.writeln(e);},
-style: function(e, s){ doc.getElementById(e).style = s;},
+
+n: function(e){ this.$n = doc.getElementById(e).innerHTML; return j;},
+
+val: function(e){ this.$val = doc.getElementById(e).value; return j;},
+
+w: function(e){ doc.write(e); return j;},
+
+wl: function(e){ doc.writeln(e); return j;},
+
+style: function(e, s){ doc.getElementById(e).style = s; return j;},
+
 
 table: function(e, a, r, c){ 
 var m = 0;
@@ -21,19 +26,24 @@ for (var i = 0;i < r; i++){
 	out += "</tr>";
 }
 doc.getElementById(e).innerHTML = out + "</table>";
+return j;
 },
+
+
 ul: function(e, a){
 	var out = "<ul>";
 	for (var i = 0; i < a.length; i++){
 	out += "<li>" + a[i] + "</li>";
 	}
 doc.getElementById(e).innerHTML = out + "</ul>";
+return j;
 },
 ol: function(e, a){
 	var out = "<ol>";
 	for (var i = 0; i < a.length; i++){
 	out += "<li>" + a[i] + "</li>";
 doc.getElementById(e).innerHTML = out + "</ol>";
+return j;
 	}
 },
 }; 
