@@ -29,21 +29,24 @@ doc.getElementById(e).innerHTML = out + "</table>";
 return j;
 },
 
+list: function(e, a, z){
+	var out = z;
+	for (var i = 0; i < a.length; i++){
+	out += "<li>" + a[i] + "</li>";
+	}
+doc.getElementById(e).innerHTML = out + z;
+return j;
+},
+
 
 ul: function(e, a){
-	var out = "<ul>";
-	for (var i = 0; i < a.length; i++){
-	out += "<li>" + a[i] + "</li>";
-	}
-doc.getElementById(e).innerHTML = out + "</ul>";
+	this.list(this.e, this.a, "ul")
 return j;
 },
+
 ol: function(e, a){
-	var out = "<ol>";
-	for (var i = 0; i < a.length; i++){
-	out += "<li>" + a[i] + "</li>";
-doc.getElementById(e).innerHTML = out + "</ol>";
+	this.list(this.e, this.a, "ol")
 return j;
-	}
-},
+}
+
 }; 
