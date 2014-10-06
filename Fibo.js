@@ -1,13 +1,13 @@
 
 function Fibo(a){
-    var b = 0, c = 1, d = a / 2, fib = [];
-    for (var i = 0; i < d; i++){
-        b += c;
-        c += b;
-        fib[(i * 2) - 1] = b;
-        fib[i * 2] = c;
+    var b = [0,1], fib = [];
+    for (var i = 0; i < a; i++){
+        b[i % 2] += b[(i+1) % 2];
+        
+        fib[i] = b[i % 2];
     }
     return  fib;
 }
+
 
 Fibo(14);
