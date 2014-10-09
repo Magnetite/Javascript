@@ -196,7 +196,7 @@ return factors;
 }
 
 function getNth(a){
-	if (a > 1230){
+	if (a > 1230 || a <= 0){
 	return false;
 	}
     return primeSet[a - 1];
