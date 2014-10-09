@@ -196,7 +196,26 @@ return factors;
 }
 
 function getNth(a){
+	if (a > 1230){
+	return false;
+	}
     return primeSet[a - 1];
 }
+
+function PrimeRange(a, b){
+    if ( a > 1230 || b > 1230 || a > b){
+        return false;
+    }
+    
+    var primes = [];
+    
+    
+    for (var i = 0; i <= (b - a); i++){
+        primes[i] = primeSet[a + i - 1];
+    }
+    return primes;
+}
+
+
 
 
