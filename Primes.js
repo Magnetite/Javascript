@@ -195,4 +195,8 @@ return factors;
 
 }
 
+function getNth(a){
+    return primeSet[a - 1];
+}
+
 
