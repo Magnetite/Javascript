@@ -203,16 +203,19 @@ function getNth(a){
 }
 
 function PrimeRange(a, b){
-    if ( a > 1230 || b > 1230 || a > b){
+    if ( a > 1230 || b > 1230 || a <= 0 || b <= 0){
         return false;
     }
     
-    var primes = [];
+    var primes = [], i = 0, sign = 1;
     
+    if ( a > b){ sign = -1;}
     
-    for (var i = 0; i <= (b - a); i++){
-        primes[i] = primeSet[a + i - 1];
+    for (i = 0; i <= Math.abs(b - a); i++){
+        primes[i] = primeSet[a + (i * sign) - 1];
     }
+    
+    
     return primes;
 }
 
