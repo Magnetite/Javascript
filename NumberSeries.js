@@ -37,3 +37,13 @@ function DeriveByPowerRule(coeff, power, deriv){
     out[1] = power;
     return out;
 }
+
+function integrate(a,b){
+    out = [];
+    out[1] = b + 1;
+    out[0] = a / out[1];
+    
+    return out;
+    
+}
+
