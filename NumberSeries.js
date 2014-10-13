@@ -38,12 +38,18 @@ function DeriveByPowerRule(coeff, power, deriv){
     return out;
 }
 
-function integrate(a,b){
+// Integrates using the power rule
+// A is the coefficient, b the power, and c is how many times to integrate
+function integrate(a,b, c){
     out = [];
-    out[1] = b + 1;
-    out[0] = a / out[1];
-    
+    while (c > 0){
+    b += 1;
+    a /=  b;
+    c -= 1;
+    }
+    out = [a, b];
     return out;
     
 }
+
 
