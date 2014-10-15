@@ -1,4 +1,4 @@
-//Add up the recoproals of the powers of c.  
+//Add up the reciprocals of the powers of c.  
 //Parameter "a" tells how many iteration to go through
 
 function summer(a, c){

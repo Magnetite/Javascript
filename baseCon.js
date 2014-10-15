@@ -29,7 +29,7 @@ function baseCon(a, b){
     return out;
 }
 
-
+//Converts from base 10 to base (2 - 36) 
 function baseConvert(a, b){
     var tuo = [], out = [], i = 0;
     tuo[0] = 0;
@@ -58,4 +58,25 @@ function baseConvert(a, b){
         out[j] = tuo[ (l - j) - 1];
     }
     return out;
+}
+
+
+function ConvtoDec(a, b){
+    var tuo = 0, i = 0;
+    
+    //Check for proper usage
+	if (b < 0 || b < 1 || b > 10){
+	return false;
+	}
+    
+	//Converts from base n to 10
+    while (a > 0){
+        tuo += (a % 10) * Math.pow(b, i);
+        a /= 10;
+        a = Math.floor(a);
+        i += 1;
+        
+    }
+	
+    return tuo;
 }
