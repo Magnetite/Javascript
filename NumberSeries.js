@@ -52,4 +52,18 @@ function integrate(a,b, c){
     
 }
 
+//Generates square pyramidal numbers
+function pyramidal(a){
+    var out = 0;
+    for (var i = 0; i <= a; i++){
+        out += i * i;
+        
+    }
+    return out;
+}
 
+//Generates octahedral numbers
+function octahedral(a){
+    
+    return pyramidal(a) + pyramidal(a - 1);
+}
