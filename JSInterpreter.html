@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Javascript Test Page</title>
+
+<script language="javascript">
+function runner() {
+var inp = document.getElementById("con").value;
+document.getElementById("js").innerHTML = inp;
+location.reload();
+}
+function console(a){
+document.getElementById("console").value += a;
+
+}
+
+</script>
+
+<style type="text/css">
+textarea {
+background-color: black;
+color:white;
+}
+
+</style>
+
+</head>
+<body bgcolor="grey">
+<script id="js"></script>
+<br><br>
+<center><textarea id="con" cols=100 rows=25></textarea></center>
+<br>
+<center><input type="button" onclick="runner()" value="Run Program"></input></center>
+<br><br>
+<center><textarea id="console" cols=50 rows=8></textarea></center>
+</body>
+</html>
