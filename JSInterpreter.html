@@ -15,7 +15,11 @@ document.getElementById("console").value += a + "\n";
 }
 function clear() {
 document.getElementById("console").value = "";
+}
 
+function clearButton(a){
+document.getElementById(a).innerHTML = "clear()";
+location.reload();
 }
 
 </script>
@@ -34,7 +38,12 @@ color:white;
 <br><br>
 <center><textarea id="con" cols=100 rows=25></textarea></center>
 <br>
-<center><input type="button" onclick="runner()" value="Run Program"></input></center>
+<center>
+
+<input type="button" onclick="runner()" value="Run Program"></input>
+<input type="button" onclick="clearButton('js')" value="Clear Console"></input>
+
+</center>
 <br><br>
 <center><textarea id="console" cols=50 rows=8></textarea></center>
 </body>
