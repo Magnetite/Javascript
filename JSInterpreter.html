@@ -22,11 +22,23 @@ document.getElementById("js").innerHTML = "clear('" + a + "');";
 location.reload();
 }
 
-function white(){
+function bwToggle(){
+if (document.getElementById('con').style.color == "white"){
+
 document.getElementById('con').style.backgroundColor = "white";
 document.getElementById('con').style.color = "black";
 document.getElementById('console').style.backgroundColor = "white";
 document.getElementById('console').style.color = "black";
+
+} else {
+
+document.getElementById('con').style.backgroundColor = "black";
+document.getElementById('con').style.color = "white";
+document.getElementById('console').style.backgroundColor = "black";
+document.getElementById('console').style.color = "white";
+
+}
+
 }
 
 </script>
@@ -50,7 +62,7 @@ color:white;
 <input type="button" onclick="runner()" value="Run Program"></input>
 <input type="button" onclick="clearButton('console')" value="Clear Console"></input>
 <input type="button" onclick="clearButton('con')" value="Clear Top"></input>
-<input type="button" onclick="white()" value="Black text on white background"></input>
+<input type="button" onclick="bwToggle()" value="Toggle console color"></input>
 
 </center>
 <br><br>
