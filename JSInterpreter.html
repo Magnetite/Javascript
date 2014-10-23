@@ -4,6 +4,11 @@
 <title>Javascript Test Page</title>
 
 <script language="javascript">
+
+var count = 0, num = 0;
+var colors = [ "white", "red", "orange", "green", "blue", "purple"];
+
+
 function runner() {
 var inp = document.getElementById("con").value;
 document.getElementById("js").innerHTML = inp;
@@ -22,22 +27,21 @@ document.getElementById("js").innerHTML = "clear('" + a + "');";
 location.reload();
 }
 
-function bwToggle(){
-if (document.getElementById('con').style.color == "white"){
+function textToggle(){
+count += 1;
+count %= 6;
 
-document.getElementById('con').style.backgroundColor = "white";
-document.getElementById('con').style.color = "black";
-document.getElementById('console').style.backgroundColor = "white";
-document.getElementById('console').style.color = "black";
-
-} else {
-
-document.getElementById('con').style.backgroundColor = "black";
-document.getElementById('con').style.color = "white";
-document.getElementById('console').style.backgroundColor = "black";
-document.getElementById('console').style.color = "white";
+document.getElementById('con').style.color = colors[count];
+document.getElementById('console').style.color = colors[count];
 
 }
+
+function conToggle(){
+num += 1;
+num %= 6;
+
+document.getElementById('con').style.backgroundColor = colors[num];
+document.getElementById('console').style.backgroundColor = colors[num];
 
 }
 
@@ -62,7 +66,8 @@ color:white;
 <input type="button" onclick="runner()" value="Run Program"></input>
 <input type="button" onclick="clearButton('console')" value="Clear Console"></input>
 <input type="button" onclick="clearButton('con')" value="Clear Top"></input>
-<input type="button" onclick="bwToggle()" value="Toggle console color"></input>
+<input type="button" onclick="textToggle()" value="Toggle text color"></input>
+<input type="button" onclick="conToggle()" value="Toggle console color"></input>
 
 </center>
 <br><br>
