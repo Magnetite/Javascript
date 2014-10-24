@@ -6,7 +6,7 @@
 <script language="javascript">
 
 var count = 0, num = 0;
-var colors = [ "white", "red", "orange", "green", "blue", "purple"];
+var colors = [ "white", "red", "orange","yellow", "green", "blue", "purple"];
 
 
 function runner() {
@@ -29,6 +29,9 @@ location.reload();
 
 function textToggle(){
 count += 1;
+if (colors[count] == colors[num % 6]){
+count += 1;
+} 
 count %= 6;
 
 document.getElementById('con').style.color = colors[count];
@@ -38,6 +41,9 @@ document.getElementById('console').style.color = colors[count];
 
 function conToggle(){
 num += 1;
+if (colors[count] == colors[num % 6]){
+num += 1;
+} 
 num %= 6;
 
 document.getElementById('con').style.backgroundColor = colors[num];
