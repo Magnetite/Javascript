@@ -51,6 +51,20 @@ document.getElementById('console').style.backgroundColor = colors[num];
 
 }
 
+function bothToggle(){
+num += 1;
+num %= 6;
+
+count += 1;
+count %= 6;
+
+document.getElementById('con').style.backgroundColor = colors[num];
+document.getElementById('console').style.backgroundColor = colors[num];
+
+document.getElementById('con').style.color = colors[count];
+document.getElementById('console').style.color = colors[count];
+}
+
 </script>
 
 <style type="text/css">
@@ -74,6 +88,7 @@ color:white;
 <input type="button" onclick="clearButton('con')" value="Clear Top"></input>
 <input type="button" onclick="textToggle()" value="Toggle text color"></input>
 <input type="button" onclick="conToggle()" value="Toggle console color"></input>
+<input type="button" onclick="bothToggle()" value="Toggle both"></input>
 
 </center>
 <br><br>
