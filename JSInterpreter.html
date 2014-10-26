@@ -3,10 +3,10 @@
 <head>
 <title>Javascript Test Page</title>
 
+
 <script language="javascript">
 
-var count = 0, num = 0;
-var colors = [ "white", "red", "orange","yellow", "green", "blue", "purple"];
+var colors = [ "white", "black", "red", "orange","yellow", "green", "blue", "purple"];
 
 
 function runner() {
@@ -29,55 +29,63 @@ location.reload();
 
 function textToggle(){
 count += 1;
-if (colors[count] == colors[num % 6]){
+if (colors[count % 8] == colors[num]){
 count += 1;
 } 
-count %= 6;
+count %= 8;
 
-document.getElementById('con').style.color = colors[count];
-document.getElementById('console').style.color = colors[count];
+colorApply(count, num);
 
 }
 
 function conToggle(){
 num += 1;
-if (colors[count] == colors[num % 6]){
+if (colors[count] == colors[num % 8]){
 num += 1;
 } 
-num %= 6;
+num %= 8;
 
-document.getElementById('con').style.backgroundColor = colors[num];
-document.getElementById('console').style.backgroundColor = colors[num];
-
+colorApply(count, num);
 }
 
 function bothToggle(){
 num += 1;
-num %= 6;
+num %= 8;
 
 count += 1;
-count %= 6;
+count %= 8;
 
-document.getElementById('con').style.backgroundColor = colors[num];
-document.getElementById('console').style.backgroundColor = colors[num];
+colorApply(count, num);
+}
 
-document.getElementById('con').style.color = colors[count];
-document.getElementById('console').style.color = colors[count];
+function colorApply(txt, bck){
+
+	document.getElementById('con').style.backgroundColor = colors[bck];
+	document.getElementById('console').style.backgroundColor = colors[bck];
+	
+	document.getElementById('con').style.color = colors[txt];
+	document.getElementById('console').style.color = colors[txt];
+	document.getElementById("mem").value = "colorApply(" + txt + ", " + bck + ");";
+	
+	
+}
+
+function colorRun(){
+var c = document.getElementById("mem").value;
+
+if (c != false){
+	c;
+	} else {
+	colorApply(count, num);
+	}
 }
 
 </script>
 
-<style type="text/css">
-textarea {
-background-color: black;
-color:white;
-}
-
-</style>
-
 </head>
 <body bgcolor="grey">
-<script id="js"></script>
+<script id = "js"></script>
+
 <br><br>
 <center><textarea id="con" cols=100 rows=25></textarea></center>
 <br>
@@ -93,5 +101,12 @@ color:white;
 </center>
 <br><br>
 <center><textarea id="console" cols=50 rows=8></textarea></center>
+
+<textarea id="mem" cols=0 rows=0 onload = "colorRun();"></textarea>
+
+<script id = "color_js">
+var count = 0, num = 1;
+</script>
+
 </body>
 </html>
