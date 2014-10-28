@@ -10,3 +10,16 @@ function slowPi(a){
     return piOut;
 }
 
+function sqrtNest(a){
+    if (a == 1){
+        return Math.sqrt(2);
+    } else if (a > 1){
+        return  Math.sqrt(2 + sqrtNest(a - 1));
+    }
+}
+
+function Pi1(a){
+    var b = ( sqrtNest(a) ) / a;
+    return Math.sqrt(2 + b);
+    
+}
