@@ -3,10 +3,17 @@
 <head>
 <title>Javascript Test Page</title>
 
+<script id = "color_js">
+var count = 0, num = 1;
+</script>
 
 <script language="javascript">
 
 var colors = [ "white", "black", "red", "orange","yellow", "green", "blue", "purple"];
+
+var fonts = ["verdana", "impact", "sans-sarif", "cursive"];
+
+var f = 0;
 
 
 function runner() {
@@ -78,9 +85,29 @@ if (c != false){
 	} else {
 	colorApply(count, num);
 	}
+	
 }
 
+function fontToggle(){
+
+	f += 1;
+	f %= 4;
+	document.getElementById('con').style.fontFamily = fonts[f];
+	document.getElementById('console').style.fontFamily = fonts[f];
+}
+ 
+//window.onload = colorRun;
 </script>
+
+<style>
+
+con {
+width: 300px,
+height: 300px
+
+}
+
+</style>
 
 </head>
 <body bgcolor="grey">
@@ -97,16 +124,15 @@ if (c != false){
 <input type="button" onclick="textToggle()" value="Toggle text color"></input>
 <input type="button" onclick="conToggle()" value="Toggle console color"></input>
 <input type="button" onclick="bothToggle()" value="Toggle both"></input>
+<input type="button" onclick="fontToggle()" value="Change Font"></input>
 
 </center>
 <br><br>
 <center><textarea id="console" cols=50 rows=8></textarea></center>
 
-<textarea id="mem" cols=0 rows=0 onload = "colorRun();"></textarea>
+<textarea id="mem" cols=20 rows=1 ></textarea>
 
-<script id = "color_js">
-var count = 0, num = 1;
-</script>
+
 
 </body>
 </html>
