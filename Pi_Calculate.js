@@ -10,6 +10,26 @@ function slowPi(a){
     return piOut;
 }
 
+
+//The function below uses the Nilakantha series to calculate Pi.
+function Pi2(a){
+    var b = 3;
+    for (var i = 2; i < a * 2; i += 2){
+        
+        if (i % 4 == 2){
+            b += (4/( i * (i + 1) * (i + 2) ) );
+        } else {
+            b -= (4/( i * (i + 1) * (i + 2) ) );
+        }
+        
+    }
+    
+    return b;
+}
+
+
+
+
 function sqrtNest(a){
     if (a == 1){
         return Math.sqrt(2);
