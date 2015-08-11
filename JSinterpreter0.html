@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>JavaScript Interpreter</title>
+
+<script>
+function interpret(){
+var inp = document.getElementById("input").value;
+return inp;
+
+}
+
+function conout(a){
+document.getElementById("output").value = a;
+
+}
+</script>
+
+<style>
+#input {
+width: 50%;
+height: 50%;
+
+}
+
+body {
+background-color: blue;
+}
+
+button {
+}
+
+</style>
+</head>
+
+<body>
+<textarea id = "input"></textarea>
+<br>
+<button onclick="interpret()">Run Program</button>
+<div id = "output"></div>
+
+</body>
+</html>
