@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Super Divider 2.0  Graphical!</title>
+<script language="javascript">
+
+
+
+function dv(){   //Fix bug with function, trailing zeroes don't show up!
+    var a = document.getElementById("t1").value;
+    var b = document.getElementById("t2").value;
+    var c = [ ], d = 0, e = 0, f = 0;
+	var div = "<div class='n";
+	var divEnd = "'></div>";
+    c[0] = Math.floor((a/b) * 10000000000 )/10000000000;
+    
+    e = (a * 10000000000) % b;
+    for (i=1;i<1000;i++){
+        d = Math.floor((e/b) * 10000000000);
+		d = d.toString();
+		
+		 while(d.length < 10){
+		d = "0" + d;
+		}
+		
+		c[i] = d;
+        e = (e * 10000000000) % b;
+    }
+    
+	var noDot = c.join("").replace("." , " ");
+	var v = "";
+	
+	for (i = 0, len = noDot. length; i < len; i++){
+	if (noDot !== " "){
+		v += div + noDot[i] + divEnd;
+		}
+	}
+    document.getElementById("1").innerHTML = v;
+    
+}
+</script>
+<style>
+
+div {
+height: 3px;
+width: 3px;
+float: left;
+}
+
+body {
+background-color: black;
+}
+
+.n0 { background-color: grey;}
+.n1 { background-color: white;}
+.n2 { background-color: yellow;}
+.n3 { background-color: green;}
+.n4 { background-color: red;}
+.n5 { background-color: orange;}
+.n6 { background-color: black;}
+.n7 { background-color: silver;}
+.n8 { background-color: maroon;}
+.n9 { background-color: blue;}
+
+
+</style>
+</head>
+<body>
+<div class="n3"></div>
+<textarea rows=1 id="t1"></textarea> <textarea rows=1 id="t2"></textarea><input type="button" id="d" value="Compute!" onclick="dv()"></input>
+<br>
+<span id="1"></span>
+</body>
+</html>

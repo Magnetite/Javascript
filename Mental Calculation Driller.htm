@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252">
+<script type="text/javascript">
+var checkButton = "<button type='button' onclick='Check()'>Check Answers</button>";
+
+function Ck(){
+document.getElementById("d2").innerHTML = " <br>" + checkButton;
+};
+
+function ClearButton() {
+document.getElementById("11").innerHTML = "<!--   -->";  //Erases Hint Button
+};
+
+function Decimal() {
+var t = (Math.floor(Math.random()*100))/10;
+if (t%1===0) {
+return "0" + t;
+} else {
+return t;
+};
+};
+
+function About() {
+alert("Programmed by Steven, \n\n Powered by Javascript!");
+};
+
+
+function Power() {
+for (i=1; i<11;i++){
+document.getElementById(i).innerHTML = (Math.floor(Math.random()*90) + 10) + "<sup>"
+ + (Math.floor(Math.random()*8)+2) +"</sup>" + " = " + "<textarea rows = 1></textarea><br>";
+};
+Ck();
+ClearButton();  
+};
+
+function Cal() {
+for (i=1;i<11;i++) {
+document.getElementById(i).innerHTML = Month() + "." + Day() + "." + Century() 
++ Year() + " = " + "<textarea rows = 1></textarea><br>";
+};
+ClearButton();
+};
+
+function Square() {
+for (i=1;i<11;i++) {
+document.getElementById(i).innerHTML = (Math.floor(Math.random()*900) + 100) + "<sup>"
+ + "0.5" + "</sup>" + " = " + "<textarea rows = 1></textarea><br>";
+ };
+ Ck();
+ ClearButton();
+ };
+ 
+function Dp() {
+for (i=1;i<11;i++) {
+document.getElementById(i).innerHTML = Decimal() + "<sup>"
+ + Decimal() +"</sup>" + " = " + "<textarea rows = 1></textarea>" + "<br>";
+};
+document.getElementById("11").innerHTML = "<br>" + "<button type='button' onclick='HowDPower()'>Calculation Hint</button>";
+Ck();
+};
+
+function Moon() {
+for (i=1;i<11;i++) {
+document.getElementById(i).innerHTML = Month() + "." + Day() + "." + (Math.floor(Math.random()* 7) + 17)
++ Year() + " = " + "<textarea rows = 1></textarea><br>";
+};
+ClearButton();
+};
+
+function Root() {
+for (i=1; i<11;i++){
+document.getElementById(i).innerHTML = (Math.floor(Math.random()*90) + 10) + "<sup>"
+ + "1/" + (Math.floor(Math.random()*8)+2) +"</sup>" + " = " + "<textarea rows = 1></textarea><br>";
+};
+Ck();
+ClearButton();
+};
+
+function HowDPower() {
+alert("Hints On How To Calculate Decimal Powers: \n\n\n1. Use Common Logs: \n\n One Method is" + 
+" to use Prememerized Common Logs of the first primes '2,3,5,7,11,13,17,29,23,29'."
++ "\n Then factor the number to be powered into it prime factors, add the Logs of all the primes" + 
+" to get the total Log of the number");
+};
+
+function Check() {
+
+};
+
+function Month() {
+var M = (Math.floor(Math.random()*11)+1);
+return TwoDigit(M);
+};
+
+function Day() {
+var D = (Math.floor(Math.random()*27)+1);
+return TwoDigit(D);
+};
+
+function Century() {
+return (Math.floor(Math.random()*82)+17);
+};
+
+function Year() {
+var Y = Math.floor(Math.random()*100)
+return TwoDigit(Y);
+};
+
+function TwoDigit(v) {
+if (v < 10) {
+return "0" + v;
+} else {
+return v
+};
+};
+
+</script>
+<style type="text/css">
+#d1 {
+background-color:grey;
+border-radius: 10px;
+border: 3px solid black;
+height: 400px;
+width: 330px;
+color:black;
+font-size: 24px;
+position:relative;
+clear:right;
+}
+.c1 {
+border-radius: 10px;
+border: 3px solid black;
+background-color:grey;
+height: 100px;
+width: 300px;
+float: right;
+position:relative;
+margin-left:300px;
+margin-bottom:300px;
+clear:left;
+}
+textarea {
+height: 21px;
+} 
+body {
+background-color:green;
+</style>
+<title>Mental Calculation Driller</title>
+</head>
+<body>
+<table><tbody><tr><td>
+<div id="d1">
+<span id="1"></span>   <!-- Blanks for problems -->
+<span id="2"></span>
+<span id="3"></span>
+<span id="4"></span>
+<span id="5"></span>
+<span id="6"></span>
+<span id="7"></span>
+<span id="8"></span>
+<span id="9"></span>
+<span id="10"></span>
+<span id="11"></span> <!-- for Calculation Hint Button -->
+
+
+
+</div>
+
+<div id="d2"></div>  <!-- Check Answers Button goes here -->
+
+</td><td>
+<div class="c1"><table>
+
+<tbody>
+
+<tr>
+<td><button type="button" id="power" onclick="Power()">Powers Practice </button></td>
+<td><button type="button" id="cal" onclick="Cal()">Calendar Calculation</button></td>
+<td><button type="button" id="square" onclick="Square()">Square Roots</button></td>
+</tr>
+
+<tr>
+<td><button type="button" id="dp" onclick="Dp()">Decimal Powers</button></td>
+<td><button type="button" id="moon" onclick="Moon()">Moon Phases  (1700 - 2400)</button></td>
+<td><button type="button" id="root" onclick="Root()">Rooting Practice</button></td>
+</tr>
+
+</tbody></table></div>
+
+</td></tr></tbody></table>
+
+<center>
+<br><button type="button" onclick="About()">About This Web Program</button>
+</center>
+
+</body></html>
