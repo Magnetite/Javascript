@@ -35,11 +35,18 @@ float: right;
 
     <script>
       $(document).ready(function() {
-         $(".drg").click(function(){
-			$(".drg").animate({height: '100px'});
-		 }); 
-         
-       });
+        var ids = [];
+		for (var i = 1; i < 16; i++){
+			ids.push("#d" + i);
+		}
+		
+		ids.forEach(function(cur){ 
+			$(cur).click(function(){ 
+			$(cur).animate({left: '3em'});
+			}); 
+			});
+         //}
+       });  //<= End of forEach
     </script>
 
 </head>
