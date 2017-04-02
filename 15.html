@@ -34,19 +34,25 @@ float: right;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
     <script>
+	
+	function ani(id){
+			$(id).click(function(){ 
+			$(id).animate({left: '3em'});
+			});
+			}
+			
+			
       $(document).ready(function() {
         var ids = [];
 		for (var i = 1; i < 16; i++){
 			ids.push("#d" + i);
 		}
 		
-		ids.forEach(function(cur){ 
-			$(cur).click(function(){ 
-			$(cur).animate({left: '3em'});
-			}); 
-			});
+		
+		
+		ids.forEach( function(cur){ ani(cur);} );
          //}
-       });  //<= End of forEach
+       });  
     </script>
 
 </head>
