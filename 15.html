@@ -35,16 +35,28 @@ float: right;
 
     <script>
 	
-	function ani(id){
+	function ani(id, mode){
 			$(id).click(function(){ 
-			$(id).animate({left: '3em'});
+			
+				if (mode === 1){
+					$(id).animate({left: '3em'}); //Go right
+				} else if (mode === 2){
+					$(id).animate({right: '3em'}); //Go left
+				} else if (mode === 3){
+					$(id).animate({top: '3em'}); //Go down
+				} else {
+					$(id).animate({bottom: '3em'}); //Go up
+				}
+			
 			});
+			
 			}
 			
+			var grid = [0];
 			
       $(document).ready(function() {
         var ids = [];
-		var grid = [0];
+		
 		
 		for (var i = 1; i < 16; i++){
 			ids.push("#d" + i);
@@ -54,8 +66,8 @@ float: right;
 		
 		
 		
-		ids.forEach( function(cur){ ani(cur);} );
-         //}
+		ids.forEach( function(cur){ ani(cur,2);} );
+         
        });  
     </script>
 
