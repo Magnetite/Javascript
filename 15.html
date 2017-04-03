@@ -65,13 +65,32 @@ float: right;
 		arr[oldVal] = 0;
 		arr[oldZero] = oldV;
 		
+		eventHandle(oldVal); //<= oldVal is now the index of 0, so it is used
+		
 		
 	}
 	
 		
-	function eventHandle(){
+	function eventHandle(zeroInd){
 		
 		$('div').unbind();
+		
+		if ( (zeroInd % squareSide) != 3 ){
+			ani( (zeroInd + 2), grid, 1 );
+		} 
+		
+		if ( (zeroInd % squareSide) != 0 ){
+			ani( (zeroInd ), grid, 2 );
+		} 
+		
+		
+		if ( (zeroInd - 4) > 0 ){
+			ani( (zeroInd - 3), grid, 3 );
+		} 
+		
+		if ( (zeroInd + 4) < grid.length ){
+			ani( (zeroInd + 5), grid, 5 );
+		} 
 		
 		
 		
