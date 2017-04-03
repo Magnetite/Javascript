@@ -52,7 +52,7 @@ float: right;
 			
 			}
 			
-			var grid = [0];
+			var grid = [];
 			
       $(document).ready(function() {
         var ids = ['#d12','#d15'];
@@ -62,6 +62,7 @@ float: right;
 			//ids.push("#d" + i);
 			grid.push(i);
 		}
+		grid.push(0);
 		
 		
 		ani(ids[0], 3);
