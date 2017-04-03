@@ -55,18 +55,19 @@ float: right;
 			var grid = [0];
 			
       $(document).ready(function() {
-        var ids = [];
+        var ids = ['#d12','#d15'];
 		
 		
 		for (var i = 1; i < 16; i++){
-			ids.push("#d" + i);
+			//ids.push("#d" + i);
 			grid.push(i);
 		}
 		
 		
+		ani(ids[0], 3);
+		ani(ids[1], 2);
 		
-		
-		ids.forEach( function(cur){ ani(cur,2);} );
+		//ids.forEach( function(cur){ ani(cur,2);} );
          
        });  
     </script>
