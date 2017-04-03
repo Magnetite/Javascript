@@ -35,7 +35,7 @@ float: right;
 
     <script>
 	
-	function ani(id, mode){
+	function ani(id,arr, mode){
 		var d = '#d';  //part of id
 		var em = '5em';
 			$(d + id).click(function(){ 
@@ -49,6 +49,8 @@ float: right;
 				} else {
 					$(d + id).animate({bottom: em}); //Go up
 				}
+				
+				valueSwap(id, arr);
 			
 			});
 			
@@ -59,8 +61,9 @@ float: right;
 		
 		var oldVal = arr.indexOf(a);
 		var oldZero = arr.indexOf(0);
-		arr[oldZero] = arr[oldVal];
+		var oldV = arr[oldVal];
 		arr[oldVal] = 0;
+		arr[oldZero] = oldV;
 		
 		
 	}
@@ -79,10 +82,9 @@ float: right;
 		grid.push(0);
 		
 		
-		ani(ids[0], 3);
-		ani(ids[1], 2);
+		ani(ids[0], grid, 3);
+		ani(ids[1], grid, 2);
 		
-		//ids.forEach( function(cur){ ani(cur,2);} );
          
        });  
     </script>
