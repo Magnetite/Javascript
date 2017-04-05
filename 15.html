@@ -21,6 +21,7 @@ position: relative;
 float: right;
 	height: 5em;
 	width: 5em;
+	border-radius: 100%;
 	z-index: 1;
 	background-color: orange;
 	text-align: center;
@@ -37,17 +38,17 @@ float: right;
 	
 	function ani(id,arr, mode){
 		var d = '#d';  //part of id
-		var em = '5em';
-			$(d + id).click(function(){ 
+		var em = '+=5em';
+			$(d + arr[id]).click(function(){ 
 			
 				if (mode === 1){
-					$(d + id).animate({left: em}); //Go right
+					$(d + arr[id]).animate({left: em}); //Go right
 				} else if (mode === 2){
-					$(d + id).animate({right: em}); //Go left
+					$(d + arr[id]).animate({right: em}); //Go left
 				} else if (mode === 3){
-					$(d + id).animate({top: em}); //Go down
+					$(d + arr[id]).animate({top: em}); //Go down
 				} else {
-					$(d + id).animate({bottom: em}); //Go up
+					$(d + arr[id]).animate({bottom: em}); //Go up
 				}
 				
 				valueSwap(id, arr);
@@ -59,13 +60,13 @@ float: right;
 	//a is the value to swap with 0, arr is the array
 	function valueSwap(a, arr){
 		
-		var oldVal = arr.indexOf(a);
+		//var oldVal = arr.indexOf(a);
 		var oldZero = arr.indexOf(0);
-		var oldV = arr[oldVal];
-		arr[oldVal] = 0;
+		var oldV = arr[a];
+		arr[a] = 0;
 		arr[oldZero] = oldV;
 		
-		eventHandle(oldVal); //<= oldVal is now the index of 0, so it is used
+		eventHandle(a); 
 		
 		
 	}
@@ -74,22 +75,23 @@ float: right;
 	function eventHandle(zeroInd){
 		
 		$('div').unbind();
+		//$("div").off("click");
 		
-		if ( (zeroInd % squareSide) != 3 ){
-			ani( (zeroInd + 2), grid, 1 );
+		if ( (zeroInd % squareSide) !== 3 ){
+			ani( (zeroInd + 1), grid, 1 );
 		} 
 		
-		if ( (zeroInd % squareSide) != 0 ){
-			ani( (zeroInd ), grid, 2 );
+		if ( (zeroInd % squareSide) !== 0 ){
+			ani( (zeroInd - 1), grid, 2 );
 		} 
 		
 		
-		if ( (zeroInd - 4) > 0 ){
-			ani( (zeroInd - 3), grid, 3 );
+		if ( (zeroInd - squareSide) >= 0 ){
+			ani( (zeroInd - squareSide), grid, 3 );
 		} 
 		
-		if ( (zeroInd + 4) < grid.length ){
-			ani( (zeroInd + 5), grid, 5 );
+		if ( (zeroInd + squareSide) <= grid.length ){
+			ani( (zeroInd + squareSide), grid, 5 );
 		} 
 		
 		
@@ -102,7 +104,7 @@ float: right;
 			var squareSide = 4;
 			
       $(document).ready(function() {
-        var ids = [12,15]; //Default 
+        var ids = [11,14]; //Default 
 		
 		
 		for (var i = 1; i < 16; i++){
