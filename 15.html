@@ -37,24 +37,31 @@ float: right;
     <script>
 	var fourSqr = [11,14];
 	
-	function ani(id,arr, mode){
+	function ani(id){
 		var d = '#d';  //part of id
 		var em = '+=5em';
-		console.log("ani, 43");
-			$(d + arr[id]).click(function(){ 
+			$(d + grid[id]).click(function(){ 
 			
 				if (mov[id] === 1){
-					$(d + arr[id]).animate({left: em}); //Go right
+				
+					$(d + grid[id]).animate({left: em}); //Go right
+					
 				} else if (mov[id] === 2){
-					$(d + arr[id]).animate({right: em}); //Go left
+				
+					$(d + grid[id]).animate({right: em}); //Go left
+					
 				} else if (mov[id] === 3){
-					$(d + arr[id]).animate({top: em}); //Go down
+				
+					$(d + grid[id]).animate({top: em}); //Go down
+					
 				} else if (mov[id] !== 0) {
-					$(d + arr[id]).animate({bottom: em}); //Go up
+				
+					$(d + grid[id]).animate({bottom: em}); //Go up
 				}
 				
-				valueSwap(id, arr);
-			
+				if (mov[id] !== 0){
+					valueSwap(id, arr);
+				}
 			});
 			
 			
@@ -75,32 +82,32 @@ float: right;
 		
 	}
 	
-		
+	//sets up event handlers
 	function eventHandle(zeroInd){
 		
-		//$('div').unbind();
-		fourSqr.forEach(function(cur, ind, arr){ $(cur).off("click"); arr.pop(cur); });
-		//$("div").off("click");
+		
+		mov.forEach(function(cur, ind, arr){ arr[ind] = 0; });  //<= clears the move codes in mov array
+		
 		
 		if ( (zeroInd % squareSide) !== 3 ){
-			ani( (zeroInd + 1), grid, 1 );
-			fourSqr.push(zeroInd + 1);
+			//ani( (zeroInd + 1), grid, 1 );
+			mov[zeroInd + 1] = 1;
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
-			ani( (zeroInd - 1), grid, 2 );
-			fourSqr.push(zeroInd - 1);
+			//ani( (zeroInd - 1), grid, 2 );
+			mov[zeroInd - 1] = 2;
 		} 
 		
 		
 		if ( (zeroInd - squareSide) >= 0 ){
-			ani( (zeroInd - squareSide), grid, 3 );
-			fourSqr.push(zeroInd - squareSide);
+			//ani( (zeroInd - squareSide), grid, 3 );
+			mov[zeroInd - squareSide] = 3;
 		} 
 		
 		if ( (zeroInd + squareSide) <= grid.length ){
-			ani( (zeroInd + squareSide), grid, 7 );
-			fourSqr.push(zeroInd + squareSide);
+			//ani( (zeroInd + squareSide), grid, 7 );
+			mov[zeroInd + squareSide] = 0;
 		} 
 		
 		
