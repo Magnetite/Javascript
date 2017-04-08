@@ -42,11 +42,11 @@ float: right;
 		var em = '+=5em';
 			$(d + grid[id]).click(function(){ 
 			
-				if (mov[id] === 1){
+				if (id % squareSide === 3){
 				
 					$(d + grid[id]).animate({left: em}); //Go right
 					
-				} else if (mov[id] === 2){
+				} else if (id % squareSide === 1){
 				
 					$(d + grid[id]).animate({right: em}); //Go left
 					
@@ -76,7 +76,6 @@ float: right;
 		arr[a] = 0;
 		arr[oldZero] = oldV;
 		
-		//console.log(fourSqr.join());
 		eventHandle(a); 
 		
 		
@@ -84,13 +83,14 @@ float: right;
 	
 	//sets up event handlers
 	function eventHandle(zeroInd){
-		
+		var d = '#d';  //part of id
+		var em = '+=5em';
 		
 		mov.forEach(function(cur, ind, arr){ arr[ind] = 0; });  //<= clears the move codes in mov array
 		
 		
 		if ( (zeroInd % squareSide) !== 3 ){
-			//ani( (zeroInd + 1), grid, 1 );
+			$( d +(zeroInd + 1) ).animate({right: em});
 			mov[zeroInd + 1] = 1;
 		} 
 		
