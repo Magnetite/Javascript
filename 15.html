@@ -86,28 +86,32 @@ float: right;
 		var d = '#d';  //part of id
 		var em = '+=5em';
 		
-		mov.forEach(function(cur, ind, arr){ arr[ind] = 0; });  //<= clears the move codes in mov array
-		
+		//mov.forEach(function(cur, ind, arr){ arr[ind] = 0; });  //<= clears the move codes in mov array
+		$('div').off("click");
 		
 		if ( (zeroInd % squareSide) !== 3 ){
-			$( d +(zeroInd + 1) ).animate({right: em});
-			mov[zeroInd + 1] = 1;
+			$( d +(zeroInd + 2) ).animate({right: em});
+			valueSwap(zeroInd + 1, grid);
+			//mov[zeroInd + 1] = 1;
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
-			//ani( (zeroInd - 1), grid, 2 );
-			mov[zeroInd - 1] = 2;
+			(d + (zeroInd)).animate({left: em});
+			valueSwap(zeroInd - 1, grid);
+			//mov[zeroInd - 1] = 2;
 		} 
 		
 		
 		if ( (zeroInd - squareSide) >= 0 ){
-			//ani( (zeroInd - squareSide), grid, 3 );
-			mov[zeroInd - squareSide] = 3;
+			(d + (zeroInd - squareSide + 1)).animate({bottom: em});
+			valueSwap(zeroInd + squareSide, grid);
+			//mov[zeroInd - squareSide] = 3;
 		} 
 		
 		if ( (zeroInd + squareSide) <= grid.length ){
-			//ani( (zeroInd + squareSide), grid, 7 );
-			mov[zeroInd + squareSide] = 0;
+			(d + (zeroInd + squareSide + 1)).animate({top: em});
+			valueSwap(zeroInd + squareSide, grid);
+			//mov[zeroInd + squareSide] = 0;
 		} 
 		
 		
@@ -133,9 +137,9 @@ float: right;
 		mov.push(0);
 		
 		
-		ani(fourSqr[0], grid, 3);
-		ani(fourSqr[1], grid, 2);
-		
+		//ani(fourSqr[0], grid, 3);
+		//ani(fourSqr[1], grid, 2);
+		eventHandle(grid.indexOf(0));
          
        });  
     </script>
