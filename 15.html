@@ -36,7 +36,15 @@ float: right;
 
     <script>
 	
-			
+	function assign(t, Obj){
+		var d = '#d';
+	
+		$(d + grid[t]).click(function(){ 
+				$( d + grid[t] ).animate(Obj);  
+				valueSwap(t, grid);
+			});
+		
+	}
 			
 			
 	//a is the value to swap with 0, arr is the array
@@ -55,7 +63,7 @@ float: right;
 	
 	//sets up event handlers
 	function eventHandle(zeroInd){
-		var d = '#d';  //part of id
+		//var d = '#d';  //part of id
 		var em = '+=5em';
 		var tmp;
 		
@@ -63,34 +71,23 @@ float: right;
 		
 		if ( (zeroInd % squareSide) !== 3 ){
 			tmp = zeroInd + 1;
-			$(d + grid[tmp]).click(function(){ 
-				$( d + grid[tmp] ).animate({left: em});  
-				valueSwap(zeroInd + 1, grid);
-			});
+			assign(tmp, {left: em});
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
-			$(d + grid[zeroInd - 1]).click(function(){ 
-				$(d + grid[zeroInd - 1]).animate({right: em});
-				valueSwap(zeroInd - 1, grid);
-			});
+			tmp = zeroInd--;
+			assign(tmp, {right: em});
 		} 
 		
 		
 		if ( (zeroInd - squareSide) >= 0 ){
 			tmp = zeroInd - squareSide;
-			$(d + grid[tmp]).click(function(){ 
-				$(d + grid[tmp] ).animate({top: em});
-				valueSwap(zeroInd - squareSide, grid);
-			});
+			assign(tmp, {top: em});
 		} 
 		
-		if ( (zeroInd + squareSide) <= grid.length ){
+		if ( (zeroInd + squareSide) < grid.length ){
 			tmp = zeroInd + squareSide;
-			$(d + grid[tmp]).click(function(){ 
-				$(d + grid[tmp]).animate({bottom: em});
-				valueSwap(tmp, grid);
-			});
+			assign(tmp, {bottom: em});
 		} 
 		
 		
