@@ -35,37 +35,9 @@ float: right;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
     <script>
-	var fourSqr = [11,14];
 	
-	function ani(id){
-		var d = '#d';  //part of id
-		var em = '+=5em';
-			$(d + grid[id]).click(function(){ 
-			
-				if (id % squareSide === 3){
-				
-					$(d + grid[id]).animate({left: em}); //Go right
-					
-				} else if (id % squareSide === 1){
-				
-					$(d + grid[id]).animate({right: em}); //Go left
-					
-				} else if (mov[id] === 3){
-				
-					$(d + grid[id]).animate({top: em}); //Go down
-					
-				} else if (mov[id] !== 0) {
-				
-					$(d + grid[id]).animate({bottom: em}); //Go up
-				}
-				
-				if (mov[id] !== 0){
-					valueSwap(id, arr);
-				}
-			});
 			
 			
-			}
 			
 	//a is the value to swap with 0, arr is the array
 	function valueSwap(a, arr){
@@ -85,33 +57,40 @@ float: right;
 	function eventHandle(zeroInd){
 		var d = '#d';  //part of id
 		var em = '+=5em';
+		var tmp;
 		
-		//mov.forEach(function(cur, ind, arr){ arr[ind] = 0; });  //<= clears the move codes in mov array
 		$('div').off("click");
 		
 		if ( (zeroInd % squareSide) !== 3 ){
-			$( d +(zeroInd + 2) ).animate({right: em});
-			valueSwap(zeroInd + 1, grid);
-			//mov[zeroInd + 1] = 1;
+			tmp = zeroInd + 2;
+			$(d + tmp).click(function(){ 
+				$( d + tmp ).animate({right: em});  
+				valueSwap(zeroInd + 1, grid);
+			});
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
-			(d + (zeroInd)).animate({left: em});
-			valueSwap(zeroInd - 1, grid);
-			//mov[zeroInd - 1] = 2;
+			$(d + zeroInd).click(function(){ 
+				$(d + zeroInd).animate({left: em});
+				valueSwap(zeroInd - 1, grid);
+			});
 		} 
 		
 		
 		if ( (zeroInd - squareSide) >= 0 ){
-			(d + (zeroInd - squareSide + 1)).animate({bottom: em});
-			valueSwap(zeroInd + squareSide, grid);
-			//mov[zeroInd - squareSide] = 3;
+			tmp = zeroInd - squareSide + 1;
+			$(d + tmp).click(function(){ 
+				$(d + tmp ).animate({bottom: em});
+				valueSwap(zeroInd + squareSide, grid);
+			});
 		} 
 		
 		if ( (zeroInd + squareSide) <= grid.length ){
-			(d + (zeroInd + squareSide + 1)).animate({top: em});
-			valueSwap(zeroInd + squareSide, grid);
-			//mov[zeroInd + squareSide] = 0;
+			tmp = zeroInd + squareSide + 1;
+			$(d + tmp).click(function(){ 
+				$(d + tmp).animate({top: em});
+				valueSwap(zeroInd + squareSide, grid);
+			});
 		} 
 		
 		
@@ -121,25 +100,19 @@ float: right;
 	
 			//globals
 			var grid = [];
-			var mov = [];
 			var squareSide = 4;
 			
       $(document).ready(function() {
-        //var ids = [11,14]; //Default 
 		
 		
 		for (var i = 1; i < 16; i++){
-			//ids.push("#d" + i);
+			
 			grid.push(i);  
-			mov.push(0);
 		}
 		grid.push(0);
-		mov.push(0);
 		
 		
-		//ani(fourSqr[0], grid, 3);
-		//ani(fourSqr[1], grid, 2);
-		eventHandle(grid.indexOf(0));
+		eventHandle(15);
          
        });  
     </script>
