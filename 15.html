@@ -64,14 +64,14 @@ float: right;
 		if ( (zeroInd % squareSide) !== 3 ){
 			tmp = zeroInd + 2;
 			$(d + tmp).click(function(){ 
-				$( d + tmp ).animate({right: em});  
+				$( d + tmp ).animate({left: em});  
 				valueSwap(zeroInd + 1, grid);
 			});
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
 			$(d + zeroInd).click(function(){ 
-				$(d + zeroInd).animate({left: em});
+				$(d + zeroInd).animate({right: em});
 				valueSwap(zeroInd - 1, grid);
 			});
 		} 
@@ -80,7 +80,7 @@ float: right;
 		if ( (zeroInd - squareSide) >= 0 ){
 			tmp = zeroInd - squareSide + 1;
 			$(d + tmp).click(function(){ 
-				$(d + tmp ).animate({bottom: em});
+				$(d + tmp ).animate({top: em});
 				valueSwap(zeroInd + squareSide, grid);
 			});
 		} 
@@ -88,7 +88,7 @@ float: right;
 		if ( (zeroInd + squareSide) <= grid.length ){
 			tmp = zeroInd + squareSide + 1;
 			$(d + tmp).click(function(){ 
-				$(d + tmp).animate({top: em});
+				$(d + tmp).animate({bottom: em});
 				valueSwap(zeroInd + squareSide, grid);
 			});
 		} 
