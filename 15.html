@@ -62,34 +62,34 @@ float: right;
 		$('div').off("click");
 		
 		if ( (zeroInd % squareSide) !== 3 ){
-			tmp = zeroInd + 2;
-			$(d + tmp).click(function(){ 
-				$( d + tmp ).animate({left: em});  
+			tmp = zeroInd + 1;
+			$(d + grid[tmp]).click(function(){ 
+				$( d + grid[tmp] ).animate({left: em});  
 				valueSwap(zeroInd + 1, grid);
 			});
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
-			$(d + zeroInd).click(function(){ 
-				$(d + zeroInd).animate({right: em});
+			$(d + grid[zeroInd - 1]).click(function(){ 
+				$(d + grid[zeroInd - 1]).animate({right: em});
 				valueSwap(zeroInd - 1, grid);
 			});
 		} 
 		
 		
 		if ( (zeroInd - squareSide) >= 0 ){
-			tmp = zeroInd - squareSide + 1;
-			$(d + tmp).click(function(){ 
-				$(d + tmp ).animate({top: em});
-				valueSwap(zeroInd + squareSide, grid);
+			tmp = zeroInd - squareSide;
+			$(d + grid[tmp]).click(function(){ 
+				$(d + grid[tmp] ).animate({top: em});
+				valueSwap(zeroInd - squareSide, grid);
 			});
 		} 
 		
 		if ( (zeroInd + squareSide) <= grid.length ){
-			tmp = zeroInd + squareSide + 1;
-			$(d + tmp).click(function(){ 
-				$(d + tmp).animate({bottom: em});
-				valueSwap(zeroInd + squareSide, grid);
+			tmp = zeroInd + squareSide;
+			$(d + grid[tmp]).click(function(){ 
+				$(d + grid[tmp]).animate({bottom: em});
+				valueSwap(tmp, grid);
 			});
 		} 
 		
