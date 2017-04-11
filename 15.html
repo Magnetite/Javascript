@@ -38,6 +38,7 @@ float: right;
 	
 	function assign(t, Obj){
 		var d = '#d';
+		
 	
 		$(d + grid[t]).click(function(){ 
 				$( d + grid[t] ).animate(Obj);  
@@ -63,7 +64,7 @@ float: right;
 	
 	//sets up event handlers
 	function eventHandle(zeroInd){
-		//var d = '#d';  //part of id
+		
 		var em = '+=5em';
 		var tmp;
 		
@@ -75,7 +76,7 @@ float: right;
 		} 
 		
 		if ( (zeroInd % squareSide) !== 0 ){
-			tmp = zeroInd--;
+			tmp = zeroInd - 1;
 			assign(tmp, {right: em});
 		} 
 		
