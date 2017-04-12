@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<title>Game 15 Static Div Version</title>
+<style>
+body {
+background-color: black;
+color: green;
+font-size: 20px;
+font-family: "Lucida Console";
+}
+
+#game15{
+	height: 20em;
+	width: 20em;
+}
+
+.drg{
+position: relative;
+float: right;
+	height: 5em;
+	width: 5em;
+	border-radius: 100%;
+	z-index: 1;
+	background-color: orange;
+	text-align: center;
+	draggable: true;
+	
+}
+
+.zero {
+
+	visibility: 0;
+	color: black;
+}
+
+
+</style>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+    <script>
+	
+	function assign(t, Obj){
+		var d = '#d';
+		
+	
+		$(d + grid[t]).click(function(){ 
+				
+			});
+		
+	}
+			
+			
+	//a is the value to swap with 0, arr is the array
+	function valueSwap(a, arr){
+		
+		//var oldVal = arr.indexOf(a);
+		var oldZero = arr.indexOf(0);
+		var oldV = arr[a];
+		arr[a] = 0;
+		arr[oldZero] = oldV;
+		
+		eventHandle(a); 
+		
+		
+	}
+	
+	//sets up event handlers
+	function eventHandle(zeroInd){
+		
+		var em = '+=5em';
+		var tmp;
+		
+		$('div').off("click");
+		
+		if ( (zeroInd % squareSide) !== 3 ){
+			tmp = zeroInd + 1;
+			valueSwap(tmp, grid);
+		} 
+		
+		if ( (zeroInd % squareSide) !== 0 ){
+			tmp = zeroInd - 1;
+			valueSwap(tmp, grid);
+		} 
+		
+		
+		if ( (zeroInd - squareSide) >= 0 ){
+			tmp = zeroInd - squareSide;
+			valueSwap(tmp, grid);
+		} 
+		
+		if ( (zeroInd + squareSide) < grid.length ){
+			tmp = zeroInd + squareSide;
+			valueSwap(tmp, grid);
+		} 
+		
+		
+		
+	}
+	
+	
+			//globals
+			var grid = [];
+			var squareSide = 4;
+			
+      $(document).ready(function() {
+		
+		
+		for (var i = 1; i < 16; i++){
+			
+			grid.push(i);  
+		}
+		grid.push(0);
+		
+		
+		eventHandle(15);
+         
+       });  
+    </script>
+
+</head>
+<body>
+
+<div id="game15">
+	<div id="d1" class="drg">1</div>
+	<div id="d2" class="drg">2</div>
+	<div id="d3" class="drg">3</div>
+	
+	<div id="d4" class="drg" >4</div>
+	<div id="d5" class="drg" >5</div>
+	<div id="d6" class="drg">6</div>
+	
+	<div id="d7" class="drg">7</div>
+	<div id="d8" class="drg">8</div>
+	<div id="d9" class="drg">9</div>
+	
+	<div id="d10" class="drg">10</div>
+	<div id="d11" class="drg">11</div>
+	<div id="d12" class="drg">12</div>
+	
+	<div id="d13" class="drg">13</div>
+	<div id="d14" class="drg">14</div>
+	<div id="d15" class="drg">15</div>
+	<div id="d0" class="zero">0</div>
+	
+	
+	
+
+</div>
+
+
+</body>
+</html>
