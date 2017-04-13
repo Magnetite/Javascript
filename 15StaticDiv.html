@@ -42,9 +42,14 @@ float: right;
 
     <script>
 	
-	function assign(t, Obj){
+	function assign(t){
 		var d = '#d';
+		var tmp;
 		
+		grid.forEach(function(cur, ind, ar){ 
+					tmp = ind + 1;
+					$(d + tmp ).text(ar[ind]);
+				});
 	
 		$(d + grid[t]).click(function(){ 
 				
@@ -62,38 +67,44 @@ float: right;
 		arr[a] = 0;
 		arr[oldZero] = oldV;
 		
-		eventHandle(a); 
+		
+		
+		assign(a); 
 		
 		
 	}
 	
 	//sets up event handlers
 	function eventHandle(zeroInd){
-		
+		var d = '#d';
 		var em = '+=5em';
 		var tmp;
 		
+		//make sure all divs are clear of event handlers
 		$('div').off("click");
 		
+		//Check if there is a square to the left
 		if ( (zeroInd % squareSide) !== 3 ){
 			tmp = zeroInd + 1;
-			valueSwap(tmp, grid);
+			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
 		} 
 		
+		//check if there is a square to right
 		if ( (zeroInd % squareSide) !== 0 ){
 			tmp = zeroInd - 1;
-			valueSwap(tmp, grid);
+			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
 		} 
 		
-		
+		//check if there is a square above
 		if ( (zeroInd - squareSide) >= 0 ){
 			tmp = zeroInd - squareSide;
-			valueSwap(tmp, grid);
+			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
 		} 
 		
+		//check if there is a square down
 		if ( (zeroInd + squareSide) < grid.length ){
 			tmp = zeroInd + squareSide;
-			valueSwap(tmp, grid);
+			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
 		} 
 		
 		
@@ -104,7 +115,7 @@ float: right;
 			//globals
 			var grid = [];
 			var squareSide = 4;
-			
+		
       $(document).ready(function() {
 		
 		
@@ -118,6 +129,7 @@ float: right;
 		eventHandle(15);
          
        });  
+	   
     </script>
 
 </head>
@@ -143,7 +155,7 @@ float: right;
 	<div id="d13" class="drg">13</div>
 	<div id="d14" class="drg">14</div>
 	<div id="d15" class="drg">15</div>
-	<div id="d0" class="zero">0</div>
+	<div id="d16" class="drg">16</div>
 	
 	
 	
