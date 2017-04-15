@@ -83,26 +83,26 @@ float: right;
 		
 		//Check if there is a square to the left
 		if ( (zeroInd % squareSide) !== 3 ){
-			tmp = zeroInd + 1;
-			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
+			tmp = zeroInd + 2;
+			$(d + (tmp)).click(function(){  valueSwap( (tmp - 1), grid);  });
 		} 
 		
 		//check if there is a square to right
 		if ( (zeroInd % squareSide) !== 0 ){
-			tmp = zeroInd - 1;
-			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
+			tmp = zeroInd;
+			$(d + (tmp)).click(function(){  valueSwap( (tmp - 1), grid);  });
 		} 
 		
 		//check if there is a square above
 		if ( (zeroInd - squareSide) >= 0 ){
-			tmp = zeroInd - squareSide;
-			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
+			tmp = zeroInd - squareSide + 1;
+			$(d + tmp).click(function(){  valueSwap( (tmp - 1), grid);  });
 		} 
 		
 		//check if there is a square down
 		if ( (zeroInd + squareSide) < grid.length ){
-			tmp = zeroInd + squareSide;
-			$(d + (tmp + 1)).click(function(){  valueSwap(tmp, grid);  });
+			tmp = zeroInd + squareSide + 1;
+			$(d + (tmp)).click(function(){  valueSwap( (tmp -1), grid);  });
 		} 
 		
 		
