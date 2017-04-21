@@ -46,6 +46,17 @@
 		document.getElementById(b).innerHTML = a;
 	}
 	
+	$(document).ready(function(){
+		var d = "#d";
+		
+		for (var i = 0; i < 10;i++){
+			$(d + i).click(function(){
+				equation.push(i);
+			})
+		}
+	});
+	
+	
 	
 	</script>
 </head>
