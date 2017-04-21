@@ -39,11 +39,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
     <script>
-	var equation = [];  //added 4-19-2017
+	var equation = [1,2,3];  //added 4-19-2017
 	var ans = 0;
 	
 	function print(a, b){
 		document.getElementById(b).innerHTML = a;
+	}
+	
+	function display(){
+		print(equation.join(), "equation");
 	}
 	
 	$(document).ready(function(){
@@ -52,6 +56,7 @@
 		for (var i = 0; i < 10;i++){
 			$(d + i).click(function(){
 				equation.push(i);
+				display();
 			})
 		}
 	});
