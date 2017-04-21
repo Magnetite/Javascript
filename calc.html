@@ -39,7 +39,8 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 
     <script>
-	var equation = [1,2,3];  //added 4-19-2017
+	var equation = [];  //added 4-19-2017
+	var equ = [0,1,2,3,4,5,6,7,8,9,"+", "-", "*", "^"];
 	var ans = 0;
 	
 	function print(a, b){
@@ -47,17 +48,22 @@
 	}
 	
 	function display(){
-		print(equation.join(), "equation");
+		print(equation.join(""), "equation");
 	}
 	
 	$(document).ready(function(){
 		var d = "#d";
 		
-		for (var i = 0; i < 10;i++){
+		for (var i = 0; i < 10; i++ ){
 			$(d + i).click(function(){
-				equation.push(i);
+				equation.push(equ[i]);
 				display();
 			})
+			
+			$("#clear").click(function(){
+				print("","equation");
+				equation = [];
+			});
 		}
 	});
 	
@@ -95,8 +101,8 @@
 			<div id="root" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
 		</div>
 	</div>
-	<div class="w3-btn w3-block w3-indigo">Compute!</div>
-	<div class="w3-btn w3-block w3-indigo">Clear Screen</div>
+	<div class="w3-btn w3-block w3-indigo" id="compute">Compute!</div>
+	<div class="w3-btn w3-block w3-indigo" id="clear">Clear Screen</div>
 	
 	
 	
