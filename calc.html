@@ -58,10 +58,24 @@
 	$(document).ready(function(){
 		var d = "#d";
 		var eqF;
+		var tmp = 0;
+		
+		var inc = (function(){
+			var ints = 0;
+			return function(a){
+				if (a === 0){
+					return ints;
+				} else {
+					ints++;
+				}
+			}
+		})();
 		
 		for (var i = 0; i < 10; i++ ){
+			inc(1);
+		
 			$(d + i).click(function(){
-				equation.push(equ[i]);
+				equation.push( equ[inc(0)] );
 				display();
 			})
 			
