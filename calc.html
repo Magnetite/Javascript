@@ -55,29 +55,35 @@
 		print(equation.join(""), "equation");
 	}
 	
-	$(document).ready(function(){
-		var d = "#d";
-		var eqF;
-		var tmp = 0;
-		
-		var inc = (function(){
+	function event(a, b){
+		document.getElementById(a).onclick = function(){ 
+			
+			equation.push( equ[b] );
+			display();
+		}
+	}
+	
+	var inc = (function(){
 			var ints = 0;
-			return function(a){
-				if (a === 0){
-					return ints;
-				} else {
-					ints++;
-				}
+			var tmp = 0;
+			return function(){
+				tmp = ints;
+				ints++;
+				return ints;
 			}
 		})();
+	
+	$(document).ready(function(){
+		var d = "d";  //changed
+		
+		
+		
 		
 		for (var i = 0; i < 10; i++ ){
-			inc(1);
-		
-			$(d + i).click(function(){
-				equation.push( equ[inc(0)] );
-				display();
-			})
+			
+			event(d + i, i);  //Assign event Handlers to div buttons
+			
+			
 			
 			$("#clear").click(function(){
 				print("","equation");
