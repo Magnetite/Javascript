@@ -52,7 +52,9 @@
 	}
 	
 	function display(){
-		print(equation.join(""), "equation");
+	var eq = equation;
+	
+		print(eq.join(""), "equation");
 	}
 	
 	function event(a, b){
@@ -75,13 +77,15 @@
 	
 	$(document).ready(function(){
 		var d = "d";  //changed
+		var tmpD = 0;
 		
 		
 		
 		
 		for (var i = 0; i < 10; i++ ){
+		tmpD = d + i;
 			
-			event(d + i, i);  //Assign event Handlers to div buttons
+			event(tmpD, i);  //Assign event Handlers to div buttons
 			
 			
 			
@@ -116,14 +120,14 @@
 		</div>
 		
 		<div class="w3-col m6">
-			<div id="add" class="w3-btn w3-circle w3-red">+</div>
-			<div id="sub" class="w3-btn w3-circle w3-red">-</div>
-			<div id="mult" class="w3-btn w3-circle w3-red">*</div>
-			<div id="div" class="w3-btn w3-circle w3-red">/</div>
-			<div id="per" class="w3-btn w3-circle w3-red">%</div>
-			<div id="sqrt" class="w3-btn w3-circle w3-red">&radic;</div>
-			<div id="pow" class="w3-btn w3-circle w3-red">^</div>
-			<div id="root" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
+			<div id="d11" class="w3-btn w3-circle w3-red">+</div>
+			<div id="d12" class="w3-btn w3-circle w3-red">-</div>
+			<div id="d13" class="w3-btn w3-circle w3-red">*</div>
+			<div id="d14" class="w3-btn w3-circle w3-red">/</div>
+			<div id="d15" class="w3-btn w3-circle w3-red">%</div>
+			<div id="d16" class="w3-btn w3-circle w3-red">&radic;</div>
+			<div id="d17" class="w3-btn w3-circle w3-red">^</div>
+			<div id="d18" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
 		</div>
 	</div>
 	<div class="w3-btn w3-block w3-indigo" id="compute">Compute!</div>
