@@ -44,7 +44,7 @@
 
     <script>
 	var equation = [];  //added 4-19-2017
-	var equ = [0,1,2,3,4,5,6,7,8,9,"+", "-", "*", "^"];
+	var equ = [0,1,2,3,4,5,6,7,8,9,"+", "-", "*", "/"];
 	var ans = 0;
 	
 	function print(a, b){
@@ -71,7 +71,7 @@
 			return function(){
 				tmp = ints;
 				ints++;
-				return ints;
+				return tmp;
 			}
 		})();
 	
@@ -81,7 +81,7 @@
 		
 		
 		
-		for (var i = 0; i < 10; i++ ){
+		for (var i = 0, len = equ.length; i < len; i++ ){
 			
 			event(d + i, i);  //Assign event Handlers to div buttons
 			
@@ -91,6 +91,14 @@
 				print("","equation");
 				equation = [];
 			});
+			
+			//Test code below:
+			/*
+			document.getElementById('d11').onclick = function(){ 
+				equation.push( equ[10] );
+				display();
+			}
+			*/
 		}
 	});
 	
@@ -118,14 +126,14 @@
 		</div>
 		
 		<div class="w3-col m6">
-			<div id="d11" class="w3-btn w3-circle w3-red">+</div>
-			<div id="d12" class="w3-btn w3-circle w3-red">-</div>
-			<div id="d13" class="w3-btn w3-circle w3-red">*</div>
-			<div id="d14" class="w3-btn w3-circle w3-red">/</div>
-			<div id="d15" class="w3-btn w3-circle w3-red">%</div>
-			<div id="d16" class="w3-btn w3-circle w3-red">&radic;</div>
-			<div id="d17" class="w3-btn w3-circle w3-red">^</div>
-			<div id="d18" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
+			<div id="d10" class="w3-btn w3-circle w3-red">+</div>
+			<div id="d11" class="w3-btn w3-circle w3-red">-</div>
+			<div id="d12" class="w3-btn w3-circle w3-red">*</div>
+			<div id="d13" class="w3-btn w3-circle w3-red">/</div>
+			<div id="d14" class="w3-btn w3-circle w3-red">%</div>
+			<div id="d15" class="w3-btn w3-circle w3-red">&radic;</div>
+			<div id="d16" class="w3-btn w3-circle w3-red">^</div>
+			<div id="d17" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
 		</div>
 	</div>
 	<div class="w3-btn w3-block w3-indigo" id="compute">Compute!</div>
