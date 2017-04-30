@@ -64,7 +64,10 @@
 	
 	//Parses the equation array, and computes the result
 	function compute(){
+		var out = 0, e = equation;
+		out = eval( e.join("") );
 		
+		print(out, "screen");
 	}
 	
 	function event(a, b){
@@ -100,6 +103,10 @@
 			$("#clear").click(function(){
 				print("","equation");
 				equation = [];
+			});
+			
+			$("#compute").click(function(){
+				compute();
 			});
 			
 		}
