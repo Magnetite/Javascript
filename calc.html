@@ -107,7 +107,11 @@
 			});
 			
 			$("#compute").click(function(){
-				compute();
+				try {
+					compute();
+				} catch (err){
+					print( "Error: " + err.message, "screen");
+				}
 			});
 			
 		}
