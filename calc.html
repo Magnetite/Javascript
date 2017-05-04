@@ -44,7 +44,7 @@
 
     <script>
 	var equation = [];  //added 4-19-2017
-	var equ = [0,1,2,3,4,5,6,7,8,9,"+", "-", "*", "/", "pow(", "sqrt(", "(", ")",","];
+	var equ = [0,1,2,3,4,5,6,7,8,9,"+", "-", "*", "/", "pow(", "sqrt(", "(", ")",",","per("];
 	var ans = 0;
 	
 	function print(a, b){
@@ -65,6 +65,10 @@
 	//Makes a shorter "nickname" for Math.pow()
 	function pow(a, b){
 		return Math.pow(a, b);
+	}
+	
+	function per(a, b){
+		return a/100 * b;
 	}
 	
 	//Parses the equation array, and computes the result
@@ -155,8 +159,8 @@
 			<div id="d16" class="w3-btn w3-circle w3-red">(</div>
 			<div id="d17" class="w3-btn w3-circle w3-red">)</div>
 			<div id="d18" class="w3-btn w3-circle w3-red">,</div>
-			<div id="d19" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
-			<div id="d20" class="w3-btn w3-circle w3-red">%</div>
+			<div id="d19" class="w3-btn w3-circle w3-red">%</div>
+			<div id="d20" class="w3-btn w3-circle w3-red"><sup>n</sup>&radic;</div>
 		</div>
 	</div>
 	<div class="w3-btn w3-block w3-indigo" id="compute">Compute!</div>
