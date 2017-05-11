@@ -62,6 +62,12 @@
 		return 0;
 	}
 	
+	function back(){
+		equation.pop();
+		display();
+		
+	}
+	
 	function print(a, b){
 		document.getElementById(b).innerHTML = a;
 	}
@@ -130,7 +136,11 @@
 				}
 			});
 			
-			$("#d23").click(function(){
+			$("#mc").click(function(){
+				mc();
+			})
+			
+			$("#back").click(function(){
 				mc();
 			})
 	});
@@ -172,7 +182,8 @@
 			<div id="d20" class="w3-btn w3-circle w3-red">Pi</div>
 			<div id="d21" class="w3-btn w3-circle w3-red">E</div>
 			<div id="d22" class="w3-btn w3-circle w3-red">ans</div>
-			<div id="d23" class="w3-btn w3-circle w3-red">mc</div>
+			<div id="mc" class="w3-btn w3-circle w3-red">mc</div>
+			<div id="back" class="w3-btn w3-circle w3-red">back</div>
 		</div>
 	</div>
 	<div class="w3-btn w3-block w3-indigo" id="compute">Compute!</div>
