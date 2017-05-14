@@ -25,4 +25,10 @@ a;
 }
 }
 
+//element remover
+function del(id){
+	var del = document.getElementById(id);
+		del.parentNode.removeChild(del);
+}
+
 
