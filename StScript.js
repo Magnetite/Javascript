@@ -31,4 +31,8 @@ function del(id){
 		del.parentNode.removeChild(del);
 }
 
+function until(func, val){
+	while(func !== val){}
+	return true;
+}
 
