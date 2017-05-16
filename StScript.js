@@ -36,3 +36,16 @@ function until(func, val){
 	return true;
 }
 
+function click(id, action){  
+	
+		if (!document.getElementById(id)){
+			
+			return false;
+		
+		}
+	
+		document.getElementById(id).onclick = action;
+		
+		return true;
+	}
+
