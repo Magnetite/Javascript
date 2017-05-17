@@ -48,4 +48,9 @@ function click(id, action){
 		
 		return true;
 	}
+	
+function classAdd(id, clss){
+	document.getElementById(id).className = clss;
+	return true;
+}
 
