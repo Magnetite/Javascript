@@ -54,3 +54,9 @@ function classAdd(id, clss){
 	return true;
 }
 
+function Del(id){
+	document.getElementById(id)
+}
+
+
+
