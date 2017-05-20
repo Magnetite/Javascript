@@ -8,9 +8,11 @@ function l(a) {
 document.writeln(a);
 }
 
+
 function id(a,b) {
 document.getElementById(a).innerHTML = b;
 }
+
 
 }
 
@@ -44,13 +46,13 @@ function click(id, action){
 		
 		}
 	
-		document.getElementById(id).onclick = action;
+		id(id, "onclick = " + action);
 		
 		return true;
 	}
 	
 function classAdd(id, clss){
-	document.getElementById(id).className = clss;
+	id(id, "addClass = " + clss);
 	return true;
 }
 
