@@ -68,4 +68,14 @@ function id(id, prop){
 	return true;
 }
 
+function forIn(a, callback){
+	if (typeof(a)=== "Object"){
+		
+	} else if (typeof(a) === "String"){
+		
+	} else if (typeof(a)=== "Array"){
+		
+	}
+}
+
 
