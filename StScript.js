@@ -73,8 +73,12 @@ function forIn(a, callback){
 		
 	} else if (typeof(a) === "String"){
 		
-	} else if (typeof(a)=== "Array"){
+		for (var i = 0, len = a.length; i < len; i++){
+			callback;
+		}
 		
+	} else if (typeof(a)=== "Array"){
+		a.forEach(callback);
 	}
 }
 
