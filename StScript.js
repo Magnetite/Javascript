@@ -70,6 +70,9 @@ function id(id, prop){
 
 function forIn(a, callback){
 	if (typeof(a)=== "Object"){
+	
+		var arr = Object.values(a);
+		forIn(arr, callback);
 		
 	} else if (typeof(a) === "String"){
 		
