@@ -22,7 +22,7 @@ return a;
 
 
 function loop(a,b) {
-for (i=0;i<b;i++) {
+for (var i=0;i<b;i++) {
 a;
 }
 }
@@ -71,14 +71,11 @@ function id(id, prop){
 function forIn(a, callback){
 	if (typeof(a)=== "Object"){
 	
-		var arr = Object.values(a);
-		forIn(arr, callback);
+		forIn(Object.values(a), callback);
 		
 	} else if (typeof(a) === "String"){
 		
-		for (var i = 0, len = a.length; i < len; i++){
-			callback;
-		}
+		loop(callback, a.length);
 		
 	} else if (typeof(a)=== "Array"){
 		a.forEach(callback);
