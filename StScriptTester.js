@@ -10,6 +10,10 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 <script src="StScript.js"></script>
 
+<script>
+	loop( out.id( "output", Math.random() ),7);
+</script>
+
 <div id="output"></div>
 
 <table>
