@@ -2,7 +2,7 @@
 
 <html>
 <head>
-<title>Calculator</title>
+<title>StScript Tester</title>
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
@@ -11,10 +11,12 @@
 <script src="StScript.js"></script>
 
 <script>
-	loop( out.id( "output", Math.random() ),7);
+var t = 0;
+	loop( function(){ t += 7;},7);
+	out.id("output", t);
 </script>
 
-<div id="output"></div>
+<div id="output">5</div>
 
 <table>
 <tr><td>1</td><td>2</td><td>3</td></tr>
