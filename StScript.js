@@ -1,16 +1,16 @@
 var out = {
 
-function w(a) {
+w: function(a) {
 document.write(a);
-}
+},
 
-function l(a) {
+l: function(a) {
 document.writeln(a);
-}
+},
 
 
-function id(a,b) {
-document.getElementById(a).innerHTML = b;
+id: function(a,b) {
+document.getElementById(a).innerHTML = " " + b;
 }
 
 
