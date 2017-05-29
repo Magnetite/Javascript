@@ -11,6 +11,10 @@ document.writeln(a);
 
 id: function(a,b) {
 document.getElementById(a).innerHTML = " " + b;
+},
+
+addClass: function(id, clss){
+	id(id, "addClass = " + clss);
 }
 
 
