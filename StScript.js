@@ -10,7 +10,7 @@ document.writeln(a);
 
 
 id: function(a,b) {
-document.getElementById(a).innerHTML = " " + b;
+document.getElementById("output").innerHTML = "fkhj";
 },
 
 addClass: function(id, clss){
