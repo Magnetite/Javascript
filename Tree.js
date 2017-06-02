@@ -23,7 +23,17 @@ function biTreeMake(arr){
 //and zero represents null. 
 
 function biArrTreeMake(mArr){
-    var outArr = [];
+    var outArr = [
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	0,0,0,0,0,
+	];
     var tmp = 0;
     var lastIndex = 0;
     
