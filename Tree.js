@@ -22,18 +22,14 @@ function biTreeMake(arr){
 //in a binary arrTree, a 1 represents a binary value based on it's index
 //and zero represents null. 
 
-function biArrTreeMake(mArr){
-    var outArr = [
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	0,0,0,0,0,
-	];
+function biArrTreeMake(mArr, arrLen){
+    var outArr = [];
+	
+	
+	for (var n = 0; n < arrLen; n++){
+		outArr.push(0);
+	}
+
     var tmp = 0;
     var lastIndex = 0;
     
