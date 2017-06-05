@@ -52,7 +52,7 @@ function biArrTreeMake(mArr, arrLen){
           
         }
 		
-		outArr[lastIndex] = 1;
+		outArr[lastIndex - 2] = 1;
     }
     
     
