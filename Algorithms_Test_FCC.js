@@ -19,3 +19,32 @@ function convertToRoman(num) {
   
  return ans;
 }
+
+
+
+//Piglatin translater test for FreeCodeCamp
+function translatePigLatin(str) {
+  var vowels = ["a","e","i","o","u","y"];
+  var ans = "";
+  var tmpArr = str.split("");
+  var tmp = "";
+  
+  for (var i = 0, len = str.length; i < len; i++){
+    
+    if (i === 0  && vowels.indexOf(tmpArr[0]) !== -1){
+      ans = tmpArr.join('') + "way";
+      i = len;
+    } else if (vowels.indexOf(tmpArr[i]) === -1){
+      //TODO
+      tmp = tmpArr.shift();
+      tmpArr.push(tmp);
+    } else if (i === len - 1) {
+      ans += "ay";
+    }
+    
+    
+  }
+  
+  return ans;
+}
+
