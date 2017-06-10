@@ -23,6 +23,7 @@ function convertToRoman(num) {
 
 
 //Piglatin translater test for FreeCodeCamp
+
 function translatePigLatin(str) {
   var vowels = ["a","e","i","o","u","y"];
   var ans = "";
@@ -39,7 +40,7 @@ function translatePigLatin(str) {
       tmp = tmpArr.shift();
       tmpArr.push(tmp);
     } else if (i === len - 1) {
-      ans += "ay";
+      ans += tmpArr.join('') + "ay";
     }
     
     
@@ -47,4 +48,6 @@ function translatePigLatin(str) {
   
   return ans;
 }
+
+
 
