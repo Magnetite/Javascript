@@ -24,6 +24,7 @@ function convertToRoman(num) {
 
 //Piglatin translater test for FreeCodeCamp
 
+
 function translatePigLatin(str) {
   var vowels = ["a","e","i","o","u","y"];
   var ans = "";
@@ -33,14 +34,20 @@ function translatePigLatin(str) {
   for (var i = 0, len = str.length; i < len; i++){
     
     if (i === 0  && vowels.indexOf(tmpArr[0]) !== -1){
+      
       ans = tmpArr.join('') + "way";
       i = len;
-    } else if (vowels.indexOf(tmpArr[i]) === -1){
-      //TODO
+      
+    } else if (vowels.indexOf(tmpArr[0]) === -1){
+      
       tmp = tmpArr.shift();
       tmpArr.push(tmp);
-    } else if (i === len - 1) {
-      ans += tmpArr.join('') + "ay";
+      
+    } else if (vowels.indexOf(tmpArr[i]) !== -1 && i !== 0) {
+      
+      ans = tmpArr.join('') + "ay";
+      i = len;
+      
     }
     
     
@@ -48,6 +55,8 @@ function translatePigLatin(str) {
   
   return ans;
 }
+
+
 
 
 
