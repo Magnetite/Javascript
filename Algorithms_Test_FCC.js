@@ -58,28 +58,32 @@ function translatePigLatin(str) {
 
 
 
-
+//Takes a string of DNA Bases, and returns an 2 dimensional array of The Bases and their partners 
 function pairElement(str) {
   var outArr = [];
-  var tmpArr = [];
   
-  var arr = str.split();
+  var arr = str.split("");
   
   for (var i = 0, len = arr.length; i < len; i++){
     switch (arr[i]){
       case "A":
-        tmpArr.push("A");
-        tmpArr.push("T");
+        outArr.push(["A","T"]);
         break;
       case "T":
-        tmpArr.push("T");
-        tmpArr.push("A");
+        outArr.push(["T","A"]);
+        break;
+      case "G": 
+        outArr.push(["G","C"]);
+        break;
+      case "C":
+        outArr.push(["C", "G"]);
+        break;
     }
   }
   
+  
   return outArr;
 }
-
 
 
 
