@@ -59,4 +59,30 @@ function translatePigLatin(str) {
 
 
 
+function pairElement(str) {
+  var outArr = [];
+  var tmpArr = [];
+  
+  var arr = str.split();
+  
+  for (var i = 0, len = arr.length; i < len; i++){
+    switch (arr[i]){
+      case "A":
+        tmpArr.push("A");
+        tmpArr.push("T");
+        break;
+      case "T":
+        tmpArr.push("T");
+        tmpArr.push("A");
+    }
+  }
+  
+  return outArr;
+}
+
+
+
+
+
+
 
