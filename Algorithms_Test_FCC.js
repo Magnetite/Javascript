@@ -86,6 +86,18 @@ function pairElement(str) {
 }
 
 
+function addTogether() {
+  
+  var first = arguments[0];
+  if (arguments.length === 2){
+    return first + arguments[1];
+  } else {
+    return function(a){ return first + a;} ;
+  }
+  return false;
+}
+
+
 
 
 
