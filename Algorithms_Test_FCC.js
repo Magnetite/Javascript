@@ -86,16 +86,24 @@ function pairElement(str) {
 }
 
 
+
 function addTogether() {
   
   var first = arguments[0];
-  if (arguments.length === 2){
+  if (arguments.length === 2 && 
+      typeof(first) === typeof(1) &&
+      typeof(arguments[1]) === typeof(1)
+     ){
     return first + arguments[1];
   } else {
-    return function(a){ return first + a;} ;
+    return undefined;
   }
-  return false;
+  
+  function add1(a){ return first + a;} 
+  return add1();
 }
+
+
 
 
 
