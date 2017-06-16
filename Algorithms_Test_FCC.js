@@ -95,14 +95,21 @@ function addTogether() {
       typeof(arguments[1]) === typeof(1)
      ){
     return first + arguments[1];
-  } else {
-    return undefined;
-  }
+  } else if (arguments.length === 1 && typeof(first) === typeof(1)){
+    
+    return function(a){ 
+      
+      if (typeof(arguments[0]) === typeof(1)){
+        return first + a;
+      }
+    
+    } ;
+    
+  } 
   
-  function add1(a){ return first + a;} 
-  return add1();
+  
+  return undefined;
 }
-
 
 
 
