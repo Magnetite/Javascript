@@ -113,6 +113,21 @@ function addTogether() {
 
 
 
+function convertHTML(str) {
+  // &colon;&rpar;
+  var out = "";
+   
+  out = str.replace("&", "&amp;").replace("<","&lt;").replace(">","&gt;")
+  .replace('"', "&quot;");
+  
+  
+  return out;
+}
+
+
+
+
+
 
 
 
