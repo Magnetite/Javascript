@@ -112,18 +112,17 @@ function addTogether() {
 }
 
 
-
+//Convert the following to HTML entities: &,<,>,",'
 function convertHTML(str) {
   // &colon;&rpar;
   var out = "";
    
-  out = str.replace("&", "&amp;").replace("<","&lt;").replace(">","&gt;")
-  .replace('"', "&quot;");
+  out = str.replace(/&/g, "&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;")
+  .replace(/"/g, "&quot;").replace(/'/g,"&apos;");
   
   
   return out;
 }
-
 
 
 
