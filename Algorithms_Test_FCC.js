@@ -125,7 +125,20 @@ function convertHTML(str) {
 }
 
 
-
+function sumFibs(a){
+    var b = 1, c = 1;
+    var out = 0;
+    
+    for (var i = 0; b <= a || c <= a; i++){
+        b += c;
+        c += b;
+        
+        if (b % 2 === 1){out += b; }
+        if (c % 2 === 1){out += c; }
+    }
+    
+    return out;
+}
 
 
 
