@@ -141,15 +141,39 @@ function sumFibs(a){
 }
 
 
+
 function diffArray(arr1, arr2) {
   var newArr = [];
   // Same, same; but different.
   var len1 = arr1.length;
   var len2 = arr2.length;
   
+  for (var i = 0; i < len1; i++){
+    
+    if (arr2.indexOf(arr1[i]) === -1 &&
+        newArr.indexOf(arr1[i]) === -1){
+      newArr.push(arr1[i]);
+    }
+  
+    
+  }
+  
+  for ( i = 0; i < len2; i++){
+    
+    if (arr1.indexOf(arr2[i]) === -1 &&
+        newArr.indexOf(arr2[i]) === -1){
+      newArr.push(arr2[i]);
+    }
+   
+    
+  }
+  
+
   
   return newArr;
 }
+
+
 
 
 
