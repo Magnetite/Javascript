@@ -141,6 +141,15 @@ function sumFibs(a){
 }
 
 
+function diffArray(arr1, arr2) {
+  var newArr = [];
+  // Same, same; but different.
+  var len1 = arr1.length;
+  var len2 = arr2.length;
+  
+  
+  return newArr;
+}
 
 
 
