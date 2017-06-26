@@ -175,25 +175,26 @@ function diffArray(arr1, arr2) {
 
 
 ​function whatIsInAName(collection, source){
-  // What's in a name?
-  var arr = [];
-  // Only change code below this line
-  for (var i = 0, len = collection.length; i < len; i++){
-    if (collection[i].first === source[i].first &&
-        collection[i].last === source[i].last){
+    
+    var arr = 0;
+    
+    for (var i = 0, len = collection.length; i < len; i++){
+    if ( ( collection[i].hasOwnProperty("first") &&
+    collection[i].first === source[i].first) ||
+        ( collection[i].hasOwnProperty("last") && 
+        collection[i].last === source[i].last ) ){
       arr.push(collection[i]);
     }
   }
   
   // Only change code above this line
   return arr;
+    
 }
 
 whatIsInAName([{ first: "Romeo", last: "Montague" },
 { first: "Mercutio", last: null }, { first: "Tybalt", last: "Capulet" }],
 { last: "Capulet" });
-
-
 
 
 
