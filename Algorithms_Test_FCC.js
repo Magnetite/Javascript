@@ -178,15 +178,19 @@ function diffArray(arr1, arr2) {
     
     var arr = 0;
     
-    for (var i = 0, len = collection.length; i < len; i++){
-    if ( ( collection[i].hasOwnProperty("first") &&
-    collection[i].first === source[i].first) ||
-        ( collection[i].hasOwnProperty("last") && 
-        collection[i].last === source[i].last ) ){
-      arr.push(collection[i]);
+   for (var i = 0, len = collection.length; i < len; i++){
+    if (collection[i].hasOwnProperty("first") && 
+        source.hasOwnProperty("first")){
+      if (collection[i].first === source.first){
+        arr.push(collection[i]);
+      }
+    } else if (collection[i].hasOwnProperty("last") && 
+        source.hasOwnProperty("last")){
+      if (collection[i].last === source.last){
+        arr.push(collection[i]);
+      }
     }
   }
-  
   // Only change code above this line
   return arr;
     
