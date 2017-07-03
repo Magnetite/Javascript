@@ -205,26 +205,22 @@ function diffArray(arr1, arr2) {
     
 }
 
-function uniteUnique(arr) {
+  
+  function uniteUnique(arr) {
   
   var out = [];
   
-  for (var i = 0, len = arguments.length; i <= len; i++){
+  for (var i = 0, len = arguments.length; i < len; i++){
     for (var j = 0, jlen = arguments[i].length; j < jlen; j++){
-      
-      if (j === 0){
-        out.push(arguments[i][0]);
-      } else {
-        //TODO
+      if (out.indexOf(arguments[i][j]) === -1){
+        out.push(arguments[i][j]);
       }
-      
-      
+        
     }
   }
   
   return out;
 }
-
 
 
 
