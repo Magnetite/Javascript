@@ -223,4 +223,17 @@ function diffArray(arr1, arr2) {
 }
 
 
+//Make sure that pre is truthy on all objects of the array called collection
+function truthCheck(collection, pre) {
+  // Is everyone being true?
+  for (var i = 0, len = collection.length; i < len; i++){
+    if (!collection[i][pre]){
+      return false;
+    }
+  }
+  return true;
+}
+
+
+
 
