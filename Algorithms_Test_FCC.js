@@ -247,3 +247,10 @@ function smallestCommons(arr) {
   return out;
 }
 
+function numFind(num, ar){
+  var j = 0;
+  for (; num < ar[j] && j < ar.length; j++){}
+  
+  return [j, ar[j]];
+}
+
