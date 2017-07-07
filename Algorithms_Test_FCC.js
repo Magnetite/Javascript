@@ -235,5 +235,15 @@ function truthCheck(collection, pre) {
 }
 
 
-
+function smallestCommons(arr) {
+  
+  var out = 0;
+  var primes = [2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,
+               71,73,79,89,97,101,103,107,109,113,127,131,137,139];
+  
+  for ( var i = Math.max(arr[0], arr[1]), len = Math.min(arr[0], arr[1]); i <= len;i++){
+    
+  }
+  return out;
+}
 
