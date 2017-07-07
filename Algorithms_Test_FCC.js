@@ -249,8 +249,9 @@ function smallestCommons(arr) {
 
 function numFind(num, ar){
   var j = 0;
-  for (; num < ar[j] && j < ar.length; j++){}
+ 
+  for (; num < ar[j] + 1 && j < ar.length; j++){}
   
-  return [j, ar[j]];
+ return j - 1;
 }
 
