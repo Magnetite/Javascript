@@ -3,6 +3,16 @@
 
 var MC = {
 
-loop: function(a, b){}
+loop: function(a, b){
+	for (var i = 0; i < b; i++){
+		//todo
+	}
+},
+
+sum: function(arr){
+	return arr.reduce( function(a,b){return a + b; });
+}
+
+
 
 }
