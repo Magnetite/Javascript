@@ -15,7 +15,7 @@ sum: function(arr){
 	return arr.reduce( function(a,b){return a + b; });
 },
 
-sumPrimes(a){
+sumPrimes: function(a){
 
 //An value of out1 is a prime that is added to a prime of out2 at the same index as out1.
 var out1 = [];  
@@ -34,8 +34,11 @@ var len = primes.length;
 		}
 		
 	}
-}
+},
 
+squareEnd: function(a,b){
+	return (a * a) %  Math.pow(10, b);
+}
 
 
 }
