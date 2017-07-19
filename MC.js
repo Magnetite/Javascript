@@ -45,6 +45,11 @@ numLength: function(a){
 	var i = 0;
 	for (; Math.pow(10,i) < a; i++){}
 	return i;
+},
+
+invert: function(a){
+	var len = MC.numLength(a);
+	return Math.pow(10,len) - a;
 }
 
 }
