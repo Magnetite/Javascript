@@ -38,7 +38,13 @@ var len = primes.length;
 
 squareEnd: function(a,b){
 	return (a * a) %  Math.pow(10, b);
-}
+},
 
+numLength: function(a{
+numLength: function(a){
+	var i = 0;
+	for (; Math.pow(10,i) < a; i++){}
+	return i;
+}
 
 }
