@@ -58,6 +58,15 @@ digitSelect: function(a,b){
 		return -1;  //Fail
 	}
 	return Math.floor(a / Math.pow(10,(len - b - 1)) ) % 10;
+},
+
+comd: function(a){
+	var first = MC.digitSelect(0);
+	if (first < 5){
+		return -1; //Fail
+	}
+	var b = MC.invert(a);
+	return MC.invert(b * 2);
 }
 
 }
