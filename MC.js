@@ -50,6 +50,14 @@ numLength: function(a){
 invert: function(a){
 	var len = MC.numLength(a);
 	return Math.pow(10,len) - a;
+},
+
+digitSelect: function(a,b){
+	var len = MC.numLength(a);
+	if (len <=b){
+		return -1;  //Fail
+	}
+	return Math.floor(a / Math.pow(10,(len - b - 1)) ) % 10;
 }
 
 }
