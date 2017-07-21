@@ -67,6 +67,17 @@ comd: function(a){
 	}
 	var b = MC.invert(a);
 	return MC.invert(b * 2);
+},
+
+reverse: function(a){
+	var len = MC.numLength(a);
+	var out = 0;
+	
+	for ( var i = 0; i < len; i++, out *= 10){
+		out += MC.digitSelect(a, i);
+	}
+	
+	return out;
 }
 
 }
