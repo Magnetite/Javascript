@@ -88,6 +88,18 @@ var out = 1;
 	}
 	
 	return out;
+},
+
+quarterSquares: function(a){
+	var numOut = [];
+	var powOfTen = Math.pow(10, MC.numLength(a) );
+	
+	numOut[0] = Math.pow(a, 2);
+	numOut[1] = Math.pow( (powOfTen/2) - a, 2);
+	numOut[2] = Math.pow( (powOfTen/2) + a, 2);
+	numOut[0] = Math.pow( powOfTen - a, 2);
+	
+	return numOut;
 }
 
 }
