@@ -106,6 +106,14 @@ quarterSquares: function(a){
 	numOut[0] = Math.pow( powOfTen - a, 2);
 	
 	return numOut;
+},
+
+avg: function(arr){
+	var len = arr.length;
+	var outAvg = 0;
+	for (var i = 0; i < len; i++){ outAvg += arr[i]; }
+	 
+	 return outAvg/len;
 }
 
 }
