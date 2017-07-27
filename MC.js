@@ -90,6 +90,16 @@ var out = 1;
 	return out;
 },
 
+powerBegin: function(a, pow, digits){
+var out = Math.pow(a, pow);
+var len = MC.numLength(out);
+
+out = Math.floor(out / Math.pow(10, len - digits) );
+	
+	
+	return out;
+},
+
 quarterSquares: function(a){
 	var numOut = [];
 	var powOfTen = Math.pow(10, MC.numLength(a) );
