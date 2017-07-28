@@ -124,6 +124,16 @@ avg: function(arr){
 	for (var i = 0; i < len; i++){ outAvg += arr[i]; }
 	 
 	 return outAvg/len;
+},
+
+midDigs: function(num, digits){
+	var len = MC.numLength(num);
+	
+	var cut = Math.floor( (len - digits )/2  );
+	
+	var out = Math.floor(num/cut);
+	
+	return out % Math.pow(10, digits);
 }
 
 }
