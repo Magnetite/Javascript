@@ -61,7 +61,7 @@ digitSelect: function(a,b){
 	return Math.floor(a / Math.pow(10,(len - b - 1)) ) % 10;
 },
 
-comd: function(a){
+comd: function(a){   //<= Will take a number like 984, double it, and return the 1st n digits, n = length of 984.
 	var first = MC.digitSelect(0);
 	if (first < 5){
 		return -1; //Fail
@@ -134,6 +134,14 @@ midDigs: function(num, digits){
 	var out = Math.floor(num/cut);
 	
 	return out % Math.pow(10, digits);
+},
+
+simul: function(matrix){  //<= matrix is a 2D array, with each subarray being simultaneous equations.  
+	var len1 = matrix.length;
+	var len2 = matrix[0].length;
+	
+	
+	
 }
 
 }
