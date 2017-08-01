@@ -148,13 +148,15 @@ simul: function(matrix){  //<= matrix is a 2D array, with each subarray being si
 quad: function(arr){
 	var a = arr[0], b = arr[1], c = arr[2];
 	var check = b * b - 4 * a * c;
+	var imagin = false;
+	
 	
 	if (check < 0){
-		return false;  //<= todo: add functionality to handle imaginary numbers
+		imagin = true;
 	}
-	var top = Math.pow( check, 0.5);
+	var top = Math.pow( Math.abs(check), 0.5);
 	
-	return [(-b + top)/(2*a), (-b - top)/(2*a)];
+	return [ [imagin, (-b + top)/(2*a)], [imagin, (-b - top)/(2*a)] ];
 	
 }
 
