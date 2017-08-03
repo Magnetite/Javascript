@@ -158,6 +158,14 @@ quad: function(arr){
 	
 	return [ [imagin, (-b + top)/(2*a)], [imagin, (-b - top)/(2*a)] ];
 	
+},
+
+matrixMult: function(a, b){
+	
+	//Test if a and b are conformable to matrix multiplication
+	if (a[0].length != b.length){
+		return -1;
+	}
 }
 
 }
