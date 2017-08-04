@@ -166,6 +166,15 @@ matrixMult: function(a, b){
 	if (a[0].length != b.length){
 		return -1;
 	}
+	
+	var outMatrix = [];
+	for (var i = 0, len = a[0].length; i < len; i++){
+		for ( var j = 0, jlen = b.length; j < jlen; j++){
+			
+		}
+	}
+	
+	
 }
 
 }
