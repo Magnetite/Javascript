@@ -168,9 +168,11 @@ matrixMult: function(a, b){
 	}
 	
 	var outMatrix = [];
-	for (var i = 0, len = a[0].length; i < len; i++){
+	
+	//todo: Fix this code
+	for (var i = 0, len = a[0].length * a.length; i < len; i++){
 		for ( var j = 0, jlen = b.length; j < jlen; j++){
-			
+			outMatrix[i] += a[i][j] * b[j];  //todo: fix this
 		}
 	}
 	
