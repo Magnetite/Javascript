@@ -169,12 +169,18 @@ matrixMult: function(a, b){
 	
 	var outMatrix = [];
 	
+	var row = a[0].length;
+	
 	//todo: Fix this code
-	for (var i = 0, len = a[0].length * a.length; i < len; i++){
-		for ( var j = 0, jlen = b.length; j < jlen; j++){
-			outMatrix[i] += a[i][j] * b[j];  //todo: fix this
+	for ( var m = 0, len = a.length; m < len; m++){
+			for (var i = 0; i < row; i++){
+			for ( var j = 0, jlen = b.length; j < jlen; j++){
+				outMatrix[i] += a[m][i] * b[j];  //todo: fix this
+			}
 		}
 	}
+	
+	return outMatrix;
 	
 	
 }
