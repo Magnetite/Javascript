@@ -183,6 +183,14 @@ matrixMult: function(a, b){
 	return outMatrix;
 	
 	
+},
+
+isInt: function(a){
+	if (a === Math.floor(a)){
+		return true;
+	}
+	
+	return false;
 }
 
 }
