@@ -191,6 +191,18 @@ isInt: function(a){
 	}
 	
 	return false;
+},
+
+complexMult: function(a, b){
+	var out = [];
+	
+	out[0] = a[0] * b[0];
+	out[0] += a[1] * b[1] * -1;
+	
+	out[1] = a[0] * b[1];
+	out[1] += a[1] * b[0];
+	
+	return out;
 }
 
 }
