@@ -203,6 +203,11 @@ complexMult: function(a, b){
 	out[1] += a[1] * b[0];
 	
 	return out;
+},
+
+compInterest: function(amount, per, t){
+	var percent = 1 + a/100;
+	return 	amount * Math.pow(percent, t);
 }
 
 }
