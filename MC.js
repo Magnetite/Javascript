@@ -208,6 +208,14 @@ complexMult: function(a, b){
 compInterest: function(amount, per, t){
 	var percent = 1 + a/100;
 	return 	amount * Math.pow(percent, t);
+},
+
+tabulate: function(start, end, callback){
+	var outArr = [];
+	
+	for(var i = start, ind = 0; i <= end; i++, ind++){
+		outArr[ind] = callback(i);  //<= todo: check syntax!
+	}
 }
 
 }
