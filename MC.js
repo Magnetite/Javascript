@@ -216,6 +216,9 @@ tabulate: function(start, end, callback){
 	for(var i = start, ind = 0; i <= end; i++, ind++){
 		outArr[ind] = callback(i);  //<= todo: check syntax!
 	}
-}
+},
 
+sumSeq: Function(a){
+	return (a * a + a)/2;
+}
 }
