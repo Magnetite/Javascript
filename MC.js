@@ -61,6 +61,23 @@ digitSelect: function(a,b){
 	return Math.floor(a / Math.pow(10,(len - b - 1)) ) % 10;
 },
 
+digitSelectRound: function(a,b){
+	var len = MC.numLength(a);
+	if (len <=b || b === 0){
+		return -1;  //Fail
+	}
+	
+	var out = Math.floor(a / Math.pow(10,(len - b - 1)) ) % 10;
+	 
+	if ( b === len - 1){
+		return out;
+	} else if (MC.digitSelect(a, b + 1) < 4){
+		return out + 1;
+	}
+	
+	
+},
+
 comd: function(a){   //<= Will take a number like 984, double it, and return the 1st n digits, n = length of 984.
 	var first = MC.digitSelect(0);
 	if (first < 5){
