@@ -71,7 +71,7 @@ digitSelectRound: function(a,b){
 	 
 	if ( b === len - 1){
 		return out;
-	} else if (MC.digitSelect(a, b + 1) < 4){
+	} else if (MC.digitSelect(a, b + 1) > 4){
 		return out + 1;
 	}
 	
@@ -237,5 +237,8 @@ tabulate: function(start, end, callback){
 
 sumSeq: Function(a){
 	return (a * a + a)/2;
+},
+hexagon: function(a){
+	return ( sumSeq(a) * 6 ) + 1;
 }
 }
