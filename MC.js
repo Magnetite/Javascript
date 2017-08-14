@@ -240,5 +240,8 @@ sumSeq: Function(a){
 },
 hexagon: function(a){
 	return ( sumSeq(a) * 6 ) + 1;
-}
+},
+multString(a,b)(
+	return a + '' + b + '' + b * a;
+)
 }
