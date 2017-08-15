@@ -235,13 +235,23 @@ tabulate: function(start, end, callback){
 	}
 },
 
-sumSeq: Function(a){
+sumSeq: function(a){
 	return (a * a + a)/2;
 },
 hexagon: function(a){
 	return ( sumSeq(a) * 6 ) + 1;
 },
-multString(a,b)(
+multString: function(a,b)(
 	return a + '' + b + '' + b * a;
-)
+),
+digitsTogether: function(a,b){
+	var out = 0;
+	var prod = a * b;
+	
+	out += a * Math.pow(MC.numLength(b) + MC.numLength(prod), 10);
+	out += b * Math.pow(MC.numLength(prod), 10);
+	out += prod;
+	
+	return out;
+}
 }
