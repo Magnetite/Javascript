@@ -253,5 +253,12 @@ digitsTogether: function(a,b){
 	out += prod;
 	
 	return out;
+},
+
+moonPhase: function(){
+	var date = new Date();
+	
+	last2 = date.year % 100;
+	//todo: finish this
 }
 }
