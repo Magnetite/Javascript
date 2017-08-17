@@ -258,7 +258,8 @@ digitsTogether: function(a,b){
 moonPhase: function(){
 	var date = new Date();
 	
-	last2 = date.year % 100;
+	var goldenNumber = date.getFullYear() % 19 + 1;  //Use this to compute the approximate phases for the year
 	//todo: finish this
+	
 }
 }
