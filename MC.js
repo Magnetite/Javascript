@@ -260,7 +260,7 @@ moonPhase: function(){
 	
 	var UngoldenNumber = date.getFullYear() % 19 - 3;  //Use this to compute the approximate phases for the year
 	//todo: finish this
-	var out = ( (UngoldenNumber * 11) + date.getMonth() + date.getDay() ) % 30;
+	var out = ( (UngoldenNumber * 11) + date.getMonth() + 1 + date.getDate() ) % 30;
 	
 	return out;
 	
