@@ -267,6 +267,16 @@ moonPhase: function(){
 },
 
 crossMult: function(a, b){
+	var lenA = MC.numLength(a);
+	var lenB = MC.numlength(b);
+	
+	var outArr = [];
+	
+	if(lenA === 1 && lenB === 1){
+		outArr[0] = a * b;
+	}
+	
+	return outArr;
 	
 }
 }
