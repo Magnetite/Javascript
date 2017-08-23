@@ -4,8 +4,21 @@
 <title> Angular Calculator</title>
 
 <div ng-app="calc" ng-controller="cont">
+Number to Square: <input ng-model="toSqr">
+<h1>{{toSqr * toSqr}}</h1> 
 
 </div>
+
+
+
+
+
+<script>
+	var calApp = angular.module("calc", []);
+	calApp.controller("cont", function($scope){
+		$scope.toSqr = 34;
+	});
+</script>
 
 
 
