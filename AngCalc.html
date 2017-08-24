@@ -7,8 +7,9 @@
 </head>
 <body>
 <div ng-app="calc" ng-controller="cont">
-Number to Square: <input ng-model="toSqr">
-<h1>{{toSqr * toSqr}}</h1> 
+Rate of return: <input ng-model="rate">
+Number of periods: <input ng-model="periods">
+Total return:<h1>{{ Math.pow( (1 + rate), periods) - 1}}</h1> 
 
 </div>
 
@@ -19,7 +20,9 @@ Number to Square: <input ng-model="toSqr">
 <script>
 	var calApp = angular.module("calc", []);
 	calApp.controller("cont", function($scope){
-		$scope.toSqr = 34;
+		$scope.rate = .07;
+		$scope.periods = 1;
+		
 	});
 </script>
 
