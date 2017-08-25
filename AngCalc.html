@@ -9,9 +9,11 @@
 <div ng-app="calc" ng-controller="cont">
 Rate of return: <input ng-model="rate">
 Number of periods: <input ng-model="periods">
-Total return:<h1>{{ Math.pow( (1 + rate), periods) - 1}}</h1> 
+<button ng-click="totalR()">Compute</button>
+Total return:<h1>{{ totalRate }}</h1> 
 
 </div>
+
 
 
 
@@ -22,8 +24,14 @@ Total return:<h1>{{ Math.pow( (1 + rate), periods) - 1}}</h1>
 	calApp.controller("cont", function($scope){
 		$scope.rate = .07;
 		$scope.periods = 1;
+		$scope.totalRate = 0;
+		$scope.totalR = function(){
+			$scope.totalRate = Math.pow(1 + $scope.rate, $scope.periods) -  1;
+		}
 		
 	});
+	
+	
 </script>
 
 
