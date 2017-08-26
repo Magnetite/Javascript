@@ -27,6 +27,8 @@ Total return:<h1>{{ totalRate }}</h1>
 		$scope.totalRate = 0;
 		$scope.totalR = function(){
 			$scope.totalRate = Math.pow(1 + $scope.rate, $scope.periods) -  1;
+			$scope.totalRate = Math.round($scope.totalRate * 10000) / 10000;
+			
 		}
 		
 	});
