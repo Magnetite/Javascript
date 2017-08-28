@@ -29,15 +29,17 @@ Invested: <input ng-model="invested">
 		$scope.totalRate = 0;
 		$scope.totalR = function(){
 			$scope.totalRate = Math.pow(1 + $scope.rate, $scope.periods) -  1;
-			$scope.totalRate = Math.round($scope.totalRate * 10000) / 10000;
-			$scope.totalMoney = ( 1+ $scope.totalRate) * $scope.invested;
+			$scope.totalRate = rounder($scope.totalRate, 4);
+			$scope.totalMoney = rounder( ( 1+ $scope.totalRate) * $scope.invested, 4 );
 			
 		}
 		
 	});
 	
 	function rounder(a,b){
-		return (a * Math.pow(10, b) ) / Math.pow(10, b);
+	
+		var tenPow = Math.pow(10, b);
+		return Math.round(a * tenPow ) / tenPow;
 	}
 	
 </script>
