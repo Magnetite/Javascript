@@ -11,8 +11,9 @@ Rate of return: <input ng-model="rate">
 Number of periods: <input ng-model="periods">
 Invested: <input ng-model="invested">
 <button ng-click="totalR()">Compute</button>
-<h1>Total rate of return: {{ totalRate }}</h1> 
-<h1>Total  return: {{ totalMoney }}</h1> 
+<h1>Total rate of return: {{ totalRate * 100}} %</h1> 
+<h1>Total  return: ${{ totalIncrease }}</h1> 
+<h1>Total  amount: ${{ totalMoney }}</h1> 
 
 </div>
 
@@ -27,10 +28,14 @@ Invested: <input ng-model="invested">
 		$scope.rate = .07;
 		$scope.periods = 1;
 		$scope.totalRate = 0;
+		$scope.totalMoney = 0;
+		$scope.totalIncrease = 0;
 		$scope.totalR = function(){
 			$scope.totalRate = Math.pow(1 + $scope.rate, $scope.periods) -  1;
 			$scope.totalRate = rounder($scope.totalRate, 4);
-			$scope.totalMoney = rounder( ( 1+ $scope.totalRate) * $scope.invested, 4 );
+			
+			$scope.totalIncrease = rounder( $scope.totalRate * $scope.invested, 4 );
+			$scope.totalMoney = $scope.invested + $scope.totalIncrease;
 			
 		}
 		
