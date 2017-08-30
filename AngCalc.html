@@ -4,6 +4,13 @@
 <title> Angular Calculator</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
+<style>
+
+td {
+font-size: 20;
+}
+</style>
+
 </head>
 <body>
 <div ng-app="calc" ng-controller="cont">
@@ -11,9 +18,12 @@ Rate of return: <input ng-model="rate">
 Number of periods: <input ng-model="periods">
 Invested: <input ng-model="invested">
 <button ng-click="totalR()">Compute</button>
-<h1>Total rate of return: {{ totalRate * 100}} %</h1> 
-<h1>Total  return: ${{ totalIncrease }}</h1> 
-<h1>Total  amount: ${{ totalMoney }}</h1> 
+<table>
+
+<tr><td>Total rate of return: </td><td>{{ totalRate * 100}} %</td> </tr>
+<tr><td>Total  return:</td><td> ${{ totalIncrease }}</td></tr> 
+<tr><td>Total  amount:</td><td> ${{ totalMoney }}</td></tr> 
+</table>
 
 </div>
 
