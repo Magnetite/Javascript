@@ -278,5 +278,15 @@ crossMult: function(a, b){
 	
 	return outArr;
 	
+},
+
+function pyTriple1(a){
+	if ( a % 2 === 0){
+		return -1;
+	}
+	
+	var halfSqr = Math.floor((a * a)/2)
+	return [a, halfSqr, halfSqr + 1 ];
+	
 }
 }
