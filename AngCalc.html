@@ -21,6 +21,7 @@ Invested: <input ng-model="invested">
 <table>
 
 <tr><td>Total rate of return: </td><td>{{ totalRate * 100}} %</td> </tr>
+<tr><td>Approximate doubling time: </td><td>{{ rounder( 72/(totalRate*100), 4)}} </td> </tr>
 <tr><td>Total  return:</td><td> ${{ totalIncrease }}</td></tr> 
 <tr><td>Total  amount:</td><td> ${{ totalMoney }}</td></tr> 
 </table>
