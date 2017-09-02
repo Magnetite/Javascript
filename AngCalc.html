@@ -4,6 +4,8 @@
 <title> Angular Calculator</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
+
+
 <style>
 
 td {
@@ -21,7 +23,7 @@ Invested: <input ng-model="invested">
 <table>
 
 <tr><td>Total rate of return: </td><td>{{ totalRate * 100}} %</td> </tr>
-<tr><td>Approximate doubling time: </td><td>{{ rounder( 72/(totalRate*100), 4)}} </td> </tr>
+<tr><td>Approximate doubling time: </td><td>{{  approxD }} </td> </tr>
 <tr><td>Total  return:</td><td> ${{ totalIncrease }}</td></tr> 
 <tr><td>Total  amount:</td><td> ${{ totalMoney }}</td></tr> 
 </table>
@@ -37,10 +39,12 @@ Invested: <input ng-model="invested">
 	var calApp = angular.module("calc", []);
 	calApp.controller("cont", function($scope){
 		$scope.rate = .07;
+		$scope.invested = 1;
 		$scope.periods = 1;
 		$scope.totalRate = 0;
 		$scope.totalMoney = 0;
 		$scope.totalIncrease = 0;
+		$scope.approxD = rounder( 0.72/$scope.rate, 4);
 		$scope.totalR = function(){
 			$scope.totalRate = Math.pow(1 + $scope.rate, $scope.periods) -  1;
 			$scope.totalRate = rounder($scope.totalRate, 4);
