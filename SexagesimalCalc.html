@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Sexagesimal  Calculator</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+
+
+
+
+</head>
+<body>
+<div ng-app="calc" ng-controller="cont">
+Rate of return: <input ng-model="rate">
+Number of periods: <input ng-model="periods">
+Invested: <input ng-model="invested">
+<button ng-click="">Compute</button>
+
+
+
+
+</div>
+
+
+
+
+
+
+<script>
+	var calApp = angular.module("calc", []);
+	calApp.controller("cont", function($scope){
+		
+		}
+		
+	});
+	
+	function rounder(a,b){
+	
+		var tenPow = Math.pow(10, b);
+		return Math.round(a * tenPow ) / tenPow;
+	}
+	
+	b60{
+	
+		split10: function(a){
+			var ints = Math.floor(a);
+			var dec = a - ints;
+			
+			return [ints, dec];
+		}
+	}
+	
+</script>
+
+
+
+</body>
+</html>
