@@ -39,7 +39,7 @@ Invested: <input ng-model="invested">
 		return Math.round(a * tenPow ) / tenPow;
 	}
 	
-	b60{
+	b60 = {
 	
 		split10: function(a){
 			var ints = Math.floor(a);
@@ -51,13 +51,16 @@ Invested: <input ng-model="invested">
 		conv: function(a){
 			var out = [];
 			
-			temp = 0;
-			
 			while ( a > 0){
-				
+				out.shift( a % 60 );
+				 a /= 60;
+				 a = Math.floor(a);	
 			}
+			
+			return out;
+		
 		}
-	}
+	};
 	
 </script>
 
