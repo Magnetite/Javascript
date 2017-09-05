@@ -50,12 +50,24 @@ Invested: <input ng-model="invested">
 		
 		conv: function(a){
 			var out = [];
+            
+            var b = b60.split10(a);
+            var c = b[1];
 			
 			while ( a > 0){
-				out.unshift( a % 60 );
+				out.unshift( Math.floor(a) % 60 );
 				 a /= 60;
 				 a = Math.floor(a);	
 			}
+            
+            if (c > 0){
+                out.push("#");
+            }
+            
+            for (var i = 0; i < 10; i++){
+                c *= 60;
+                out.push(Math.floor(c) % 60);
+            }
 			
 			return out;
 		
