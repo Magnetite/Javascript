@@ -52,7 +52,7 @@ Invested: <input ng-model="invested">
 			var out = [];
 			
 			while ( a > 0){
-				out.shift( a % 60 );
+				out.unshift( a % 60 );
 				 a /= 60;
 				 a = Math.floor(a);	
 			}
