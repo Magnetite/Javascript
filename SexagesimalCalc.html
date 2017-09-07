@@ -13,16 +13,17 @@
 First Decimal Number: <input ng-model="first">
 First Sexagesimal Number: <input ng-model="firstS">
 
-<button ng-click="">Add</button>
-<button ng-click="">Subtract</button>
-<button ng-click="">Multiply</button>
-<button ng-click="">Divide</button>
-<button ng-click="">To the power of</button>
-<button ng-click="">Percent of</button>
+<button ng-click="ar.add(first,sec)">Add</button>
+<button ng-click="ar.sub(first,sec)">Subtract</button>
+<button ng-click="ar.mult(first,sec)">Multiply</button>
+<button ng-click="ar.div(first,sec)">Divide</button>
+<button ng-click="ar.pow(first,sec)">To the power of</button>
+<button ng-click="ar.per(first,sec)">Percent of</button>
 
-Second Decimal Number: <input ng-model="second">
-Second Sexagesimal Number: <input ng-model="secondS">
-
+Second Decimal Number: <input ng-model="sec">
+Second Sexagesimal Number: <input ng-model="secS">
+<br>
+Output: {{output}}
 
 
 
@@ -45,6 +46,29 @@ Second Sexagesimal Number: <input ng-model="secondS">
 	
 		var tenPow = Math.pow(10, b);
 		return Math.round(a * tenPow ) / tenPow;
+	}
+	
+	ar = {
+		add: function(a,b){
+			return a+b;
+		},
+		
+		sub: function(a,b){
+			return a-b;
+		},
+		
+		mult: function(a,b){
+			return a*b;
+		},
+		div: function(a,b){
+			return a/b;
+		},
+		pow: function(a,b){
+			return Math.pow(a,b);
+		},
+		per: function(a,b){
+			return (a*b)/100;
+		}
 	}
 	
 	b60 = {
