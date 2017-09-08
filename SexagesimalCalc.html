@@ -37,6 +37,8 @@ Output: {{output}}
 <script>
 	var calApp = angular.module("calc", []);
 	calApp.controller("cont", function($scope){
+	
+		$scope.output = 0;
 		
 		}
 		
@@ -48,26 +50,28 @@ Output: {{output}}
 		return Math.round(a * tenPow ) / tenPow;
 	}
 	
+	
+	
 	ar = {
 		add: function(a,b){
-			return a+b;
+			output =  a+b;
 		},
 		
 		sub: function(a,b){
-			return a-b;
+			output = a-b;
 		},
 		
 		mult: function(a,b){
-			return a*b;
+			output = a*b;
 		},
 		div: function(a,b){
-			return a/b;
+			output = a/b;
 		},
 		pow: function(a,b){
-			return Math.pow(a,b);
+			output = Math.pow(a,b);
 		},
 		per: function(a,b){
-			return (a*b)/100;
+			output = (a*b)/100;
 		}
 	}
 	
