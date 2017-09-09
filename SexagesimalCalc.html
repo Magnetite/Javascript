@@ -11,7 +11,11 @@
 <body>
 <div ng-app="calc" ng-controller="cont">
 First Decimal Number: <input ng-model="first">
+or
 First Sexagesimal Number: <input ng-model="firstS">
+
+<br>
+<br>
 
 <button ng-click="ar.add(first,sec)">Add</button>
 <button ng-click="ar.sub(first,sec)">Subtract</button>
@@ -20,8 +24,13 @@ First Sexagesimal Number: <input ng-model="firstS">
 <button ng-click="ar.pow(first,sec)">To the power of</button>
 <button ng-click="ar.per(first,sec)">Percent of</button>
 
+<br>
+<br>
+
 Second Decimal Number: <input ng-model="sec">
+or
 Second Sexagesimal Number: <input ng-model="secS">
+<br>
 <br>
 Output: {{output}}
 
