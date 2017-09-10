@@ -17,12 +17,12 @@ First Sexagesimal Number: <input ng-model="firstS">
 <br>
 <br>
 
-<button ng-click="ar.add(first,sec)">Add</button>
-<button ng-click="ar.sub(first,sec)">Subtract</button>
-<button ng-click="ar.mult(first,sec)">Multiply</button>
-<button ng-click="ar.div(first,sec)">Divide</button>
-<button ng-click="ar.pow(first,sec)">To the power of</button>
-<button ng-click="ar.per(first,sec)">Percent of</button>
+<button ng-click="add(first,sec)">Add</button>
+<button ng-click="sub(first,sec)">Subtract</button>
+<button ng-click="mult(first,sec)">Multiply</button>
+<button ng-click="div(first,sec)">Divide</button>
+<button ng-click="pow(first,sec)">To the power of</button>
+<button ng-click="per(first,sec)">Percent of</button>
 
 <br>
 <br>
@@ -47,11 +47,51 @@ Output: {{output}}
 	var calApp = angular.module("calc", []);
 	calApp.controller("cont", function($scope){
 	
-		$scope.output = 0;
+		 $scope.output = 0;
+		 var arr = [];
+		 
+		 
+		 $scope.floater = function(a,b){
+			return [parseFloat(a), parseFloat(b)];
+		 }
+		 
+		 $scope.add = function(a,b){
+			arr = $scope.floater(a,b);
+			$scope.output =  arr[0] + arr[1];
+		 }
+		 
+		 $scope.sub = function(a,b){
+			arr = $scope.floater(a,b);
+			$scope.output = arr[0] - arr[1];
+		}
+		
+		$scope.mult = function(a,b){
+			arr = $scope.floater(a,b);
+			$scope.output = arr[0] * arr[1];
+		}
+		
+		$scope.div = function(a,b){
+			arr = $scope.floater(a,b);
+			$scope.output = arr[0] / arr[1];
+		}
+		
+		$scope.pow = function(a,b){
+			arr = $scope.floater(a,b);
+			$scope.output = Math.pow(arr[0],arr[1]);
+		}
+		
+		$scope.per = function(a,b){
+			arr = $scope.floater(a,b);
+			$scope.output = (arr[0] * arr[1])/100;
+		}
+		 
+		 
+		
+		
 		
 		}
 		
-	});
+	);
 	
 	function rounder(a,b){
 	
@@ -61,28 +101,6 @@ Output: {{output}}
 	
 	
 	
-	ar = {
-		add: function(a,b){
-			output =  a+b;
-		},
-		
-		sub: function(a,b){
-			output = a-b;
-		},
-		
-		mult: function(a,b){
-			output = a*b;
-		},
-		div: function(a,b){
-			output = a/b;
-		},
-		pow: function(a,b){
-			output = Math.pow(a,b);
-		},
-		per: function(a,b){
-			output = (a*b)/100;
-		}
-	}
 	
 	b60 = {
 	
