@@ -33,6 +33,9 @@ Second Sexagesimal Number: <input ng-model="secS">
 <br>
 <br>
 Output: {{output}}
+<br>
+<br>
+Output: {{outputS}}
 
 
 
@@ -48,6 +51,7 @@ Output: {{output}}
 	calApp.controller("cont", function($scope){
 	
 		 $scope.output = 0;
+		 $scope.outputS = [];  //<= Sexagesimal output
 		 var arr = [];
 		 
 		 
@@ -58,40 +62,82 @@ Output: {{output}}
 		 $scope.add = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output =  arr[0] + arr[1];
+			$scope.outputS =  b60.conv($scope.output);
 		 }
 		 
 		 $scope.sub = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output = arr[0] - arr[1];
+			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.mult = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output = arr[0] * arr[1];
+			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.div = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output = arr[0] / arr[1];
+			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.pow = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output = Math.pow(arr[0],arr[1]);
+			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.per = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output = (arr[0] * arr[1])/100;
-		}
-		 
-		 
-		
-		
-		
+			$scope.outputS =  b60.conv($scope.output);
 		}
 		
-	);
+		
+			b60 = {
+				
+					split10: function(a){
+						var ints = Math.floor(a);
+						var dec = a - ints;
+						
+						return [ints, dec];
+					},
+					
+					conv: function(a){
+						var out = [];
+						
+						var b = b60.split10(a);
+						var c = b[1];
+						
+						while ( a > 0){
+							out.unshift( Math.floor(a) % 60 );
+							 a /= 60;
+							 a = Math.floor(a);	
+						}
+						
+						if (c > 0){
+							out.push("#");
+						}
+						
+						for (var i = 0; i < 10; i++){
+							c *= 60;
+							out.push(Math.floor(c) % 60);
+						}
+						
+						return out;
+					
+					}
+				};
+					 
+					 
+					
+					
+					
+					}
+					
+				);
 	
 	function rounder(a,b){
 	
@@ -102,40 +148,7 @@ Output: {{output}}
 	
 	
 	
-	b60 = {
 	
-		split10: function(a){
-			var ints = Math.floor(a);
-			var dec = a - ints;
-			
-			return [ints, dec];
-		},
-		
-		conv: function(a){
-			var out = [];
-            
-            var b = b60.split10(a);
-            var c = b[1];
-			
-			while ( a > 0){
-				out.unshift( Math.floor(a) % 60 );
-				 a /= 60;
-				 a = Math.floor(a);	
-			}
-            
-            if (c > 0){
-                out.push("#");
-            }
-            
-            for (var i = 0; i < 10; i++){
-                c *= 60;
-                out.push(Math.floor(c) % 60);
-            }
-			
-			return out;
-		
-		}
-	};
 	
 </script>
 
