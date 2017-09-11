@@ -130,7 +130,18 @@ Output: {{outputS}}
 					
 					}
 				};
-					 
+					 function split60(){
+						var f = $scope.firstS.split("#");
+						var f1 = f[0].split(",") ;
+						var f2 = f[1].split(",") ;
+						
+						var s = $scope.secS.split("#");
+						var s1 = s[0].split(",");
+						var s2 = s[1].split(",");
+						
+						return [f1,f2,s1,s2];
+						
+					 }
 					 
 					
 					
