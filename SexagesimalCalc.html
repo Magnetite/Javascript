@@ -130,13 +130,26 @@ Output: {{outputS}}
 					
 					},
 					
+					
 					int2Base10: function(arr){
 						var len = arr.length;
 						var total = 0;
 						
 						
-						for (var i = 0; i < len; i++){
-							total += parseInt(arr[i]) * Math.pow(60,i);
+						for (var i = 1; i <= len; i++){
+							total += parseInt(arr[len - i]) * Math.pow(60,i);
+						}
+						
+						return total;
+					},
+					
+					frac2Base10: function(arr){
+						var len = arr.length;
+						var total = 0;
+						
+						
+						for (var i = 1; i <= len; i++){
+							total += parseInt(arr[i - 1]) * Math.pow(60,i * -1);
 						}
 						
 						return total;
