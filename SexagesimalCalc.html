@@ -69,7 +69,13 @@ Output: {{outputS}}
 		 $scope.sub = function(a,b){
 			arr = $scope.floater(a,b);
 			$scope.output = arr[0] - arr[1];
-			$scope.outputS =  b60.conv($scope.output);
+			
+			if ($scope.output >= 0){
+				$scope.outputS =  b60.conv($scope.output);
+			} else {
+				$scope.outputS =  b60.conv( Math.abs($scope.output) ); //<= todo fix this so it displays minus values correctly
+				$scope.outputS.unshift("-");
+			}
 		}
 		
 		$scope.mult = function(a,b){
@@ -98,6 +104,9 @@ Output: {{outputS}}
 		
 		$scope.abso = function(a,b){
 			//added 9-13-2017
+			$scope.sub();
+			$scope.output *= -1;
+			
 		}
 		
 		
@@ -112,14 +121,16 @@ Output: {{outputS}}
 					
 					conv: function(a){
 						var out = [];
+						var limit = 20;
 						
 						var b = b60.split10(a);
 						var c = b[1];
 						
-						while ( a > 0){
+						while (  a > 0){
 							out.unshift( Math.floor(a) % 60 );
 							 a /= 60;
 							 a = Math.floor(a);	
+							 //limit--;
 						}
 						
 						
