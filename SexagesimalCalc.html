@@ -103,9 +103,13 @@ Output: {{outputS}}
 		}
 		
 		$scope.abso = function(a,b){
-			//added 9-13-2017
-			$scope.sub();
-			$scope.output *= -1;
+			
+			if (a > b){
+				$scope.sub(a,b);
+			} else {
+				$scope.sub(b,a);
+			}
+		
 			
 		}
 		
