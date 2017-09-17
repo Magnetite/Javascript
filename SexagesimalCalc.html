@@ -17,6 +17,13 @@ First Sexagesimal Number: <input ng-model="firstS">
 <br>
 <br>
 
+
+Second Decimal Number: <input ng-model="sec">
+or
+Second Sexagesimal Number: <input ng-model="secS">
+<br>
+<br>
+
 <button ng-click="add(first,sec)">Add</button>
 <button ng-click="sub(first,sec)">Subtract</button>
 <button ng-click="mult(first,sec)">Multiply</button>
@@ -28,15 +35,14 @@ First Sexagesimal Number: <input ng-model="firstS">
 <br>
 <br>
 
-Second Decimal Number: <input ng-model="sec">
-or
-Second Sexagesimal Number: <input ng-model="secS">
-<br>
-<br>
 Output: {{output}}
 <br>
 <br>
 Output: {{outputS}}
+
+<br>
+<br>
+Messages:{{message}}
 
 
 
@@ -53,6 +59,7 @@ Output: {{outputS}}
 	
 		 $scope.output = 0;
 		 $scope.outputS = [];  //<= Sexagesimal output
+		 $scope.message = "";
 		 var arr = [];
 		 
 		 
