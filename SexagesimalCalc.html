@@ -73,6 +73,15 @@ Messages:{{message}}
 		 $scope.message = "";
 		 var arr = [];
 		 
+		 $scope.test = function(){
+			if ( ($scope.firstS) && ($scope.secS) ){
+				return 1;
+			} else if ( ($scope.first) && ($scope.sec) ){
+				return 2;
+			} else {
+				return 0;
+			}
+		 }
 		 
 		 $scope.floater = function(a,b){
 			return [parseFloat(a), parseFloat(b)];
