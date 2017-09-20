@@ -75,12 +75,16 @@ Messages:{{message}}
 		 
 		 $scope.test = function(){
 			if ( ($scope.firstS) && ($scope.secS) ){
-				return 1;
-			} else if ( ($scope.first) && ($scope.sec) ){
 				return 2;
+			} else if ( ($scope.first) && ($scope.sec) ){
+				return 1;
 			} else {
 				return 0;
 			}
+		 }
+		 
+		 $scope.trans = function(a,b){
+			
 		 }
 		 
 		 $scope.floater = function(a,b){
@@ -106,6 +110,9 @@ Messages:{{message}}
 		}
 		
 		$scope.mult = function(a,b){
+			
+			
+		
 			arr = $scope.floater(a,b);
 			$scope.output = arr[0] * arr[1];
 			$scope.outputS =  b60.conv($scope.output);
