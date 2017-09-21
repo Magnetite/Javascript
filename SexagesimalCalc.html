@@ -86,7 +86,13 @@ Messages:{{message}}
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
 			
+			var intx = a.slice(0,hash);
+			var decx = a.slice(hash + 1);  
 			
+			var outInt = b60.int2Base10(intx);
+			var outDec = b60.frac2Base10(decx);
+			
+			return outInt + outDec;
 			
 		 }
 		 
