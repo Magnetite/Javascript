@@ -83,6 +83,7 @@ Messages:{{message}}
 			}
 		 }
 		 
+		 //todo test function below
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
 			
@@ -94,6 +95,15 @@ Messages:{{message}}
 			
 			return outInt + outDec;
 			
+		 }
+		 
+		 $scope.autoCon = function(a){
+			
+			if (typeof a === "number"){
+				return a;
+			} else {
+				return $scope.trans(a);
+			}
 		 }
 		 
 		 $scope.floater = function(a,b){
