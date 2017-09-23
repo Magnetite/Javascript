@@ -107,17 +107,30 @@ Messages:{{message}}
 		 }
 		 
 		 $scope.floater = function(a,b){
+		 
+			
 			return [parseFloat(a), parseFloat(b)];
 		 }
 		 
 		 $scope.add = function(a,b){
-			arr = $scope.floater(a,b);
+			
+			var aa = $scope.autoCon(a);
+			var bb = $scope.autoCon(b);
+			
+			var arr = $scope.floater(aa,bb);
+			
+		
 			$scope.output =  arr[0] + arr[1];
 			$scope.outputS =  b60.conv($scope.output);
 		 }
 		 
 		 $scope.sub = function(a,b){
-			arr = $scope.floater(a,b);
+		 
+			var aa = $scope.autoCon(a);
+			var bb = $scope.autoCon(b);
+			
+			var arr = $scope.floater(aa,bb);
+			
 			$scope.output = arr[0] - arr[1];
 			
 			if ($scope.output >= 0){
@@ -130,27 +143,44 @@ Messages:{{message}}
 		
 		$scope.mult = function(a,b){
 			
+			var aa = $scope.autoCon(a);
+			var bb = $scope.autoCon(b);
 			
-		
-			arr = $scope.floater(a,b);
+			var arr = $scope.floater(aa,bb);
+			
 			$scope.output = arr[0] * arr[1];
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.div = function(a,b){
-			arr = $scope.floater(a,b);
+			
+			var aa = $scope.autoCon(a);
+			var bb = $scope.autoCon(b);
+			
+			var arr = $scope.floater(aa,bb);
+			
 			$scope.output = arr[0] / arr[1];
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.pow = function(a,b){
-			arr = $scope.floater(a,b);
+		
+			var aa = $scope.autoCon(a);
+			var bb = $scope.autoCon(b);
+			
+			var arr = $scope.floater(aa,bb);
+			
 			$scope.output = Math.pow(arr[0],arr[1]);
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
 		$scope.per = function(a,b){
-			arr = $scope.floater(a,b);
+			
+			var aa = $scope.autoCon(a);
+			var bb = $scope.autoCon(b);
+			
+			var arr = $scope.floater(aa,bb);
+			
 			$scope.output = (arr[0] * arr[1])/100;
 			$scope.outputS =  b60.conv($scope.output);
 		}
