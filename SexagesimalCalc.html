@@ -99,10 +99,10 @@ Messages:{{message}}
 		 
 		 $scope.autoCon = function(a){
 			
-			if (typeof a === "number"){
-				return a;
-			} else {
+			if (typeof a === "array"){
 				return $scope.trans(a);
+			} else {
+				return a;
 			}
 		 }
 		 
