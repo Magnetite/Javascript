@@ -107,6 +107,14 @@ Messages:{{message}}
 			}
 		 }
 		 
+		 $scope.base60tst = function(a){
+			if (a < 0 || a > 59){
+				return false;
+			}
+			
+			return true;
+		 }
+		 
 		 $scope.floater = function(a,b){
 		 
 			
