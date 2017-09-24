@@ -98,8 +98,9 @@ Messages:{{message}}
 		 }
 		 
 		 $scope.autoCon = function(a){
+			var tst = a.includes("#");
 			
-			if (typeof a === "array"){
+			if (tst === true){
 				return $scope.trans(a);
 			} else {
 				return a;
