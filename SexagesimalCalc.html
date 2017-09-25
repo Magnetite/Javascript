@@ -73,6 +73,7 @@ Messages:{{message}}
 		 $scope.message = "";
 		 var arr = [];
 		 
+		 //func0
 		 $scope.test = function(){
 			if ( ($scope.firstS) && ($scope.secS) ){
 				return 2;
@@ -83,6 +84,7 @@ Messages:{{message}}
 			}
 		 }
 		 
+		 //func1
 		 //todo test function below
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
@@ -97,6 +99,7 @@ Messages:{{message}}
 			
 		 }
 		 
+		 //func2
 		 $scope.autoCon = function(a){
 			var tst = a.includes("#");
 			
@@ -107,6 +110,7 @@ Messages:{{message}}
 			}
 		 }
 		 
+		 //func3
 		 $scope.base60tst = function(a){
 			if (a < 0 || a > 59){
 				return false;
@@ -114,19 +118,21 @@ Messages:{{message}}
 			
 			var tst = b60.split10(a);
 			
-			if (a > 0){
+			if (tst > 0){
 				return false;
 			}
 			
 			return true;
 		 }
 		 
+		 //func4
 		 $scope.floater = function(a,b){
 		 
 			
 			return [parseFloat(a), parseFloat(b)];
 		 }
 		 
+		 //func5
 		 $scope.add = function(a,b){
 			
 			var aa = $scope.autoCon(a);
@@ -139,6 +145,7 @@ Messages:{{message}}
 			$scope.outputS =  b60.conv($scope.output);
 		 }
 		 
+		 //func6
 		 $scope.sub = function(a,b){
 		 
 			var aa = $scope.autoCon(a);
@@ -156,6 +163,7 @@ Messages:{{message}}
 			}
 		}
 		
+		//func7
 		$scope.mult = function(a,b){
 			
 			var aa = $scope.autoCon(a);
@@ -167,6 +175,7 @@ Messages:{{message}}
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
+		//func8
 		$scope.div = function(a,b){
 			
 			var aa = $scope.autoCon(a);
@@ -178,6 +187,7 @@ Messages:{{message}}
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
+		//func9
 		$scope.pow = function(a,b){
 		
 			var aa = $scope.autoCon(a);
@@ -189,6 +199,7 @@ Messages:{{message}}
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
+		//func10
 		$scope.per = function(a,b){
 			
 			var aa = $scope.autoCon(a);
@@ -200,6 +211,7 @@ Messages:{{message}}
 			$scope.outputS =  b60.conv($scope.output);
 		}
 		
+		//func11
 		$scope.abso = function(a,b){
 			
 			if (a > b){
@@ -211,7 +223,7 @@ Messages:{{message}}
 			
 		}
 		
-		
+			//obj0
 			b60 = {
 				
 					split10: function(a){
@@ -232,7 +244,7 @@ Messages:{{message}}
 							out.unshift( Math.floor(a) % 60 );
 							 a /= 60;
 							 a = Math.floor(a);	
-							 //limit--;
+							 
 						}
 						
 						
@@ -275,6 +287,8 @@ Messages:{{message}}
 					
 					
 				};
+				
+					//func12
 					 function split60(){
 						var f = $scope.firstS.split("#");
 						var f1 = f[0].split(",") ;
