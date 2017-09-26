@@ -89,8 +89,8 @@ Messages:{{message}}
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
 			
-			var intx = a.slice(0,hash);
-			var decx = a.slice(hash + 1);  
+			var intx = a.slice(0,hash).split(",");
+			var decx = a.slice(hash + 1).split(",");  
 			
 			var outInt = b60.int2Base10(intx);
 			var outDec = b60.frac2Base10(decx);
@@ -101,7 +101,7 @@ Messages:{{message}}
 		 
 		 //func2
 		 $scope.autoCon = function(a){
-			var tst = a.includes("#");
+			var tst = a.includes(",");
 			
 			if (tst === true){
 				return $scope.trans(a);
