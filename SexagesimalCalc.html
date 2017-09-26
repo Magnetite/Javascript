@@ -128,6 +128,13 @@ Messages:{{message}}
 		 //func4
 		 $scope.floater = function(a,b){
 		 
+			if (a === ""){
+				a = 0;
+			}
+			
+			if (b === ""){
+				b = 0;
+			} 
 			
 			return [parseFloat(a), parseFloat(b)];
 		 }
