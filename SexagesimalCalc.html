@@ -101,7 +101,16 @@ Messages:{{message}}
 		 
 		 //func2
 		 $scope.autoCon = function(a){
-			var tst = a.includes(",");
+		 
+		 
+			var tst = false;
+			
+			if (a !== undefined){
+				tst = a.hasOwnProperty("includes");
+			} else {
+				tst = false;
+			}
+			
 			
 			if (tst === true){
 				return $scope.trans(a);
