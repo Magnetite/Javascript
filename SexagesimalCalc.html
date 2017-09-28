@@ -73,6 +73,14 @@ Messages:{{message}}
 		 $scope.message = "";
 		 var arr = [];
 		 
+		 //func -1
+		 $scope.clear = function(){
+			$scope.message = "";
+			$scope.output = "";
+			$scope.outputS = [];
+			
+		 }
+		 
 		 //func0
 		 $scope.test = function(){
 			if ( ($scope.firstS) && ($scope.secS) ){
@@ -198,6 +206,10 @@ Messages:{{message}}
 			var bb = $scope.autoCon(b);
 			
 			var arr = $scope.floater(aa,bb);
+			
+			if (arr[1] === 0){
+				$scope.message = "Not Allowed: Division by zero";
+			}
 			
 			$scope.output = arr[0] / arr[1];
 			$scope.outputS =  b60.conv($scope.output);
