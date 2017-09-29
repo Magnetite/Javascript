@@ -42,6 +42,7 @@ Base 60:
 <button ng-click="pow(firstS,secS)">To the power of</button>
 <button ng-click="per(firstS,secS)">Percent of</button>
 <button ng-click="abso(firstS,secS)">Absolute Diff</button>
+<button ng-click="clearFields()">Clear Fields</button>
 
 <br>
 <br>
@@ -80,6 +81,19 @@ Messages:{{message}}
 			$scope.outputS = [];
 			
 		 }
+		 
+		 $scope.clearFields = function(){
+			$scope.clear();
+			
+			$scope.first = "";
+			$scope.firstS = "";
+			$scope.sec = "";
+			$scope.secS = "";
+			
+			
+		 }
+		 
+		
 		 
 		 //func0
 		 $scope.test = function(){
