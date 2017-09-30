@@ -56,6 +56,10 @@ Output: {{outputS}}
 <br>
 Messages:{{message}}
 
+<br>
+<br>
+Conversion from base 60 to base 10 test:{{trans(outputS)}}
+
 
 
 </div>
@@ -74,7 +78,9 @@ Messages:{{message}}
 		 $scope.message = "";
 		 var arr = [];
 		 
-		 //func -1
+		 
+		 
+		 //func -2
 		 $scope.clear = function(){
 			$scope.message = "";
 			$scope.output = "";
@@ -82,6 +88,7 @@ Messages:{{message}}
 			
 		 }
 		 
+		 //func -1
 		 $scope.clearFields = function(){
 			$scope.clear();
 			
@@ -111,8 +118,8 @@ Messages:{{message}}
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
 			
-			var intx = a.slice(0,hash).split(",");
-			var decx = a.slice(hash + 1).split(",");  
+			var intx = a.slice(0,hash);  //todo fix this, split removed since it is not a method of result
+			var decx = a.slice(hash + 1);  
 			
 			var outInt = b60.int2Base10(intx);
 			var outDec = b60.frac2Base10(decx);
