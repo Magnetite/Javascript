@@ -119,10 +119,13 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 			var hash = a.indexOf("#");
 			
 			var intx = a.slice(0,hash);  //todo fix this, split removed since it is not a method of result
-			var decx = a.slice(hash + 1);  
+			var decx = a.slice(hash + 1); 
+
+			var inty= intx.split(",");  //todo find a way to get this to work
+			var idecy= decx.split(",");
 			
-			var outInt = b60.int2Base10(intx);
-			var outDec = b60.frac2Base10(decx);
+			var outInt = b60.int2Base10(inty);
+			var outDec = b60.frac2Base10(decy);
 			
 			return outInt + outDec;
 			
