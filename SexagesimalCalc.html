@@ -118,14 +118,16 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
 			
+			//a.toString();
+			
 			var intx = a.slice(0,hash);  //todo fix this, split removed since it is not a method of result
 			var decx = a.slice(hash + 1); 
 
-			var inty= intx.split(",");  //todo find a way to get this to work
-			var idecy= decx.split(",");
+			//var inty= intx.split(",");  //todo find a way to get this to work
+			//var idecy= decx.split(",");
 			
-			var outInt = b60.int2Base10(inty);
-			var outDec = b60.frac2Base10(decy);
+			var outInt = b60.int2Base10(intx);
+			var outDec = b60.frac2Base10(decx);
 			
 			return outInt + outDec;
 			
@@ -166,7 +168,7 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 			return true;
 		 }
 		 
-		 //func4
+		 //func4   returns a,b as floats
 		 $scope.floater = function(a,b){
 		 
 			if (a === ""){
