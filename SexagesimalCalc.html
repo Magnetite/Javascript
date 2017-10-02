@@ -330,11 +330,11 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 					
 					
 					int2Base10: function(arr){
-						var len = arr.length;
+						var len = arr.length - 1;
 						var total = 0;
 						
 						
-						for (var i = 1; i <= len; i++){
+						for (var i = 0; i <= len; i++){
 							total += parseInt(arr[len - i]) * Math.pow(60,i);
 						}
 						
