@@ -4,6 +4,8 @@
 <title> Sexagesimal  Calculator</title>
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
 
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
 
 
 
@@ -23,6 +25,7 @@ or
 Second Sexagesimal Number: <input ng-model="secS">
 <br>
 <br>
+<div class = "w3-container">
 Base 10:
 <button ng-click="add(first,sec)">Add</button>
 <button ng-click="sub(first,sec)">Subtract</button>
@@ -43,7 +46,7 @@ Base 60:
 <button ng-click="per(firstS,secS)">Percent of</button>
 <button ng-click="abso(firstS,secS)">Absolute Diff</button>
 <button ng-click="clearFields()">Clear Fields</button>
-
+</div>
 <br>
 <br>
 
@@ -114,17 +117,12 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 		 }
 		 
 		 //func1
-		 //todo test function below
 		 $scope.trans = function(a){
 			var hash = a.indexOf("#");
 			
-			//a.toString();
 			
-			var intx = a.slice(0,hash);  //todo fix this, split removed since it is not a method of result
+			var intx = a.slice(0,hash);  
 			var decx = a.slice(hash + 1); 
-
-			//var inty= intx.split(",");  //todo find a way to get this to work
-			//var idecy= decx.split(",");
 			
 			var outInt = b60.int2Base10(intx);
 			var outDec = b60.frac2Base10(decx);
