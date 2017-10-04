@@ -11,7 +11,9 @@
 
 </head>
 <body>
-<div ng-app="calc" ng-controller="cont">
+<div ng-app="calc" ng-controller="cont" >
+
+<div class="w3-container w3-grey">
 First Decimal Number: <input ng-model="first">
 or
 First Sexagesimal Number: <input ng-model="firstS">
@@ -25,7 +27,8 @@ or
 Second Sexagesimal Number: <input ng-model="secS">
 <br>
 <br>
-<div class = "w3-container">
+</div>
+<div class = "w3-container w3-teal">
 Base 10:
 <button ng-click="add(first,sec)">Add</button>
 <button ng-click="sub(first,sec)">Subtract</button>
