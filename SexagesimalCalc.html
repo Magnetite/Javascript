@@ -359,13 +359,36 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 				
 					//func12
 					 function split60(){
-						var f = $scope.firstS.split("#");
-						var f1 = f[0].split(",") ;
-						var f2 = f[1].split(",") ;
+						var f = [];
+						var f1 = [];
+						var f2 = [] ;
 						
-						var s = $scope.secS.split("#");
-						var s1 = s[0].split(",");
-						var s2 = s[1].split(",");
+						var s = [];
+						var s1 = [];
+						var s2 = [];
+						
+						if ($scope.firstS.search("#") !== -1){
+							 f = $scope.firstS.split("#");
+							 f1 = f[0].split(",") ;
+							 f2 = f[1].split(",") ;
+						} else {
+							 f = $scope.firstS;
+							 f1 = f.split(",") ;
+							 f2 = [0] ;
+						}
+						
+						
+						if ($scope.secS.search("#") !== -1){
+							 s = $scope.firstS.split("#");
+							 s1 = f[0].split(",") ;
+							 s2 = f[1].split(",") ;
+						} else {
+							 s = $scope.secS;
+							 s1 = f.split(",") ;
+							 s2 = [0] ;
+						}
+						
+						
 						
 						return [f1,f2,s1,s2];
 						
