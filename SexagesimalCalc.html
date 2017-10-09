@@ -64,7 +64,9 @@ Output: {{outputS}}
 
 <br>
 <br>
-Messages:{{message}}
+
+Messages:<span class="w3-text-red">{{message}}</span>
+
 
 <br>
 <br>
@@ -247,7 +249,8 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 			var arr = $scope.floater(aa,bb);
 			
 			if (arr[1] === 0){
-				$scope.message = "<div class='w3-red'>Not Allowed: Division by zero</div>";
+				$scope.message = "Not Allowed: Division by zero";
+				
 			}
 			
 			$scope.output = arr[0] / arr[1];
