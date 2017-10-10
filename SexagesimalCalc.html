@@ -251,10 +251,12 @@ Conversion from base 60 to base 10 test:{{trans(outputS)}}
 			if (arr[1] === 0){
 				$scope.message = "Not Allowed: Division by zero";
 				
+			} else {
+				$scope.output = arr[0] / arr[1];
+				$scope.outputS =  b60.conv($scope.output);
 			}
 			
-			$scope.output = arr[0] / arr[1];
-			$scope.outputS =  b60.conv($scope.output);
+			
 		}
 		
 		//func9
