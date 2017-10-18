@@ -10,6 +10,8 @@
 <style>
 	button{
 		height: 3em;
+		width: 4em;
+		
 	}
 </style>
 
@@ -17,7 +19,7 @@
 </head>
 <body>
 
-<div class="w3-card-4 " style="width:25%">
+<div class="w3-card-4 " style="width:25%" ng-app="stat" ng-controller="statCon" >
 
 	<header class="w3-container w3-blue">
 		<h1>Stat Calc</h1>
@@ -25,15 +27,15 @@
 	
 	<div class="w3-container w3-border">
 		<p id="input" class="w3-right-align w3-border-bottom">0</p>
-		<p id="counter" class="w3-left-align"><sup>Count=0</sup></p>
+		<p id="counter" class="w3-left-align"><sup>Count={{count}}</sup></p>
 		
-		<p id="output" class="w3-right-align"  >0</p>
+		<p id="output" class="w3-right-align"  >{{output}}</p>
 	</div>
 	
 	<footer class="w3-container w3-blue">
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">MC</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">MR</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell">MC</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell">MR</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">MS</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">M+</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">M-</button>
