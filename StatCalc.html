@@ -26,7 +26,7 @@
 	</header>
 	
 	<div class="w3-container w3-border">
-		<p id="input" class="w3-right-align w3-border-bottom">0</p>
+		<p id="input" class="w3-right-align w3-border-bottom">{{list}}</p>
 		<p id="counter" class="w3-left-align"><sup>Count={{count}}</sup></p>
 		
 		<p id="output" class="w3-right-align"  >{{output}}</p>
@@ -43,8 +43,8 @@
 		
 		<div class="w3-bar">
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">CAD</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">C</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="clearAll()">CAD</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="clear()">C</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">F-E</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">Exp</button>
 		</div>
@@ -74,7 +74,7 @@
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(0)">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">.</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><div class="w3-border-bottom">+</div></button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">Add</button>
@@ -87,6 +87,7 @@
 	statApp.controller("statCon", function($scope){
 		$scope.output = 0;
 		$scope.count = 0;
+		$scope.list = "";
 		
 		$scope.digit = function(num){
 			
@@ -97,6 +98,18 @@
 				$scope.output += num;
 			}
 		}
+		
+		$scope.clear = function(){
+			$scope.output = 0;
+		}
+		
+		$scope.clearAll = function(){
+			$scope.clear();
+			
+			$scope.count = 0;
+			$scope.list = "";
+		}
+		
 		
 	});
 </script>
