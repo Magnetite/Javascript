@@ -50,25 +50,25 @@
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">7</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">8</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">9</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(7)">7</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(8)">8</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(9)">9</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><div class="w3-border-top">x</div></button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><div class="w3-border-top">x<sup>2</sup></div></button>
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">4</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">5</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">6</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(4)">4</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(5)">5</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(6)">6</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&Sigma;x</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&Sigma;x<sup>2</sup></button>
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">1</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">2</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">3</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(1)">1</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(2)">2</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(3)">3</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&sigma;<sub>n</sub></button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&sigma;<sub>n-1</sub></button>
 		</div>
@@ -87,6 +87,16 @@
 	statApp.controller("statCon", function($scope){
 		$scope.output = 0;
 		$scope.count = 0;
+		
+		$scope.digit = function(num){
+			
+			if ($scope.output === 0){
+				$scope.output = num;
+			} else {
+				$scope.output *= 10;
+				$scope.output += num;
+			}
+		}
 		
 	});
 </script>
