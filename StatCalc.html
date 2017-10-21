@@ -76,7 +76,7 @@
 		<div class="w3-bar">
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(0)">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">.</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><div class="w3-border-bottom">+</div></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="plusMinus()"><div class="w3-border-bottom">+</div></button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">Add</button>
 		</div>
 	</footer>
@@ -108,6 +108,10 @@
 			
 			$scope.count = 0;
 			$scope.list = "";
+		}
+		
+		$scope.plusMinus = function(){
+			$scope.output *= -1;
 		}
 		
 		
