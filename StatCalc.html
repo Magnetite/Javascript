@@ -42,7 +42,7 @@
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="shrink()"><</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="clearAll()">CAD</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="clear()">C</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">F-E</button>
@@ -112,6 +112,10 @@
 		
 		$scope.plusMinus = function(){
 			$scope.output *= -1;
+		}
+		
+		$scope.shrink = function(){
+			$scope.output = Math.floor($scope.output/10);
 		}
 		
 		
