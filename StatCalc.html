@@ -87,7 +87,7 @@
 	statApp.controller("statCon", function($scope){
 		$scope.output = 0;
 		$scope.count = 0;
-		$scope.list = "";
+		$scope.list = [];
 		
 		$scope.digit = function(num){
 			
@@ -107,7 +107,7 @@
 			$scope.clear();
 			
 			$scope.count = 0;
-			$scope.list = "";
+			$scope.list = [];
 		}
 		
 		$scope.plusMinus = function(){
@@ -119,7 +119,8 @@
 		}
 		
 		$scope.add = function(){
-			$scope.list += $scope.output;  //<= todo Fix this so it separates each entry.
+			$scope.list.push($scope.output); 
+			$scope.clear();
 		}
 		
 		
