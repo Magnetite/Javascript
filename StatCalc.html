@@ -77,7 +77,7 @@
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(0)">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">.</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="plusMinus()"><div class="w3-border-bottom">+</div></button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">Add</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="add()">Add</button>
 		</div>
 	</footer>
 </div>
@@ -116,6 +116,10 @@
 		
 		$scope.shrink = function(){
 			$scope.output = Math.floor($scope.output/10);
+		}
+		
+		$scope.add = function(){
+			$scope.list += $scope.output;  //<= todo Fix this so it separates each entry.
 		}
 		
 		
