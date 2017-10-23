@@ -28,6 +28,7 @@
 	<div class="w3-container w3-border">
 		<p id="input" class="w3-right-align w3-border-bottom">{{list}}</p>
 		<p id="counter" class="w3-left-align"><sup>Count={{count}}</sup></p>
+		<p>{{mSign}}</p>
 		
 		<p id="output" class="w3-right-align"  >{{output}}</p>
 	</div>
@@ -35,7 +36,7 @@
 	<footer class="w3-container w3-blue">
 		<div class="w3-bar">
 			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell" ng-click="mc()">MC</button>
-			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell" click="mr()">MR</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell" ng-click="mr()">MR</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="ms()">MS</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="mem(1)">M+</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="mem(-1)">M-</button>
@@ -89,6 +90,7 @@
 		$scope.count = 0;
 		$scope.list = [];
 		$scope.m = 0;
+		$scope.mSign = "";  //For showing the M sign when $scope.m, the "memory", is not equal to 0;
 		
 		//todo change below so it can work with floats 
 		$scope.digit = function(num){
@@ -128,20 +130,31 @@
 		
 		$scope.mem = function(sign){
 			$scope.m += $scope.output * sign;
+			$scope.mSig();
 		}
 		
 		$scope.ms = function(){
 			$scope.m = $scope.output;
+			$scope.mSig();
 		}
 		
 		$scope.mc = function(){
 			$scope.m = 0;
+			$scope.mSig();
 		}
 		
 		$scope.mr = function(){
 			$scope.output = $scope.m;
+			$scope.mSig();
 		}
 		
+		$scope.mSig = function(){
+			if ($scope.mSign !== 0){
+				$scope.mSign = "M";
+			} else {
+				$scope.mSign = "";
+			}
+		}
 		
 	});
 </script>
