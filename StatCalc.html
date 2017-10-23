@@ -34,9 +34,9 @@
 	
 	<footer class="w3-container w3-blue">
 		<div class="w3-bar">
-			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell">MC</button>
-			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell">MR</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">MS</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell" ng-click="mc()">MC</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell" click="mr()">MR</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="ms()">MS</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="mem(1)">M+</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="mem(-1)">M-</button>
 		</div>
@@ -128,6 +128,18 @@
 		
 		$scope.mem = function(sign){
 			$scope.m += $scope.output * sign;
+		}
+		
+		$scope.ms = function(){
+			$scope.m = $scope.output;
+		}
+		
+		$scope.mc = function(){
+			$scope.m = 0;
+		}
+		
+		$scope.mr = function(){
+			$scope.output = $scope.m;
 		}
 		
 		
