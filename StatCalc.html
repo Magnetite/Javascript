@@ -37,8 +37,8 @@
 			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell">MC</button>
 			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell">MR</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">MS</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">M+</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">M-</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="mem(1)">M+</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="mem(-1)">M-</button>
 		</div>
 		
 		<div class="w3-bar">
@@ -88,6 +88,7 @@
 		$scope.output = 0;
 		$scope.count = 0;
 		$scope.list = [];
+		$scope.m = 0;
 		
 		//todo change below so it can work with floats 
 		$scope.digit = function(num){
@@ -123,6 +124,10 @@
 			$scope.list.push($scope.output); 
 			$scope.clear();
 			$scope.count++;
+		}
+		
+		$scope.mem = function(sign){
+			$scope.m += $scope.output * sign;
 		}
 		
 		
