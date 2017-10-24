@@ -143,6 +143,17 @@
 			$scope.output = $scope.m;
 		}
 		
+		$scope.sum = function(arr){
+		
+			var sum = 0;
+			
+			arr.forEach(function(cur){
+				sum += cur;
+			});
+			
+			return sum;
+		}
+		
 		
 		
 	});
