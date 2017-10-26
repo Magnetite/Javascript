@@ -29,7 +29,7 @@
 		<p id="input" class="w3-right-align w3-border-bottom">{{list}}</p>
 		<p id="counter" class="w3-left-align"><sup>Count={{count}}:M={{m}}</sup></p>
 		
-		<p id="output" class="w3-right-align"  >{{output}}</p>
+		<p id="output" class="w3-right-align"  >{{display}}</p>
 	</div>
 	
 	<footer class="w3-container w3-blue">
@@ -89,6 +89,7 @@
 		$scope.count = 0;
 		$scope.list = [];
 		$scope.m = 0;
+		$scope.display = "";
 		
 		
 		//todo change below so it can work with floats 
@@ -100,10 +101,13 @@
 				$scope.output *= 10;
 				$scope.output += num;
 			}
+			
+			$scope.dis();
 		}
 		
 		$scope.clear = function(){
 			$scope.output = 0;
+			$scope.dis();
 		}
 		
 		$scope.clearAll = function(){
@@ -111,20 +115,25 @@
 			
 			$scope.count = 0;
 			$scope.list = [];
+			$scope.dis();
 		}
 		
 		$scope.plusMinus = function(){
 			$scope.output *= -1;
+			$scope.dis();
 		}
 		
 		$scope.shrink = function(){
-			$scope.output = Math.floor($scope.output/10);
+			$scope.output = Math.floor($scope.output/10);  //<= todo fix this so it directly manipulates string
+			$scope.dis();
 		}
 		
 		$scope.add = function(){
 			$scope.list.push($scope.output); 
 			$scope.clear();
 			$scope.count++;
+			
+			$scope.dis();
 		}
 		
 		$scope.mem = function(sign){
@@ -141,6 +150,8 @@
 		
 		$scope.mr = function(){
 			$scope.output = $scope.m;
+			
+			$scope.dis();
 		}
 		
 		$scope.sum = function(arr, pow){
@@ -156,18 +167,31 @@
 		
 		$scope.ave = function(){
 			$scope.output = $scope.sum($scope.list, 1) / $scope.list.length;
+			
+			$scope.dis();
 		}
 		
 		$scope.rms = function(){
 			$scope.output = $scope.sum($scope.list, 2) / $scope.list.length;
+			
+			$scope.dis();
 		}
 		
 		$scope.displaySum = function(){
 			$scope.output = $scope.sum($scope.list, 1);
+			
+			$scope.dis();
 		}
 		
 		$scope.displaySquareSum = function(){
 			$scope.output = $scope.sum($scope.list,2);
+			
+			$scope.dis();
+		}
+		
+		$scope.dis = function(){
+			$scope.display = $scope.output + "";
+			
 		}
 		
 	});
