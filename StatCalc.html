@@ -61,7 +61,7 @@
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(4)">4</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(5)">5</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(6)">6</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&Sigma;x</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="displaySum()">&Sigma;x</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">&Sigma;x<sup>2</sup></button>
 		</div>
 		
@@ -160,6 +160,10 @@
 		
 		$scope.rms = function(){
 			$scope.output = $scope.sum($scope.list, 2) / $scope.list.length;
+		}
+		
+		$scope.displaySum = function(){
+			$scope.output = $scope.sum($scope.list);
 		}
 		
 		
