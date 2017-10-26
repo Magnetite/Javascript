@@ -54,7 +54,7 @@
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(8)">8</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(9)">9</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="ave()"><div class="w3-border-top">x</div></button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell"><div class="w3-border-top">x<sup>2</sup></div></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="rms()"><div class="w3-border-top">x<sup>2</sup></div></button>
 		</div>
 		
 		<div class="w3-bar">
@@ -143,19 +143,23 @@
 			$scope.output = $scope.m;
 		}
 		
-		$scope.sum = function(arr){
+		$scope.sum = function(arr, pow){
 		
 			var sum = 0;
 			
 			arr.forEach(function(cur){
-				sum += cur;
+				sum += Math.pow(cur, pow);
 			});
 			
 			return sum;
 		}
 		
 		$scope.ave = function(){
-			$scope.output = $scope.sum($scope.list) / $scope.list.length;
+			$scope.output = $scope.sum($scope.list, 1) / $scope.list.length;
+		}
+		
+		$scope.rms = function(){
+			$scope.output = $scope.sum($scope.list, 2) / $scope.list.length;
 		}
 		
 		
