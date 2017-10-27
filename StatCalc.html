@@ -92,17 +92,21 @@
 		$scope.display = "";
 		
 		
-		//todo change below so it can work with floats 
+		//todo change below so it can work with floats
 		$scope.digit = function(num){
 			
+			/*
 			if ($scope.output === 0){
 				$scope.output = num;
 			} else {
 				$scope.output *= 10;
 				$scope.output += num;
 			}
+			*/
 			
-			$scope.dis();
+			$scope.display += num + "";
+			$scope.output = parseFloat($scope.display);
+			
 		}
 		
 		$scope.clear = function(){
