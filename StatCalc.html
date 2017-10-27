@@ -75,7 +75,7 @@
 		
 		<div class="w3-bar">
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit(0)">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell">.</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="digit('.')">.</button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="plusMinus()"><div class="w3-border-bottom">+</div></button>
 			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell" ng-click="add()">Add</button>
 		</div>
@@ -92,7 +92,7 @@
 		$scope.display = "";
 		
 		
-		//todo change below so it can work with floats
+		
 		$scope.digit = function(num){
 			
 			
