@@ -95,16 +95,15 @@
 		//todo change below so it can work with floats
 		$scope.digit = function(num){
 			
-			/*
-			if ($scope.output === 0){
-				$scope.output = num;
-			} else {
-				$scope.output *= 10;
-				$scope.output += num;
-			}
-			*/
 			
-			$scope.display += num + "";
+			if ($scope.display === "0"){
+				$scope.display = num + "";
+			} else {
+				$scope.display += num + "";
+			}
+			
+			
+			
 			$scope.output = parseFloat($scope.display);
 			
 		}
