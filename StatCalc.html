@@ -8,10 +8,8 @@
 <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-colors-flat.css">
 
 <style>
-	.button{
-		//height: 3em;
-		width: 10em;
-		
+	.bn{
+		height: 2.7em;
 	}
 </style>
 
@@ -34,50 +32,50 @@
 	
 	<footer class="w3-container w3-blue">
 		<div class="w3-bar w3-row">
-			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="mc()">MC</button>
-			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="mr()">MR</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="ms()">MS</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="mem(1)">M+</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="mem(-1)">M-</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="mc()">MC</button>
+			<button class="w3-bar-item  w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="mr()">MR</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="ms()">MS</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="mem(1)">M+</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="mem(-1)">M-</button>
 		</div>
 		
 		<div class="w3-bar w3-row">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="shrink()"><</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="clearAll()">CAD</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="clear()">C</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2">F-E</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2">Exp</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="shrink()"><</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="clearAll()">CAD</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="clear()">C</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn">F-E</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn">Exp</button>
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(7)">7</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(8)">8</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(9)">9</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="ave()"><div class="w3-border-top">x</div></button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="rms()"><div class="w3-border-top">x<sup>2</sup></div></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(7)">7</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(8)">8</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(9)">9</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="ave()"><div class="w3-border-top">x</div></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="rms()"><div class="w3-border-top">x<sup>2</sup></div></button>
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(4)">4</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(5)">5</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(6)">6</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="displaySum()">&Sigma;x</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="displaySquareSum()">&Sigma;x<sup>2</sup></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(4)">4</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(5)">5</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(6)">6</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="displaySum()">&Sigma;x</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="displaySquareSum()">&Sigma;x<sup>2</sup></button>
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(1)">1</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(2)">2</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit(3)">3</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2">&sigma;<sub>n</sub></button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2">&sigma;<sub>n-1</sub></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(1)">1</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(2)">2</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit(3)">3</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn">&sigma;<sub>n</sub></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn">&sigma;<sub>n-1</sub></button>
 		</div>
 		
 		<div class="w3-bar">
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l4" ng-click="digit(0)">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="digit('.')">.</button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="plusMinus()"><div class="w3-border-bottom">+</div></button>
-			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2" ng-click="add()">Add</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l4 bn" ng-click="digit(0)">&nbsp;&nbsp;&nbsp;&nbsp;0&nbsp;&nbsp;&nbsp;&nbsp;</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="digit('.')">.</button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="plusMinus()"><div class="w3-border-bottom">+</div></button>
+			<button class="w3-bar-item w3-btn w3-black w3-border w3-cell w3-col l2 bn" ng-click="add()">Add</button>
 		</div>
 	</footer>
 </div>
