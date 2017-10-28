@@ -32,8 +32,8 @@
 	
 	<footer class="w3-container w3-blue">
 		<div class=" w3-row">
-			<button class="  w3-btn w3-black w3-border w3-col l2" ng-click="mc()">MC</button>
-			<button class="  w3-btn w3-black w3-border  w3-col l2" ng-click="mr()">MR</button>
+			<button class=" w3-btn w3-black w3-border w3-col l2" ng-click="mc()">MC</button>
+			<button class=" w3-btn w3-black w3-border  w3-col l2" ng-click="mr()">MR</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2" ng-click="ms()">MS</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 " ng-click="mem(1)">M+</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 " ng-click="mem(-1)">M-</button>
@@ -44,7 +44,7 @@
 			<button class=" w3-btn w3-black w3-border  w3-col l2 " ng-click="clearAll()">CAD</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 " ng-click="clear()">C</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 ">F-E</button>
-			<button class=" w3-btn w3-black w3-border  w3-col l2 ">Exp</button>
+			<button class=" w3-btn w3-black w3-border  w3-col l2 " ng-click="exp()">Exp</button>
 		</div>
 		
 		<div class="w3-row">
@@ -87,7 +87,7 @@
 		$scope.count = 0;
 		$scope.list = [];
 		$scope.m = 0;
-		$scope.display = "";
+		$scope.display = "0";
 		
 		
 		
@@ -193,6 +193,10 @@
 		$scope.dis = function(){
 			$scope.display = $scope.output + "";
 			
+		}
+		
+		$scope.exp = function(){
+			$scope.display = $scope.output.toExponential + "";
 		}
 		
 	});
