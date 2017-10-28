@@ -44,7 +44,7 @@
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="shrink()"><</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="clearAll()">CAD</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="clear()">C</button>
-			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 ">F-E</button>
+			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="fe()">F-E</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="exp()">Exp</button>
 		</div>
 		
@@ -198,6 +198,16 @@
 		
 		$scope.exp = function(){
 			$scope.display = $scope.output.toExponential() + "";
+		}
+		
+		//todo test this function more
+		$scope.fe = function(){
+			var tst = parseFloat($scope.display);
+			if ( tst === tst.valueOf() ){
+				$scope.exp();
+			} else {
+				$scope.display = tst.valueOf();
+			}
 		}
 		
 	});
