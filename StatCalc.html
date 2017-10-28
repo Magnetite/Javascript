@@ -203,7 +203,7 @@
 		//todo test this function more
 		$scope.fe = function(){
 			var tst = parseFloat($scope.display);
-			if ( tst === tst.valueOf() ){
+			if ( tst === $scope.display.valueOf() ){
 				$scope.exp();
 			} else {
 				$scope.display = tst.valueOf();
