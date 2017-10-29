@@ -126,8 +126,8 @@
 		}
 		
 		$scope.shrink = function(){
-			$scope.output = Math.floor($scope.output/10);  //<= todo fix this so it directly manipulates string
-			$scope.dis();
+			$scope.display = $scope.display.slice(0, $scope.display.length - 1); 
+			$scope.output = parseFloat($scope.display);
 		}
 		
 		$scope.add = function(){
