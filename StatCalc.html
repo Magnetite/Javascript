@@ -171,6 +171,8 @@
 			$scope.output = $scope.sum($scope.list, 1) / $scope.list.length;
 			
 			$scope.dis();
+			
+			return $scope.output;
 		}
 		
 		$scope.rms = function(){
@@ -208,6 +210,13 @@
 			} else {
 				$scope.display = tst.valueOf();
 			}
+		}
+		
+		//sd stands for standard deviation
+		$scope.sd = function(){
+			var mean = $scope.ave();
+			
+			
 		}
 		
 	});
