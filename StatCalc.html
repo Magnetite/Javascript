@@ -215,6 +215,12 @@
 		//sd stands for standard deviation
 		$scope.sd = function(){
 			var mean = $scope.ave();
+			var df = [];
+			
+			//Calculate the squared difference between list array items and the mean
+			for (var i = 0, len = $scope.list.length; i < len; i++){
+				df[i] = Math.pow($scope.list[i] - mean, 2);
+			}
 			
 			
 		}
