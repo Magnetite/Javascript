@@ -221,7 +221,7 @@
 		//todo  add functionality for sigma,n - 1 cases as well
 		//sd stands for standard deviation
 		$scope.sd = function(dv){
-			var mean = $scope.ave($scope.list);
+			var mean = $scope.ave($scope.list, 0);
 			var df = [];
 			
 			//Calculate the squared difference between list array items and the mean
@@ -229,7 +229,8 @@
 				df.push( Math.pow($scope.list[i] - mean, 2) );
 			}
 			
-			$scope.output = Math.pow($scope.ave(df, dv), 0.5);
+			$scope.output = Math.pow($scope.ave(df, dv ), 0.5);
+			
 			$scope.dis();
 	
 			
