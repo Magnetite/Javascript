@@ -68,8 +68,8 @@
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="digit(1)">1</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="digit(2)">2</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="digit(3)">3</button>
-			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="sd()">&sigma;<sub>n</sub></button>
-			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 ">&sigma;<sub>n-1</sub></button>
+			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="sd(0)">&sigma;<sub>n</sub></button>
+			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="sd(1)">&sigma;<sub>n-1</sub></button>
 		</div>
 		
 		<div class="w3-row">
@@ -167,7 +167,8 @@
 			return sum;
 		}
 		
-		$scope.ave = function(arr){
+		//dv is input if arr is input.  dv is only 0 or 1
+		$scope.ave = function(arr, dv){
 		
 		
 		
@@ -175,7 +176,7 @@
 				$scope.output = $scope.sum($scope.list, 1) / $scope.list.length;
 				$scope.dis();
 			} else {
-				return $scope.sum(arr, 1) / arr.length;
+				return $scope.sum(arr, 1) / (arr.length - dv);
 			}
 				
 		}
@@ -217,8 +218,9 @@
 			}
 		}
 		
+		//todo  add functionality for sigma,n - 1 cases as well
 		//sd stands for standard deviation
-		$scope.sd = function(){
+		$scope.sd = function(dv){
 			var mean = $scope.ave($scope.list);
 			var df = [];
 			
@@ -227,7 +229,7 @@
 				df.push( Math.pow($scope.list[i] - mean, 2) );
 			}
 			
-			$scope.output = Math.pow($scope.ave(df), 0.5);
+			$scope.output = Math.pow($scope.ave(df, dv), 0.5);
 			$scope.dis();
 	
 			
