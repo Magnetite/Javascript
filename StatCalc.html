@@ -68,7 +68,7 @@
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="digit(1)">1</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="digit(2)">2</button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="digit(3)">3</button>
-			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 ">&sigma;<sub>n</sub></button>
+			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 " ng-click="sd()">&sigma;<sub>n</sub></button>
 			<button class=" w3-btn w3-black w3-border  w3-col l2 m2 s2 ">&sigma;<sub>n-1</sub></button>
 		</div>
 		
@@ -219,18 +219,17 @@
 		
 		//sd stands for standard deviation
 		$scope.sd = function(){
-			var mean = $scope.ave();
+			var mean = $scope.ave($scope.list);
 			var df = [];
-			var varience = 0;
 			
 			//Calculate the squared difference between list array items and the mean
 			for (var i = 0, len = $scope.list.length; i < len; i++){
-				df[i] = Math.pow($scope.list[i] - mean, 2);
+				df.push( Math.pow($scope.list[i] - mean, 2) );
 			}
 			
-			
-			
-			
+			$scope.output = Math.pow($scope.ave(df), 0.5);
+			$scope.dis();
+	
 			
 		}
 		
