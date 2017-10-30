@@ -167,12 +167,17 @@
 			return sum;
 		}
 		
-		$scope.ave = function(){
-			$scope.output = $scope.sum($scope.list, 1) / $scope.list.length;
-			
-			$scope.dis();
-			
-			return $scope.output;
+		$scope.ave = function(arr){
+		
+		
+		
+			if (arguments.length === 0){
+				$scope.output = $scope.sum($scope.list, 1) / $scope.list.length;
+				$scope.dis();
+			} else {
+				return $scope.sum(arr, 1) / arr.length;
+			}
+				
 		}
 		
 		$scope.rms = function(){
@@ -216,11 +221,15 @@
 		$scope.sd = function(){
 			var mean = $scope.ave();
 			var df = [];
+			var varience = 0;
 			
 			//Calculate the squared difference between list array items and the mean
 			for (var i = 0, len = $scope.list.length; i < len; i++){
 				df[i] = Math.pow($scope.list[i] - mean, 2);
 			}
+			
+			
+			
 			
 			
 		}
