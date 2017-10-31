@@ -126,8 +126,14 @@
 		}
 		
 		$scope.shrink = function(){
+		
+		if($scope.display.length === 1){
+			$scope.display = "0";
+		} else {
 			$scope.display = $scope.display.slice(0, $scope.display.length - 1); 
 			$scope.output = parseFloat($scope.display);
+		}
+		
 		}
 		
 		$scope.add = function(){
