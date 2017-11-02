@@ -38,8 +38,9 @@ function plot(arr, high, barplot, obj){
 	
 }
 
-function showGrid(dev, high, wide, obj){
+function showGrid(dev, high, wide, obj, gridColor){
 	var incre = high / dev;
+	obj.strokeStyle = gridColor;
 	
 	obj.moveTo(0,incre);
 	
@@ -63,7 +64,7 @@ function showGrid(dev, high, wide, obj){
 }
 
 
-showGrid(5, 400, 600, drw);
+showGrid(5, 400, 600, drw, "blue");
 plot(testInput, 400, 1, drw);
 
 </script>
