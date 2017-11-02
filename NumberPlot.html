@@ -15,7 +15,7 @@ Your browser does not support the canvas element.
 
 <script>
 
-var testInput = [1,1,2,3,5,8,13,21,34,55,89,144,233,377];
+var testInput = [1,2.25,4,6.25,9,12.25,16,20.25,25,30.25,36,42.25,49,56.25,64,72.25,81,90.25,100,110.25,121,130.25];
 
 var canvas = document.getElementById("graph");
 var drw = canvas.getContext("2d");
@@ -32,7 +32,21 @@ function plot(arr, high){
 	}
 }
 
-plot(testInput, 400);
+
+function barPlot(arr, high){
+	
+	drw.moveTo(0, high);
+	
+	for (var i = 1, len = arr.length; i < len; i++){
+		drw.lineTo(i * 10, high - arr[i]);
+		drw.stroke();
+		drw.moveTo( (i * 10) + 10, high);
+		
+	}
+}
+
+
+barPlot(testInput, 400);
 
 </script>
 
