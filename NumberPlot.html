@@ -41,27 +41,27 @@ function plot(arr, high, barplot, obj){
 function showGrid(dev, high, wide, obj){
 	var incre = high / dev;
 	
-	obj.moveTo(0,dev);
+	obj.moveTo(0,incre);
 	
-	obj.lineWidth = 1;
+	obj.lineWidth = 0.1;
 	
 	for (var i = 1; i < high; i++){
-		obj.lineTo(wide, i * dev);
+		obj.lineTo(wide, i * incre);
 		obj.stroke();
-		obj.moveTo(0, i * dev + dev );
+		obj.moveTo(0, i * incre + incre );
 		
 	}
 	
 	for (var i = 1; i < wide; i++){
-		obj.lineTo(i * dev, high);
+		obj.lineTo(i * incre, high);
 		obj.stroke();
-		obj.moveTo(i * dev + dev , 0);
+		obj.moveTo(i * incre + incre , 0);
 		
 	}
 }
 
 
-showGrid(10, 400, 600, drw);
+showGrid(5, 400, 600, drw);
 plot(testInput, 400, 1, drw);
 
 </script>
