@@ -17,8 +17,14 @@ Your browser does not support the canvas element.
 
 var testInput = [1,2.25,4,6.25,9,12.25,16,20.25,25,30.25,36,42.25,49,56.25,64,72.25,81,90.25,100,110.25,121,130.25];
 
-var canvas = document.getElementById("graph");
-var drw = canvas.getContext("2d");
+
+function setUp(id){
+	var canvas = document.getElementById(id);
+	
+	return canvas.getContext("2d");
+}
+
+var drw = setUp("graph");
 
 //if barplot parameter is 0, there is a barplot, if 1, it is a graph
 function plot(arr, high, barplot, obj){
