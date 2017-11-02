@@ -21,21 +21,48 @@ var canvas = document.getElementById("graph");
 var drw = canvas.getContext("2d");
 
 //if barplot parameter is 0, there is a barplot, if 1, it is a graph
-function plot(arr, high, barplot){
+function plot(arr, high, barplot, obj){
 	
-	drw.moveTo(0, high - (arr[0] * barplot) );
+	
+	obj.moveTo(0, high - (arr[0] * barplot) );
+	
 	
 	for (var i = 1, len = arr.length; i < len; i++){
-		drw.lineTo(i * 10, high - arr[i]);
-		drw.stroke();
-		drw.moveTo( i * 10 + 10 * (1 - barplot) , high - (arr[i] * barplot) );
+		obj.lineTo(i * 10, high - arr[i]);
+		obj.stroke();
+		obj.moveTo( i * 10 + 10 * (1 - barplot) , high - (arr[i] * barplot) );
+		
+		
+		
+	}
+	
+}
+
+function showGrid(dev, high, wide, obj){
+	var incre = high / dev;
+	
+	obj.moveTo(0,dev);
+	
+	obj.lineWidth = 1;
+	
+	for (var i = 1; i < high; i++){
+		obj.lineTo(wide, i * dev);
+		obj.stroke();
+		obj.moveTo(0, i * dev + dev );
+		
+	}
+	
+	for (var i = 1; i < wide; i++){
+		obj.lineTo(i * dev, high);
+		obj.stroke();
+		obj.moveTo(i * dev + dev , 0);
 		
 	}
 }
 
 
-
-plot(testInput, 400, 1);
+showGrid(10, 400, 600, drw);
+plot(testInput, 400, 1, drw);
 
 </script>
 
