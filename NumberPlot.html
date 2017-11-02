@@ -52,6 +52,8 @@ function showGrid(dev, high, wide, obj){
 		
 	}
 	
+	obj.moveTo(incre, 0);
+	
 	for (var i = 1; i < wide; i++){
 		obj.lineTo(i * incre, high);
 		obj.stroke();
