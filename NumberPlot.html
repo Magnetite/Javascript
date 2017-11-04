@@ -28,16 +28,16 @@ var can = {
 
 
 
-		plot: function(arr, high, barplot, obj){   //<= if barplot parameter is 0, there is a barplot, if 1, it is a graph 
+		plot: function(arr, high, barplot, obj, inc){   //<= if barplot parameter is 0, there is a barplot, if 1, it is a graph 
 			
 			
 			obj.moveTo(0, high - (arr[0] * barplot) );
 			
 			
 			for (var i = 1, len = arr.length; i < len; i++){
-				obj.lineTo(i * 10, high - arr[i]);
+				obj.lineTo(i * inc, high - arr[i]);
 				obj.stroke();
-				obj.moveTo( i * 10 + 10 * (1 - barplot) , high - (arr[i] * barplot) );
+				obj.moveTo( i * inc + inc * (1 - barplot) , high - (arr[i] * barplot) );
 				
 				
 				
@@ -74,7 +74,7 @@ var can = {
 var drw = can.setUp("graph");
 
 can.showGrid(5, 400, 600, drw, "blue");
-can.plot(testInput, 400, 1, drw);
+can.plot(testInput, 400, 1, drw, 30);
 
 </script>
 
