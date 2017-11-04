@@ -72,14 +72,21 @@ var can = {
 			}
 		},
 		
-		polarGrid: function(radius, centerArr){
+		polarGrid: function(x, y, radius, obj){
 			
+		},
+		
+		circle: function(x, y, radius, obj){
+			obj.beginPath();
+			obj.arc(x,y, radius, 0, 2 * Math.PI);
+			obj.stroke();
 		}
 }
 
 var drw = can.setUp("graph");
 
-can.showGrid(5, 400, 600, drw, "blue");
+//can.showGrid(5, 400, 600, drw, "blue");
+can.circle(200,200,50, drw);
 can.plot(testInput, 400, 1, drw, 30);
 
 </script>
