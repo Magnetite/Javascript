@@ -19,6 +19,8 @@ var testInput = [1,2.25,4,6.25,9,12.25,16,20.25,25,30.25,36,42.25,49,56.25,64,72
 
 var can = {
 
+		backgroundColor: "white",
+
 		setUp: function(id){
 			var canvas = document.getElementById(id);
 			
@@ -68,6 +70,10 @@ var can = {
 				obj.moveTo(i * incre + incre , 0);
 				
 			}
+		},
+		
+		polarGrid: function(radius, centerArr){
+			
 		}
 }
 
