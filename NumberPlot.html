@@ -72,8 +72,13 @@ var can = {
 			}
 		},
 		
-		polarGrid: function(x, y, radius, obj){
+		polarGrid: function(x, y, radius, dev, obj){
+		
+			var incr = radius / dev;
 			
+			for ( var i = 0; i < dev; i++){
+				can.circle(x, y, i * incr, obj );
+			}
 		},
 		
 		circle: function(x, y, radius, obj){
@@ -86,7 +91,7 @@ var can = {
 var drw = can.setUp("graph");
 
 //can.showGrid(5, 400, 600, drw, "blue");
-can.circle(200,200,50, drw);
+can.polarGrid(200,200,50, 10, drw);
 can.plot(testInput, 400, 1, drw, 30);
 
 </script>
