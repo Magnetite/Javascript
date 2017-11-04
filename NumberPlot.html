@@ -17,61 +17,64 @@ Your browser does not support the canvas element.
 
 var testInput = [1,2.25,4,6.25,9,12.25,16,20.25,25,30.25,36,42.25,49,56.25,64,72.25,81,90.25,100,110.25,121,130.25];
 
+var can = {
 
-function setUp(id){
-	var canvas = document.getElementById(id);
-	
-	return canvas.getContext("2d");
+		setUp: function(id){
+			var canvas = document.getElementById(id);
+			
+			return canvas.getContext("2d");
+		},
+
+
+
+
+		plot: function(arr, high, barplot, obj){   //<= if barplot parameter is 0, there is a barplot, if 1, it is a graph 
+			
+			
+			obj.moveTo(0, high - (arr[0] * barplot) );
+			
+			
+			for (var i = 1, len = arr.length; i < len; i++){
+				obj.lineTo(i * 10, high - arr[i]);
+				obj.stroke();
+				obj.moveTo( i * 10 + 10 * (1 - barplot) , high - (arr[i] * barplot) );
+				
+				
+				
+			}
+			
+		},
+
+		showGrid: function(dev, high, wide, obj, gridColor){
+			var incre = high / dev;
+			obj.strokeStyle = gridColor;
+			
+			obj.moveTo(0,incre);
+			
+			obj.lineWidth = 0.1;
+			
+			for (var i = 1; i < high; i++){
+				obj.lineTo(wide, i * incre);
+				obj.stroke();
+				obj.moveTo(0, i * incre + incre );
+				
+			}
+			
+			obj.moveTo(incre, 0);
+			
+			for (var i = 1; i < wide; i++){
+				obj.lineTo(i * incre, high);
+				obj.stroke();
+				obj.moveTo(i * incre + incre , 0);
+				
+			}
+		}
 }
 
-var drw = setUp("graph");
+var drw = can.setUp("graph");
 
-//if barplot parameter is 0, there is a barplot, if 1, it is a graph
-function plot(arr, high, barplot, obj){
-	
-	
-	obj.moveTo(0, high - (arr[0] * barplot) );
-	
-	
-	for (var i = 1, len = arr.length; i < len; i++){
-		obj.lineTo(i * 10, high - arr[i]);
-		obj.stroke();
-		obj.moveTo( i * 10 + 10 * (1 - barplot) , high - (arr[i] * barplot) );
-		
-		
-		
-	}
-	
-}
-
-function showGrid(dev, high, wide, obj, gridColor){
-	var incre = high / dev;
-	obj.strokeStyle = gridColor;
-	
-	obj.moveTo(0,incre);
-	
-	obj.lineWidth = 0.1;
-	
-	for (var i = 1; i < high; i++){
-		obj.lineTo(wide, i * incre);
-		obj.stroke();
-		obj.moveTo(0, i * incre + incre );
-		
-	}
-	
-	obj.moveTo(incre, 0);
-	
-	for (var i = 1; i < wide; i++){
-		obj.lineTo(i * incre, high);
-		obj.stroke();
-		obj.moveTo(i * incre + incre , 0);
-		
-	}
-}
-
-
-showGrid(5, 400, 600, drw, "blue");
-plot(testInput, 400, 1, drw);
+can.showGrid(5, 400, 600, drw, "blue");
+can.plot(testInput, 400, 1, drw);
 
 </script>
 
