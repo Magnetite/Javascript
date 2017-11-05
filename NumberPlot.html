@@ -88,12 +88,16 @@ var can = {
 		},
 		
 		rays: function(x, y, radius, dev, obj){
-			var incr = radius / dev;
+			var incr = (2 * Math.PI) / dev;
+			var totalTurn = 0;
 			
-			obj. moveTo(x, y);
+			obj.moveTo(x, y);
 			
 			for ( var i = 0; i < dev; i++){
-				
+				obj.lineTo( x + radius * Math.cos(totalTurn),  y + radius * Math.sin(totalTurn) )
+				obj.stroke();
+				obj.moveTo(x, y);
+				totalTurn += incr;
 			}
 		}
 }
@@ -102,6 +106,7 @@ var drw = can.setUp("graph");
 
 //can.showGrid(5, 400, 600, drw, "blue");
 can.polarGrid(200,200,50, 10, drw);
+can.rays(200, 200, 50, 8, drw);
 can.plot(testInput, 400, 1, drw, 30);
 
 </script>
