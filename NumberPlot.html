@@ -99,14 +99,29 @@ var can = {
 				obj.moveTo(x, y);
 				totalTurn += incr;
 			}
+		},
+		
+		polarPlot: function(arr, x, y, maxRadius, dev, obj){
+		
+			var incr = (2 * Math.PI)/dev;
+			var totalTurn = 0;
+			obj.moveTo(x, y);
+			
+			for (var i = 0, len = arr.length; i < len; i++){
+				obj.lineTo( x + maxRadius * Math.cos(totalTurn), y + Math.sin(totalTurn) );
+				obj.stroke();
+				obj.moveTo(x, y);
+				totalTurn += incr;
+				
+			}
 		}
 }
 
 var drw = can.setUp("graph");
 
 //can.showGrid(5, 400, 600, drw, "blue");
-can.polarGrid(200,200,50, 10, drw);
-can.rays(200, 200, 50, 8, drw);
+can.polarGrid(200,200,150, 10, drw);
+can.rays(200, 200, 150, 8, drw);
 can.plot(testInput, 400, 1, drw, 30);
 
 </script>
