@@ -17,6 +17,7 @@ Your browser does not support the canvas element.
 
 var testInput = [1,2.25,4,6.25,9,12.25,16,20.25,25,30.25,36,42.25,49,56.25,64,72.25,81,90.25,100,110.25,121,130.25];
 
+
 var can = {
 
 		backgroundColor: "white",
@@ -31,8 +32,7 @@ var can = {
 
 
 		plot: function(arr, high, barplot, obj, inc){   //<= if barplot parameter is 0, there is a barplot, if 1, it is a graph 
-			
-			
+	
 			obj.moveTo(0, high - (arr[0] * barplot) );
 			
 			
@@ -72,8 +72,9 @@ var can = {
 			}
 		},
 		
-		polarGrid: function(x, y, radius, dev, obj){
+		polarGrid: function(x, y, radius, dev, obj, color){
 		
+			obj.strokeStyle = color;
 			var incr = radius / dev;
 			
 			for ( var i = 0; i < dev; i++){
@@ -87,7 +88,8 @@ var can = {
 			obj.stroke();
 		},
 		
-		rays: function(x, y, radius, dev, obj){
+		rays: function(x, y, radius, dev, obj, color){
+			obj.strokeStyle = color;
 			var incr = (2 * Math.PI) / dev;
 			var totalTurn = 0;
 			
@@ -102,6 +104,8 @@ var can = {
 		},
 		
 		polarPlot: function(arr, x, y, dev, obj){
+		
+			
 		
 			var incr = (2 * Math.PI)/dev;
 			var tmp = 0;
@@ -124,10 +128,12 @@ var can = {
 var drw = can.setUp("graph");
 
 //can.showGrid(5, 400, 600, drw, "blue");
-can.polarGrid(200,200,200, 10, drw);
-can.rays(200, 200, 200, 8, drw);
-//can.plot(testInput, 400, 1, drw, 30);
+can.polarGrid(200,200,200, 10, drw, "blue");
+can.rays(200, 200, 200, 8, drw, "pink");
+
+can.polarPlot([1,2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw);
 can.polarPlot(testInput, 200, 200, 20, drw);
+
 
 </script>
 
