@@ -80,6 +80,8 @@ var can = {
 			for ( var i = 0; i < dev; i++){
 				can.circle(x, y, i * incr, obj );
 			}
+			
+			can.rays(x,y,radius, dev, obj, color);
 		},
 		
 		circle: function(x, y, radius, obj){
@@ -143,7 +145,7 @@ var drw = can.setUp("graph");
 
 //can.showGrid(5, 400, 600, drw, "blue");
 can.polarGrid(200,200,200, 10, drw, "blue");
-can.rays(200, 200, 200, 8, drw, "pink");
+//can.rays(200, 200, 200, 8, drw, "pink");
 
 can.polarPlot([41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw);
 //can.polarPlot(testInput, 200, 200, 20, drw);
