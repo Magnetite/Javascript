@@ -113,11 +113,11 @@ var can = {
 			obj.moveTo(x, y);
 			
 			for (var i = 0, len = arr.length; i < len; i++){
-				obj.lineTo( x + tmp * Math.cos(totalTurn), y + tmp * Math.sin(totalTurn) );
+				obj.lineTo( x + tmp * Math.cos(totalTurn), y - tmp * Math.sin(totalTurn) );
 				obj.stroke();
 				
 				
-				obj.moveTo(x + tmp * Math.cos(totalTurn), y + tmp * Math.sin(totalTurn));
+				obj.moveTo(x + tmp * Math.cos(totalTurn), y - tmp * Math.sin(totalTurn));
 				totalTurn += incr;
 				tmp = arr[i + 1];
 				
@@ -125,8 +125,9 @@ var can = {
 		},
 		
 		test: function(x, y, obj){
-		obj.strokeStyle = "green";
+		
 			obj.moveTo(x,y);
+			obj.strokeStyle = "red";
 			
 			obj.lineTo(x + 30, y);
 			obj.stroke();
@@ -145,7 +146,7 @@ can.polarGrid(200,200,200, 10, drw, "blue");
 can.rays(200, 200, 200, 8, drw, "pink");
 
 can.polarPlot([41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw);
-can.polarPlot(testInput, 200, 200, 20, drw);
+//can.polarPlot(testInput, 200, 200, 20, drw);
 
 can.test(350,350,drw);
 
