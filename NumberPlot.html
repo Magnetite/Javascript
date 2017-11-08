@@ -98,7 +98,7 @@ var can = {
 			obj.moveTo(x, y);
 			
 			for ( var i = 0; i < dev; i++){
-				obj.lineTo( x + radius * Math.cos(totalTurn),  y + radius * Math.sin(totalTurn) )
+				obj.lineTo( x + radius * Math.cos(totalTurn),  y + radius * Math.sin(totalTurn) );
 				obj.stroke();
 				obj.moveTo(x, y);
 				totalTurn += incr;
@@ -138,6 +138,10 @@ var can = {
 			obj.moveTo(x + 30, y);
 			 
 			 obj.lineTo(x + 30, y + 30);
+		},
+		
+		hexGrid: function(high, wide, obj){
+			
 		}
 }
 
