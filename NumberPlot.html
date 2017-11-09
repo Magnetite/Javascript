@@ -84,7 +84,9 @@ var can = {
 			obj.strokeStyle = color;
 			var incr = radius / dev;
 			
-			for ( var i = 0; i < dev; i++){
+			obj.lineWidth = 1;
+			
+			for ( var i = 0; i <= dev; i++){
 				can.circle(x, y, i * incr, obj );
 			}
 			
