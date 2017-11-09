@@ -31,8 +31,10 @@ var can = {
 
 
 
-		plot: function(arr, high, barplot, obj, inc){   //<= if barplot parameter is 0, there is a barplot, if 1, it is a graph 
-	
+		plot: function(arr, high, barplot, obj, inc, color){   //<= if barplot parameter is 0, there is a barplot, if 1, it is a graph 
+			
+			obj.beginPath();
+			obj.strokeStyle = color;
 			obj.moveTo(0, high - (arr[0] * barplot) );
 			
 			
@@ -114,13 +116,16 @@ var can = {
 			}
 		},
 		
-		polarPlot: function(arr, x, y, dev, obj){
+		polarPlot: function(arr, x, y, dev, obj, color){
 		
 			
 		
 			var incr = (2 * Math.PI)/dev;
 			var tmp = 0;
 			var totalTurn = 0;
+			
+			obj.beginPath();
+			obj.strokeStyle = color;
 			obj.moveTo(x, y);
 			
 			for (var i = 0, len = arr.length; i < len; i++){
@@ -136,25 +141,28 @@ var can = {
 		},
 		
 		test: function(x, y, obj){
-		
+				
+				obj.beginPath()
 			obj.moveTo(x,y);
 			obj.strokeStyle = "red";
 			
 			obj.lineTo(x + 30, y);
 			obj.stroke();
 			
-			obj.strokeStyle = "black";
+			obj.beginPath();
 			obj.moveTo(x + 30, y);
+			obj.strokeStyle = "black";
 			 
-			 obj.lineTo(x + 30, y + 30);
+			 obj.lineTo(x + 30, y - 30);
+			 obj.stroke();
 		},
 		
 		hexGrid: function(dev, high, wide, obj){
 			
 		},
 		
-		triGrid: function(dev, high, wide, obj){
-			
+		triGrid: function(dev, high, wide, hor, obj){
+			can.showGrid(dev, high, wide, hor, obj);
 		}
 }
 
@@ -164,10 +172,11 @@ var drw = can.setUp("graph");
 can.polarGrid(200,200,200, 10, drw, "blue");
 //can.rays(200, 200, 200, 8, drw, "pink");
 
-can.polarPlot([41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw);
+can.polarPlot([2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw, "red");
 //can.polarPlot(testInput, 200, 200, 20, drw);
 
-can.test(350,350,drw);
+//can.test(350,350,drw);
+can.triGrid(10, 200, 200, -1, drw);
 
 
 </script>
