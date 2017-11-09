@@ -47,28 +47,35 @@ var can = {
 			
 		},
 
-		showGrid: function(dev, high, wide, obj, gridColor){
+		showGrid: function(dev, high, wide, obj, gridColor, hor){  // if hor > 0 horizontal, if hor < 0 vertical, if hor = 0 both
 			var incre = high / dev;
 			obj.strokeStyle = gridColor;
-			
-			obj.moveTo(0,incre);
-			
 			obj.lineWidth = 0.1;
 			
-			for (var i = 1; i < high; i++){
-				obj.lineTo(wide, i * incre);
-				obj.stroke();
-				obj.moveTo(0, i * incre + incre );
+			
+			if (hor > 0 || hor === 0){
+				obj.moveTo(0,incre);
 				
+				for (var i = 1; i < high; i++){
+					obj.lineTo(wide, i * incre);
+					obj.stroke();
+					obj.moveTo(0, i * incre + incre );
+					
+				}
+			
 			}
 			
-			obj.moveTo(incre, 0);
+			if (hor < 0 || hor === 0){
 			
-			for (var i = 1; i < wide; i++){
-				obj.lineTo(i * incre, high);
-				obj.stroke();
-				obj.moveTo(i * incre + incre , 0);
+				obj.moveTo(incre, 0);
 				
+				for (var i = 1; i < wide; i++){
+					obj.lineTo(i * incre, high);
+					obj.stroke();
+					obj.moveTo(i * incre + incre , 0);
+					
+				}
+			
 			}
 		},
 		
@@ -140,14 +147,18 @@ var can = {
 			 obj.lineTo(x + 30, y + 30);
 		},
 		
-		hexGrid: function(high, wide, obj){
+		hexGrid: function(dev, high, wide, obj){
+			
+		},
+		
+		triGrid: function(dev, high, wide, obj){
 			
 		}
 }
 
 var drw = can.setUp("graph");
 
-//can.showGrid(5, 400, 600, drw, "blue");
+//can.showGrid(5, 400, 600, drw, "blue", 1);
 can.polarGrid(200,200,200, 10, drw, "blue");
 //can.rays(200, 200, 200, 8, drw, "pink");
 
