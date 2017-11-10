@@ -163,6 +163,10 @@ var can = {
 		
 		triGrid: function(dev, high, wide, hor, obj){
 			can.showGrid(dev, high, wide, hor, obj);
+		},
+		
+		slantLines: function(high, wide, ang){
+			
 		}
 }
 
@@ -173,7 +177,7 @@ can.polarGrid(200,200,200, 10, drw, "blue");
 //can.rays(200, 200, 200, 8, drw, "pink");
 
 can.polarPlot([2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw, "red");
-//can.polarPlot(testInput, 200, 200, 20, drw);
+can.polarPlot(testInput, 200, 200, 20, drw, "green");
 
 //can.test(350,350,drw);
 can.triGrid(10, 200, 200, -1, drw);
