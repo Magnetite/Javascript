@@ -165,8 +165,21 @@ var can = {
 			can.showGrid(dev, high, wide, hor, obj);
 		},
 		
-		slantLines: function(high, wide, ang){
+		slantLines: function(high, wide, ang, dev, obj, color){
+			var xDown = high * Math.tan(ang);
+			var incr = wide / dev;
+			var y = 0, x = 0;
 			
+			obj.beginPath();
+			obj.strokeStyle = color;
+			obj.moveTo(x, y);
+			
+			for (var i = 0; i < dev; i++  ){
+				obj.lineTo(xDown, high);
+				obj.stroke();
+				xDown += incr;
+				obj.moveTo(xDown, high);
+			}
 		}
 }
 
