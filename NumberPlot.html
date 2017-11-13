@@ -166,24 +166,37 @@ var can = {
 		},
 		
 		slantLines: function(high, wide, ang, obj, color, forward){
+		
 			var xDown = high * Math.tan(ang);
 			
-			
-			var incr = Math.abs(xDown);
-			var y = 0, x = 0;
+			var incr = xDown;
 			
 			obj.beginPath();
 			obj.strokeStyle = color;
-			obj.moveTo(x, y);
 			
+			var  w = 0;
+			
+			if ( forward === 0){
+				
+				//incr *= -1;
+				
+				obj.moveTo(wide,0);
+				w = wide;
+			} else {
+				obj.moveTo(0,0)
+			}
+			
+			
+			  
+			//todo fix this!
 			while (xDown <= wide ){
-				obj.lineTo(xDown, high);
+			
+			
+				obj.lineTo( Math.abs(w - xDown), high);
+				
 				obj.stroke();
-				if (forward === 1){
-					obj.moveTo(xDown, 0);
-				} else {
-					obj.moveTo(-1 * xDown, 0);
-				}
+				obj.moveTo( Math.abs(w - xDown), 0);
+				
 				xDown += incr;
 			}
 		}
@@ -199,7 +212,7 @@ can.polarPlot([2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,
 can.polarPlot(testInput, 200, 200, 20, drw, "green");
 
 can.slantLines(400,600, 0.2, drw, "green", 1);
-can.slantLines(400,600, -0.2, drw, "green", 0);
+can.slantLines(400,600, 0.2, drw, "green", 0);
 
 //can.test(350,350,drw);
 //can.triGrid(10, 200, 200, -1, drw);
