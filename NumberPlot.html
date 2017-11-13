@@ -181,7 +181,7 @@ var can = {
 				//incr *= -1;
 				
 				obj.moveTo(wide,0);
-				w = wide;
+				w = wide - (wide % incr);
 			} else {
 				obj.moveTo(0,0)
 			}
