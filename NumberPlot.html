@@ -165,11 +165,11 @@ var can = {
 			can.showGrid(dev, high, wide, hor, obj);
 		},
 		
-		slantLines: function(high, wide, ang, obj, color, forward){
+		slantLines: function(high, wide, ang, obj, color, forward, incr){
 		
 			var xDown = high * Math.tan(ang);
 			
-			var incr = xDown;
+			//var incr = xDown;
 			
 			obj.beginPath();
 			obj.strokeStyle = color;
@@ -180,8 +180,9 @@ var can = {
 				
 				//incr *= -1;
 				
-				obj.moveTo(wide,0);
+				
 				w = wide - (wide % incr);
+				obj.moveTo(w,0);
 			} else {
 				obj.moveTo(0,0)
 			}
@@ -211,8 +212,8 @@ var drw = can.setUp("graph");
 can.polarPlot([2,3,5,7,11,13,17,19,23,29,31,37,41,43,47,53,59,61,67,71,73,79,83,89,97,101,103,107,109,113,127,131,137,139,149,151,157,163,167,173], 200, 200, 20, drw, "red");
 can.polarPlot(testInput, 200, 200, 20, drw, "green");
 
-can.slantLines(400,600, 0.2, drw, "green", 1);
-can.slantLines(400,600, 0.2, drw, "green", 0);
+can.slantLines(400,600, 0.1, drw, "green", 1, 40);
+can.slantLines(400,600, 0.1, drw, "green", 0, 40);
 
 //can.test(350,350,drw);
 //can.triGrid(10, 200, 200, -1, drw);
