@@ -9,16 +9,16 @@
 </head>
 <body>
 
-<canvas id="graph" width="600" height="400" border="10px" >
+<canvas id="graph" width="600" height="400" style="border: 1px solid #c3c3c3;" >
 Your browser does not support the canvas element.
 </canvas>
 
 <script>
 
-var canvas = document.getElementById(id);
+var canvas = document.getElementById("graph");
 var context =  canvas.getContext("2d");
 
-canvas.addEventListener("click", marker, false);
+canvas.addEventListener("mousedown", marker, false);
 
 function marker(e){
 	context.fillStyle = "black";
