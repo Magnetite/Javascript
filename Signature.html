@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<canvas id="graph" width="600" height="400" >
+<canvas id="graph" width="600" height="400" border="10px" >
 Your browser does not support the canvas element.
 </canvas>
 
@@ -17,6 +17,13 @@ Your browser does not support the canvas element.
 
 var canvas = document.getElementById(id);
 var context =  canvas.getContext("2d");
+
+canvas.addEventListener("click", marker, false);
+
+function marker(e){
+	context.fillStyle = "black";
+	context.fillRect(e.clientX, e.clientY, 5,5);
+}
 
 </script>
 
