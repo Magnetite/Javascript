@@ -26,7 +26,15 @@ function marker(e){
 	context.fillStyle = "black";
 	
 	//if (e.mousedown){
-		context.fillRect(e.clientX, e.clientY, 1,1);
+		//context.fillRect(e.clientX, e.clientY, 1,1);
+		if (Sig.length === 0){
+			context.moveTo(e.clientX, e.clientY);
+		}
+		
+		context.lineTo(e.clientX, e.clientY);
+		context.stroke();
+		context.moveTo(e.clientX, e.clientY);
+		
 		Sig.push(e.clientX);
 		Sig.push(e.clientY);
 	//}
