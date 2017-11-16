@@ -18,11 +18,18 @@ Your browser does not support the canvas element.
 var canvas = document.getElementById("graph");
 var context =  canvas.getContext("2d");
 
-canvas.addEventListener("mousedown", marker, false);
+var Sig = [];  //<= Stores the Signature as an array of point coordinates
+
+canvas.addEventListener("mousemove", marker, false);
 
 function marker(e){
 	context.fillStyle = "black";
-	context.fillRect(e.clientX, e.clientY, 5,5);
+	
+	//if (e.mousedown){
+		context.fillRect(e.clientX, e.clientY, 1,1);
+		Sig.push(e.clientX);
+		Sig.push(e.clientY);
+	//}
 }
 
 </script>
