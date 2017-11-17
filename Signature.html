@@ -20,16 +20,19 @@ var context =  canvas.getContext("2d");
 
 var Sig = [];  //<= Stores the Signature as an array of point coordinates
 
+var tst = [193, 400, 193, 394, 193, 388, 193, 381, 193, 371, 193, 367, 196, 360, 202, 352, 209, 346, 236, 339, 249, 337, 295, 337, 317, 337, 329, 339, 335, 343, 337, 347, 337, 353, 337, 360, 337, 373, 335, 385, 335, 395];
+
 canvas.addEventListener("mousemove", marker, false);
+
 
 function marker(e){
 	context.fillStyle = "black";
 	
-	//if (e.mousedown){
-		//context.fillRect(e.clientX, e.clientY, 1,1);
+	
 		if (Sig.length === 0){
 			context.moveTo(e.clientX, e.clientY);
 		}
+		
 		
 		context.lineTo(e.clientX, e.clientY);
 		context.stroke();
@@ -37,8 +40,22 @@ function marker(e){
 		
 		Sig.push(e.clientX);
 		Sig.push(e.clientY);
-	//}
+	
 }
+
+function recall(drawArr, obj){
+
+	obj.moveTo(drawArr[0], drawArr[1]);
+
+	for (var i = 2, len = drawArr.length; i < len; i += 2){
+		obj.lineTo(drawArr[i], drawArr[i + 1]);
+		obj.stroke();
+		obj.moveTo( drawArr[i], drawArr[i + 1]);
+		
+	}
+}
+
+//recall(tst, context);
 
 </script>
 
