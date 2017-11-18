@@ -36,8 +36,17 @@ function marker(e){
 			context.moveTo(e.clientX, e.clientY);
 		}
 		
-		
 		if (toggle === 1){
+			context.beginPath();
+			toggle *= 2;
+		}
+		
+		
+		if (toggle > 0){
+			
+			
+			
+			
 			context.lineTo(e.clientX, e.clientY);
 			context.stroke();
 			context.moveTo(e.clientX, e.clientY);
