@@ -19,7 +19,7 @@ var canvas = document.getElementById("graph");
 var context =  canvas.getContext("2d");
 
 var Sig = [];  //<= Stores the Signature as an array of point coordinates
-var toggle = 1;  //<= Toggle from +1 to -1 and back, signalling when marker function is to mark the screen.
+var toggle = -1;  //<= Toggle from +1 to -1 and back, signalling when marker function is to mark the screen.
 
 var tst = [193, 400, 193, 394, 193, 388, 193, 381, 193, 371, 193, 367, 196, 360, 202, 352, 209, 346, 236, 339, 249, 337, 295, 337, 317, 337, 329, 339, 335, 343, 337, 347, 337, 353, 337, 360, 337, 373, 335, 385, 335, 395];
 
@@ -29,17 +29,14 @@ canvas.addEventListener("click", incre, false);
 
 function marker(e){
 	context.fillStyle = "black";
-	context.lineWidth = 7;
+	context.lineWidth = 4;
 	
 	
 		if (Sig.length === 0){
 			context.moveTo(e.clientX, e.clientY);
 		}
 		
-		if (toggle === 1){
-			context.beginPath();
-			toggle *= 2;
-		}
+		
 		
 		
 		if (toggle > 0){
@@ -70,6 +67,9 @@ function recall(drawArr, obj){
 
 function incre(){
 	toggle *= -1;
+	if (toggle === 1){
+		context.beginPath();
+	}
 }
 
 //recall(tst, context);
