@@ -9,7 +9,7 @@
 </head>
 <body>
 
-<canvas id="graph" width="600" height="400" style="border: 1px solid #c3c3c3;" >
+<canvas id="graph" width="900" height="400" style="border: 1px solid #c3c3c3;" >
 Your browser does not support the canvas element.
 </canvas>
 
@@ -24,12 +24,13 @@ var toggle = -1;  //<= Toggle from +1 to -1 and back, signalling when marker fun
 var tst = [193, 400, 193, 394, 193, 388, 193, 381, 193, 371, 193, 367, 196, 360, 202, 352, 209, 346, 236, 339, 249, 337, 295, 337, 317, 337, 329, 339, 335, 343, 337, 347, 337, 353, 337, 360, 337, 373, 335, 385, 335, 395];
 
 canvas.addEventListener("mousemove", marker, false);
-canvas.addEventListener("click", incre, false);
+canvas.addEventListener("mousedown", incre, false);
 
 
 function marker(e){
 	context.fillStyle = "black";
 	context.lineWidth = 4;
+	
 	
 	
 		if (Sig.length === 0){
@@ -39,7 +40,7 @@ function marker(e){
 		
 		
 		
-		if (toggle > 0){
+		if ( e.buttons === 1 ){
 			
 			
 			
@@ -58,6 +59,13 @@ function recall(drawArr, obj){
 	obj.moveTo(drawArr[0], drawArr[1]);
 
 	for (var i = 2, len = drawArr.length; i < len; i += 2){
+		
+		if (drawArr[i] < 0){
+			obj.beginPath();
+			obj.moveTo( drawArr[i], drawArr[i + 1]);
+		}
+	
+	
 		obj.lineTo(drawArr[i], drawArr[i + 1]);
 		obj.stroke();
 		obj.moveTo( drawArr[i], drawArr[i + 1]);
@@ -66,10 +74,8 @@ function recall(drawArr, obj){
 }
 
 function incre(){
-	toggle *= -1;
-	if (toggle === 1){
+	
 		context.beginPath();
-	}
 }
 
 //recall(tst, context);
