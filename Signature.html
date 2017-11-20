@@ -20,7 +20,7 @@ var context =  canvas.getContext("2d");
 
 var Sig = [];  //<= Stores the Signature as an array of point coordinates
 
-var tst = [193, 400, 193, 394, 193, 388, 193, 381, 193, 371, 193, 367, 196, 360, 202, 352, 209, 346, 236, 339, 249, 337, 295, 337, 317, 337, 329, 339, 335, 343, 337, 347, 337, 353, 337, 360, 337, 373, 335, 385, 335, 395];
+var tst = [193, 400, 193, 394, 193, 388, 193, 381, 193, 371, 193, 367, 196, 360, 202, 352, 209, 346, 236, 339, 249, 337, 295, 337, 317, 337, 329, 339, 335, 343, 337, 347, 337, 353, 337, 360, 337, 373, 335, 385, -335, 395,90, 368, 91, 368, 95, 372, 96, 374, 99, 378, 99, 379, 100, 380, 101, 380, 102, 380, 103, 380, 105, 380, 107, 380, 108, 379, 108, 376, 108, 375, 108, 372, 106, 366, 105, 364, 104, 362, 102, 360, 101, 359, 100, 359, 99, 359, 97, 359, 96, 359, 94, 360, 93, 363, 93, 364, 92, 366, 92, 367, 91, 369, -90, 370, 146, 357, 143, 357, 142, 359, 141, 361, 140, 364, 140, 365, 138, 368, 138, 370, 137, 371, 137, 373, 137, 374, 137, 375, 137, 377, 139, 377, 140, 377, 141, 377, 143, 375, -146, 374];
 
 canvas.addEventListener("mousemove", marker, false);
 canvas.addEventListener("mousedown", newPath, false);
@@ -56,26 +56,39 @@ function marker(e){
 
 function recall(drawArr, obj){
 
+	obj.beginPath();
 	obj.moveTo(drawArr[0], drawArr[1]);
 
 	for (var i = 2, len = drawArr.length; i < len; i += 2){
 		
-		if (drawArr[i] < 0){
+		if (drawArr[i] < 0 || i < 2){
 		
-			obj.lineTo(drawArr[i], drawArr[i + 1]);
+			
+			obj.lineTo(Math.abs(drawArr[i]), drawArr[i + 1]);
 			obj.stroke();
-			obj.moveTo( drawArr[i], drawArr[i + 1]);
+			//obj.moveTo( Math.abs(drawArr[i]), drawArr[i + 1]);
 		
 			obj.beginPath();
 			//obj.moveTo( drawArr[i], drawArr[i + 1]);
 		}
 	
 	
-		obj.lineTo(drawArr[i], drawArr[i + 1]);
+		obj.lineTo(Math.abs(drawArr[i]), drawArr[i + 1]);
 		obj.stroke();
-		obj.moveTo( drawArr[i], drawArr[i + 1]);
+		obj.moveTo( Math.abs(drawArr[i]), drawArr[i + 1]);
 		
 	}
+}
+
+function posi(obj, m, x, y){
+
+	if (m === 1){
+		obj.moveTo(Math.abs(x), Math.abs(y));
+	} else {
+		obj.lineTo(Math.abs(x), Math.abs(y));
+	}
+	
+	
 }
 
 function newPath(){
@@ -91,7 +104,7 @@ function endMark(){
 	
 }
 
-//recall(tst, context);
+recall(tst, context);
 
 </script>
 
