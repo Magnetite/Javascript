@@ -73,9 +73,9 @@ function recall(drawArr, obj){
 		}
 	
 	
-		obj.lineTo(Math.abs(drawArr[i]), drawArr[i + 1]);
+		posi(obj, 2, drawArr[i], drawArr[i + 1] );
 		obj.stroke();
-		obj.moveTo( Math.abs(drawArr[i]), drawArr[i + 1]);
+		posi( obj, 1, drawArr[i], drawArr[i + 1]);
 		
 	}
 }
