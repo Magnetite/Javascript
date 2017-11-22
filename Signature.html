@@ -59,9 +59,9 @@ function recall(drawArr, obj){
 	obj.beginPath();
 	obj.moveTo(drawArr[0], drawArr[1]);
 
-	for (var i = 2, len = drawArr.length; i < len; i += 2){
+	for (var i = 2, len = drawArr.length; i < len - 1; i += 2){
 		
-		if (drawArr[i] < 0 || i < 2){
+		if (drawArr[i] < 0){
 		
 			
 			obj.lineTo(Math.abs(drawArr[i]), drawArr[i + 1]);
