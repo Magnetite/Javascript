@@ -13,7 +13,7 @@
 Your browser does not support the canvas element.
 </canvas>
 <div class="w3-row">
-	<button class="w3-btn w3-red" id="clear">Clear</button> <button class="w3-btn w3-green">Save Image</button>
+	<button class="w3-btn w3-red" id="clear">Clear</button> <button class="w3-btn w3-green" id="save">Save Image</button>
 </div>
 
 <script>
@@ -28,6 +28,7 @@ var tst = [193, 400, 193, 394, 193, 388, 193, 381, 193, 371, 193, 367, 196, 360,
 canvas.addEventListener("mousemove", marker, false);
 canvas.addEventListener("mousedown", newPath, false);
 canvas.addEventListener("mouseup", endMark, false);
+document.getElementById("clear").addEventListener("click", clear);
 
 
 function marker(e){
@@ -105,6 +106,11 @@ function endMark(){
 	Sig[Sig.length - 2] *= -1;  //<= To mark the end of a path in the array 
 	}
 	
+}
+
+function clear(){
+	context.clearRect(0,0,canvas.width,canvas.height);
+	Sig = [];
 }
 
 recall(tst, context);
