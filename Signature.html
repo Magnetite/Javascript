@@ -29,6 +29,7 @@ canvas.addEventListener("mousemove", marker, false);
 canvas.addEventListener("mousedown", newPath, false);
 canvas.addEventListener("mouseup", endMark, false);
 document.getElementById("clear").addEventListener("click", clear);
+document.getElementById("save").addEventListener("click", save);
 
 
 function marker(e){
@@ -111,6 +112,11 @@ function endMark(){
 function clear(){
 	context.clearRect(0,0,canvas.width,canvas.height);
 	Sig = [];
+}
+
+function save(){
+	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  //From Stack Overflow
+	window.location.href=image; // it will save locally
 }
 
 recall(tst, context);
