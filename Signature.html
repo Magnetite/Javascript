@@ -13,13 +13,15 @@
 Your browser does not support the canvas element.
 </canvas>
 <div class="w3-row">
-	<button class="w3-btn w3-red" id="clear">Clear</button> <button class="w3-btn w3-green" id="save">Save Image</button>
+	<button class="w3-btn w3-red" id="clear">Clear</button> <button class="w3-btn w3-green" id="save">Save Image</button> <button class="w3-btn w3-black" id="bwToggle">bwTog</button>
 </div>
 
 <script>
 
 var canvas = document.getElementById("graph");
 var context =  canvas.getContext("2d");
+var togColor = "black";
+context.strokeStyle = togColor;
 
 var Sig = [];  //<= Stores the Signature as an array of point coordinates
 
@@ -30,6 +32,7 @@ canvas.addEventListener("mousedown", newPath, false);
 canvas.addEventListener("mouseup", endMark, false);
 document.getElementById("clear").addEventListener("click", clear);
 document.getElementById("save").addEventListener("click", save);
+document.getElementById("bwToggle").addEventListener("click", bwTog);
 
 
 function marker(e){
@@ -117,6 +120,18 @@ function clear(){
 function save(){
 	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");  //From Stack Overflow
 	window.location.href=image; // it will save locally
+}
+
+
+
+function bwTog(){
+	if ( togColor === "black"){
+		togColor = "green";
+	} else {
+		togColor = "black";
+	}
+	
+	context.strokeStyle = togColor;
 }
 
 recall(tst, context);
