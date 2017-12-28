@@ -41,24 +41,13 @@
 
 <hr>
 
-<div class="btn codeKey">Code Key</div>
+<div id="codeKey" class="btn codeKey">Code Key</div>
 
 
 <script>
 
 let start, end;
 var code_out = "", chars_out = "";
-
-$("#morse_code").mousedown( () => {
-	start = sec();
-});
-
-$("#morse_code").mouseup( () => {
-	end = sec();
-	
-	code_out += compare(start, end);
-	$("#morse_code").text(code_out);
-});
 
 sec = () => {
 	let t = new Date();
@@ -72,12 +61,32 @@ compare = (a,b) => {
 
 	let tst = b - a;
 	
-	if (tst > 3){
+	if (tst > 300){
 		return "-";
 	} 
 	
 	return ".";
 }
+
+
+
+$("#codeKey").mousedown( () => {
+	start = sec();
+	
+});
+
+$("#codeKey").mouseup( () => {
+	end = sec();
+	
+	code_out += compare(start, end);
+	$("#morse_code").text(code_out);
+	
+});
+
+
+
+
+
 	
 </script>
 
