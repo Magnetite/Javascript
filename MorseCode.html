@@ -30,6 +30,11 @@
 		
 	}
 	
+	.bigTxt{
+		font-size: 200px;
+		font-weight: bold;
+	}
+	
 	</style>
 
 </head>
@@ -46,7 +51,7 @@
 
 <script>
 
-let start, end;
+let start, end, spaces;
 var code_out = "", chars_out = "";
 
 sec = () => {
@@ -57,15 +62,25 @@ sec = () => {
 }
 
 //Compare a and b, and output a "." or a "-"
-compare = (a,b) => {
+compare = (a,b, m) => {
 
+	let n = new Date();
+	let lastT = n.getTime() - end;
+	
+	if (m === 1 && lastT > 300 ){
+		return " ";
+	} else if (m === 1){
+		return "";
+	}
+	
 	let tst = b - a;
 	
-	if (tst > 300){
+	if (tst > 250){
 		return "-";
 	} 
 	
 	return ".";
+	
 }
 
 
@@ -73,12 +88,13 @@ compare = (a,b) => {
 $("#codeKey").mousedown( () => {
 	start = sec();
 	
+	code_out += compare(start, end, 1);
 });
 
 $("#codeKey").mouseup( () => {
 	end = sec();
 	
-	code_out += compare(start, end);
+	code_out += compare(start, end, 0);
 	$("#morse_code").text(code_out);
 	
 });
