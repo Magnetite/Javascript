@@ -24,9 +24,9 @@
 		
 		color: white;
 		text-align: center;
-		padding-top: 38px;
-		padding-bottom: 38px;
+		padding: 0,30,0,30;
 		font-size: 36;
+		font-weight: bold;
 		
 	}
 	
@@ -45,6 +45,39 @@
 
 
 <script>
+
+let start, end;
+var code_out = "", chars_out = "";
+
+$("#morse_code").mousedown( () => {
+	start = sec();
+});
+
+$("#morse_code").mouseup( () => {
+	end = sec();
+	
+	code_out += compare(start, end);
+	$("#morse_code").text(code_out);
+});
+
+sec = () => {
+	let t = new Date();
+	
+	return t.getTime();
+	
+}
+
+//Compare a and b, and output a "." or a "-"
+compare = (a,b) => {
+
+	let tst = b - a;
+	
+	if (tst > 3){
+		return "-";
+	} 
+	
+	return ".";
+}
 	
 </script>
 
