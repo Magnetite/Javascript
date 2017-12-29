@@ -31,7 +31,7 @@
 	}
 	
 	.bigTxt{
-		font-size: 200px;
+		font-size: 40px;
 		font-weight: bold;
 	}
 	
@@ -40,13 +40,15 @@
 </head>
 <body>
 
-<div id="morse_code" class="panel panel-default"></div>
+<div id="morse_code" class="panel panel-default bigTxt"></div>
 
 <div id="translation" class="panel panel-default"></div>
 
 <hr>
 
 <div id="codeKey" class="btn codeKey">Code Key</div>
+
+<div id="clear" class="btn btn-default ">Clear</div>
 
 
 <script>
@@ -67,7 +69,7 @@ compare = (a,b, m) => {
 	let n = new Date();
 	let lastT = n.getTime() - end;
 	
-	if (m === 1 && lastT > 300 ){
+	if (m === 1 && lastT > 500 ){
 		return " ";
 	} else if (m === 1){
 		return "";
@@ -97,6 +99,10 @@ $("#codeKey").mouseup( () => {
 	code_out += compare(start, end, 0);
 	$("#morse_code").text(code_out);
 	
+});
+
+$("#clear").click( () => {
+	$("#morse_code").text("");
 });
 
 
