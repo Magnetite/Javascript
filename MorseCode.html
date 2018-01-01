@@ -40,7 +40,7 @@
 </head>
 <body>
 
-<pre id="morse_code" class="panel panel-default bigTxt"></pre>
+<pre id="morse_code" class="jumbotron bigTxt"></pre>
 
 <div id="translation" class="panel panel-default"></div>
 
@@ -55,6 +55,12 @@
 
 let start, end, spaces;
 var code_out = "", chars_out = "";
+
+toLetters = () => {
+	let codes = code_out.split(" ");
+	
+	let alphaDict = {};
+}
 
 sec = () => {
 	let t = new Date();
