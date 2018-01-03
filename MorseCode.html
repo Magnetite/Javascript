@@ -102,6 +102,8 @@ toLetters = () => {
 	codes.forEach( cur => {
 		chars_out += alphaDict[ cur ];
 	});
+	
+	$("#translation").text(chars_out);
 }
 
 sec = () => {
@@ -141,6 +143,8 @@ $("#codeKey").mousedown( () => {
 	start = sec();
 	
 	code_out += compare(start, end, 1);
+	
+	toLetters();
 });
 
 $("#codeKey").mouseup( () => {
@@ -153,7 +157,9 @@ $("#codeKey").mouseup( () => {
 
 $("#clear").click( () => {
 	$("#morse_code").text("");
+	$("#translation").text("");
 	code_out = "";
+	chars_out = "";
 });
 
 
