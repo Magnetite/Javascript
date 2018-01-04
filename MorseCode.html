@@ -57,7 +57,7 @@ let start, end, spaces;
 var code_out = "", chars_out = "";
 
 toLetters = () => {
-	let codes = code_out.split(" ");
+	let codes = code_out.replace("-", "s")split(" ");
 	
 	let alphaDict = {
 		".-":"a",
