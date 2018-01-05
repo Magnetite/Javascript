@@ -57,8 +57,9 @@ let start, end, spaces;
 var code_out = "", chars_out = "";
 
 toLetters = () => {
-	let co = code_out.replace("-", "s").replace(".", "d");
-	let codes = co.split(" ");
+	let co = code_out.replace("-", "s")
+	let c = co.replace(".", "d");
+	let codes = c.split(" ");
 	
 	let alphaDict = {
 		"ds":"a",
@@ -100,6 +101,7 @@ toLetters = () => {
 		
 	};
 	
+	chars_out = "";  //Reset chars_out so it does not repeat items
 	codes.forEach( cur => {
 		chars_out += alphaDict[ cur ];
 	});
