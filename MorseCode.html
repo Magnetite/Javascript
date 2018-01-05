@@ -145,9 +145,9 @@ compare = (a,b, m) => {
 $("#codeKey").mousedown( () => {
 	start = sec();
 	
-	code_out += compare(start, end, 1);
+	//code_out += compare(start, end, 1);
 	
-	toLetters();
+	//toLetters();
 });
 
 $("#codeKey").mouseup( () => {
@@ -155,6 +155,8 @@ $("#codeKey").mouseup( () => {
 	
 	code_out += compare(start, end, 0);
 	$("#morse_code").text(code_out);
+	
+	toLetters();
 	
 });
 
