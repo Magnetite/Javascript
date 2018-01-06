@@ -148,6 +148,10 @@ $("#codeKey").mousedown( () => {
 	//code_out += compare(start, end, 1);
 	
 	//toLetters();
+	let nd = new Date();
+	if (end !== 0 && nd.getTime() - end > 1000 ){
+		code_out += "    ";
+	}
 });
 
 $("#codeKey").mouseup( () => {
