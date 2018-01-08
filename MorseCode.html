@@ -155,14 +155,22 @@ $("#codeKey").mousedown( () => {
 	//toLetters();
 	let nd = new Date();
 	if (end !== 0 && nd.getTime() - end > 1000 ){
-		code_out += "    ";
+	
+		if (code_out !== null){
+			code_out += "    ";
+		} 
 	}
 });
 
 $("#codeKey").mouseup( () => {
 	end = sec();
 	
-	code_out += compare(start, end, 0);
+	if (code_out === null){
+		code_out = compare(start, end, 0);
+	} else {
+		code_out += compare(start, end, 0);
+	}
+	
 	$("#morse_code").text(code_out);
 	
 	toLetters();
@@ -172,7 +180,7 @@ $("#codeKey").mouseup( () => {
 $("#clear").click( () => {
 	$("#morse_code").text("");
 	$("#translation").text("");
-	code_out = "";
+	code_out = null;
 	chars_out = "";
 });
 
