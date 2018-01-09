@@ -62,9 +62,12 @@ let start, end, spaces;
 var code_out = "", chars_out = "";
 
 toLetters = () => {
-	let co = code_out.replace("-", "s")
-	let c = co.replace(".", "d");
+	let co = code_out.replace(/-/g, "s")
+	let c = co.replace(/./g, "d");
 	let codes = c.split(" ");
+	
+	//testing
+	console.log(codes);
 	
 	let alphaDict = {
 		"ds":"a",
@@ -127,9 +130,7 @@ compare = (a,b, m) => {
 	let n = new Date();
 	let lastT = n.getTime() - end;
 	
-	if (m === 1 && lastT > 1000 ){
-		return "     ";
-	} else if (m === 1 && lastT > 400){
+	 if (m === 1 && lastT > 400){
 		return  " ";
 	}else if (m === 1){
 		return "";
@@ -150,14 +151,12 @@ compare = (a,b, m) => {
 $("#codeKey").mousedown( () => {
 	start = sec();
 	
-	//code_out += compare(start, end, 1);
 	
-	//toLetters();
 	let nd = new Date();
-	if (end !== 0 && nd.getTime() - end > 1000 ){
+	if (end !== 0 && nd.getTime() - end > 400 ){
 	
 		if (code_out !== null){
-			code_out += "    ";
+			code_out += " ";
 		} 
 	}
 });
