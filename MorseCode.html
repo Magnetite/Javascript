@@ -63,7 +63,7 @@ var code_out = "", chars_out = "";
 
 toLetters = () => {
 	let co = code_out.replace(/-/g, "s")
-	let c = co.replace(/./g, "d");
+	let c = co.replace(/[.]/g, "d");
 	let codes = c.split(" ");
 	
 	//testing
@@ -73,7 +73,7 @@ toLetters = () => {
 		"ds":"a",
 		"sddd":"b",
 		"sds":"c",
-		"ssd":"d",
+		"sdd":"d",
 		"d":"e",
 		"ddsd":"f",
 		"ssd":"g",
@@ -96,16 +96,16 @@ toLetters = () => {
 		"sdds":"x",
 		"sdss":"y",
 		"ssdd":"z",
-		"-----":"0",
-		".----":"1",
-		"..---":"2",
-		"...--":"3",
-		"....-":"4",
-		".....":"5",
-		"-....":"6",
-		"--...":"7",
-		"---..":"8",
-		"----.":"9"
+		"sssss":"0",
+		"dssss":"1",
+		"ddsss":"2",
+		"dddss":"3",
+		"dddds":"4",
+		"ddddd":"5",
+		"sdddd":"6",
+		"ssddd":"7",
+		"sssdd":"8",
+		"ssssd":"9"
 		
 	};
 	
