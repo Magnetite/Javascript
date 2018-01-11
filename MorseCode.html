@@ -111,7 +111,12 @@ toLetters = () => {
 	
 	chars_out = "";  //Reset chars_out so it does not repeat items
 	codes.forEach( cur => {
-		chars_out += alphaDict[ cur ];
+	
+		if (chars_out === undefined){
+				chars_out = alphaDict[ cur ];
+			} else {
+				chars_out += alphaDict[ cur ];
+			}
 	});
 	
 	$("#translation").text(chars_out);
