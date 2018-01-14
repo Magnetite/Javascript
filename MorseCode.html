@@ -57,10 +57,10 @@
 
 <div id="speed" class="btn btn-default ">Speed:
 <select>
-	<option>400</option>
-	<option>600</option>
-	<option>800</option>
-	<option>1000</option>
+	<option value="400">400</option>
+	<option value="600">600</option>
+	<option value="800">800</option>
+	<option value="1000">1000</option>
 </select>
 </div>
 
@@ -208,8 +208,10 @@ $("#clear").click( () => {
 	chars_out = "";
 });
 
-$("speed").change( () => {
-	space = $("speed").value();
+//Fix this code, get space to equal a int selected in the select box.
+$("#speed").change( () => {
+	space = parseInt( document.getElementById("speed").value );
+	console.log("space = " + space);
 });
 
 
