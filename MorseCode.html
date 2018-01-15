@@ -55,9 +55,9 @@
 
 <div id="clear" class="btn btn-default ">Clear</div>
 
-<div id="speed" class="btn btn-default ">Speed:
-<select>
-	<option value="400">400</option>
+<div class="btn btn-default ">Speed:
+<select id="speed">
+	<option value="400" selected="selected" >400</option>
 	<option value="600">600</option>
 	<option value="800">800</option>
 	<option value="1000">1000</option>
@@ -210,8 +210,8 @@ $("#clear").click( () => {
 
 //Fix this code, get space to equal a int selected in the select box.
 $("#speed").change( () => {
-	space = parseInt( document.getElementById("speed").value );
-	console.log("space = " + space);
+	let el = document.getElementById("speed");
+	space = el.options[el.selectedIndex].value;
 });
 
 
