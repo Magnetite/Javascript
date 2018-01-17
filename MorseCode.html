@@ -4,8 +4,6 @@
 
 	<title>Morse Code practice</title>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
-
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -19,12 +17,10 @@
 		height: 76px;
 		border-radius: 100%;
 		background-color: red;
-		
 		border: 3px solid black;
 		
 		color: white;
 		text-align: center;
-		//padding: 100px,5px,5px;
 		padding-top: 22px;
 		padding-left: 4px;
 		font-size: 36;
@@ -77,9 +73,6 @@ toLetters = () => {
 	let co = code_out.replace(/-/g, "s")
 	let c = co.replace(/[.]/g, "d");
 	let codes = c.split(" ");
-	
-	//testing
-	console.log(codes);
 	
 	let alphaDict = {
 		"ds":"a",
@@ -210,15 +203,11 @@ $("#clear").click( () => {
 	chars_out = "";
 });
 
-//Fix this code, get space to equal a int selected in the select box.
+//Change speed variable to change space wait time
 $("#speed").change( () => {
 	let el = document.getElementById("speed");
 	space = el.options[el.selectedIndex].value;
 });
-
-
-
-
 
 	
 </script>
