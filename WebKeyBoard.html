@@ -10,14 +10,46 @@
 	
 	<style>
 	
+	#board div{
+	float: left;
+		//height: 30px;
+		//width: 30px;
+		 border-radius: 5px;
+		 background-color: blue;
+		 text-align: center;
+		 color: green;
+		 margin: 3px;
+	}
+	
+	#board div:hover{
+		background-color: red;
+	}
 	</style>
 
 </head>
 <body>
 
 <div id="board" class="jumbotron">
-<div>`</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div>
+	<div>
+		<div class="row">
+			<div class="btn btn-default">`</div> <div class="btn btn-default">1</div> <div class="btn btn-default">2</div> 
+			<div class="btn btn-default">3</div>  <div class="btn btn-default">4</div> <div class="btn btn-default">5</div> 
+			<div class="btn btn-default">6</div> <div class="btn btn-default">7</div> <div class="btn btn-default">8</div> 
+			<div class="btn btn-default">9</div> <div class="btn btn-default">0</div> <div class="btn btn-default">-</div> 
+			<div class="btn btn-default">=</div> <div class="btn btn-default">backspace</div>
+		</div>
+		
+		<div class="row">
+			<div class="btn btn-default">tab</div> <div class="btn btn-default">Q</div> <div class="btn btn-default">W</div> 
+			<div class="btn btn-default">E</div>  <div class="btn btn-default">R</div> <div class="btn btn-default">T</div> 
+			<div class="btn btn-default">Y</div> <div class="btn btn-default">U</div> <div class="btn btn-default">I</div> 
+			<div class="btn btn-default">O</div> <div class="btn btn-default">P</div> <div class="btn btn-default">[</div> 
+			<div class="btn btn-default">]</div> <div class="btn btn-default">\</div>
+		</div>
+		
+	</div>
 </div>
+
 
 </body>
 </html>
