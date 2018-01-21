@@ -59,7 +59,7 @@
 		</div>
 		
 		<div class="row col-lg-12">
-			<div class="btn btn-default">caps</div> <div class="btn btn-default">A</div> <div class="btn btn-default">S</div> 
+			<div id="caps" class="btn btn-default">caps</div> <div class="btn btn-default">A</div> <div class="btn btn-default">S</div> 
 			<div class="btn btn-default">D</div>  <div class="btn btn-default">F</div> <div class="btn btn-default">G</div> 
 			<div class="btn btn-default">H</div> <div class="btn btn-default">J</div> <div class="btn btn-default">K</div> 
 			<div class="btn btn-default">L</div> <div class="btn btn-default"><sup>:</sup>;</div> <div class="btn btn-default"><sup>"</sup>'</div> 
@@ -67,7 +67,7 @@
 		</div>
 		
 		<div class="row col-lg-12">
-			<div class="btn btn-default">shift</div> <div class="btn btn-default">Z</div> <div class="btn btn-default">X</div> 
+			<div id="shift" class="btn btn-default">shift</div> <div class="btn btn-default">Z</div> <div class="btn btn-default">X</div> 
 			<div class="btn btn-default">C</div>  <div class="btn btn-default">V</div> <div class="btn btn-default">B</div> 
 			<div class="btn btn-default">N</div> <div class="btn btn-default">M</div> <div class="btn btn-default"> <sup> < </sup> ,</div> 
 			<div class="btn btn-default"><sup>></sup>.</div> <div class="btn btn-default"><sup>?</sup>/</div> 
@@ -76,7 +76,17 @@
 		
 	</div>
 
-
+<script>
+	let cap = ( () => {
+		let tog = 1;
+		
+		return () => {
+			tog *= -1;
+			
+			
+		};
+	})();
+</script>
 
 </body>
 </html>
