@@ -83,6 +83,12 @@
 		return () => {
 			tog *= -1;
 			
+			if (tog === 1){
+				document.getElementById("caps").style = "background-color: blue";
+			} else {
+				document.getElementById("caps").style = "background-color: black";
+			}
+			
 			
 		};
 	})();
