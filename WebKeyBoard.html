@@ -77,16 +77,16 @@
 	</div>
 
 <script>
-	let cap = ( () => {
+	let color = ( () => {
 		let tog = 1;
 		
-		return () => {
+		return (id) => {
 			tog *= -1;
 			
 			if (tog === 1){
-				document.getElementById("caps").style = "background-color: blue";
+				document.getElementById(id).style = "background-color: blue";
 			} else {
-				document.getElementById("caps").style = "background-color: black";
+				document.getElementById(id).style = "background-color: black";
 			}
 			
 			
