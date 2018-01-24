@@ -33,6 +33,10 @@
 		background-color: black;  // Not making the backgroud black!
 	}
 	
+	body{
+		background-color: grey;
+	}
+	
 	
 	
 	
@@ -84,7 +88,7 @@
 			tog *= -1;
 			
 			if (tog === 1){
-				document.getElementById(id).style = "background-color: blue";
+				document.getElementById(id).style = "background-color: pink";
 			} else {
 				document.getElementById(id).style = "background-color: black";
 			}
@@ -92,6 +96,8 @@
 			
 		};
 	})();
+	
+	$("#caps").click( function(){color("caps") });
 </script>
 
 </body>
