@@ -88,9 +88,9 @@
 			tog *= -1;
 			
 			if (tog === 1){
-				document.getElementById(id).style = "background-color: pink";
-			} else {
 				document.getElementById(id).style = "background-color: black";
+			} else {
+				document.getElementById(id).style = "background-color: pink";
 			}
 			
 			
@@ -98,6 +98,7 @@
 	})();
 	
 	$("#caps").click( function(){color("caps") });
+	$("#shift").click( function(){color("shift") });
 </script>
 
 </body>
