@@ -10,7 +10,7 @@
 	
 	<style>
 	
-	#board div{
+	.board div{
 	float: left;
 		//height: 30px;
 		//width: 30px;
@@ -23,14 +23,14 @@
 		 
 	}
 	
-	#board div:hover{
+	.board div:hover{
 		background-color: red;
 		font-weight: bold;
 	}
 	
-	#board{
-		width: 48%;
-		background-color: black;  // Not making the backgroud black!
+	.board{
+		width: 700px;
+		background-color: black;  // Not making the background black!
 	}
 	
 	body{
@@ -45,7 +45,7 @@
 </head>
 <body>
 
-	<div id="board">
+	<div class="board">
 		<div class="row col-lg-12">
 			<div class="btn btn-default"><sup>~</sup>`</div> <div class="btn btn-default">1</div> <div class="btn btn-default">2</div> 
 			<div class="btn btn-default">3</div>  <div class="btn btn-default">4</div> <div class="btn btn-default">5</div> 
@@ -88,7 +88,7 @@
 			tog *= -1;
 			
 			if (tog === 1){
-				document.getElementById(id).style = "background-color: black";
+				document.getElementById(id).style = "background-color: blue";
 			} else {
 				document.getElementById(id).style = "background-color: pink";
 			}
