@@ -81,21 +81,25 @@
 	</div>
 
 <script>
-	let color = ( () => {
-		let tog = 1;
+	let color = (id) => {
+	
+		return () => {
+			let tog = 1;
+			
+			return (id) => {
+				tog *= -1;
+				
+				if (tog === 1){
+					document.getElementById(id).style = "background-color: blue";
+				} else {
+					document.getElementById(id).style = "background-color: pink";
+				}
+				
+				
+			};
 		
-		return (id) => {
-			tog *= -1;
-			
-			if (tog === 1){
-				document.getElementById(id).style = "background-color: blue";
-			} else {
-				document.getElementById(id).style = "background-color: pink";
-			}
-			
-			
 		};
-	})();
+	};
 	
 	$("#caps").click( function(){color("caps") });
 	$("#shift").click( function(){color("shift") });
