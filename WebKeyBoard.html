@@ -81,9 +81,9 @@
 	</div>
 
 <script>
-	let color = (id) => {
+	let color = ( () => {
 	
-		return () => {
+		
 			let tog = 1;
 			
 			return (id) => {
@@ -98,8 +98,8 @@
 				
 			};
 		
-		};
-	};
+		
+	})();
 	
 	$("#caps").click( function(){color("caps") });
 	$("#shift").click( function(){color("shift") });
