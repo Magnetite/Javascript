@@ -84,15 +84,18 @@
 	let color = ( () => {
 	
 		
-			let tog = 1;
+			let tog = -1;
+			let tog2 = -1;
 			
-			return (id) => {
+			return (id, mode) => {
 				tog *= -1;
 				
-				if (tog === 1){
-					document.getElementById(id).style = "background-color: blue";
-				} else {
+				if (tog === 1 && mode === 0){
 					document.getElementById(id).style = "background-color: pink";
+				} else if (tog2 === 1 && mode === 1){
+					document.getElementById(id).style = "background-color: pink";
+				} else {
+					document.getElementById(id).style = "background-color: blue";
 				}
 				
 				
@@ -101,8 +104,8 @@
 		
 	})();
 	
-	$("#caps").click( function(){color("caps") });
-	$("#shift").click( function(){color("shift") });
+	$("#caps").click( function(){color("caps", 0) });
+	$("#shift").click( function(){color("shift", 1) });
 </script>
 
 </body>
