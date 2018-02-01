@@ -47,6 +47,10 @@
 </head>
 <body>
 
+<p id="text">
+	
+</p>
+
 	<div class="board">
 		<div class="row col-lg-12">
 			<div class="btn btn-default"><sup>~</sup>`</div> <div class="btn btn-default">1</div> <div class="btn btn-default">2</div> 
@@ -108,8 +112,14 @@
 		
 	})();
 	
+	
 	$("#caps").click( function(){color("caps", 0) });
 	$("#shift").click( function(){color("shift", 1) });
+	
+	//prints out the value of the pressed button to the p tag with id "text"
+	let print = ele => {
+		
+	};
 </script>
 
 </body>
