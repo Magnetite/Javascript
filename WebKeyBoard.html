@@ -118,7 +118,9 @@
 	
 	//prints out the value of the pressed button to the p tag with id "text"
 	let print = ele => {
+		let vl = $("#" + ele).text();
 		
+		$("#text").value += vl;
 	};
 </script>
 
