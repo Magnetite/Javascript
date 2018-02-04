@@ -92,6 +92,9 @@
 	</div>
 
 <script>
+
+	let brd = []; //stores contents that get displayed in the p tag in board.
+
 	let color = ( () => {
 	
 		
@@ -123,12 +126,14 @@
 	
 	//prints out the value of the pressed button to the p tag with id "text"
 	let print = ele => {
-		let vl = $("#" + ele).text();
+		brd += $("#" + ele).text();
 		
-		$("#text").value += vl;
+		
+		$("#text").value = brd.join("");
 	};
 	
 	let clear = () => {
+		brd = [];
 		$("#text").value = "";
 	}
 </script>
