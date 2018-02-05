@@ -89,6 +89,7 @@
 			
 		</div>
 		
+		<div id="clear" class="btn btn-default">Clear Screen</div>
 	</div>
 
 <script>
@@ -120,9 +121,15 @@
 		
 	})();
 	
+	let clear = () => {
+		brd = [];
+		$("#text").innerHTML = "";
+	}
+	
 	
 	$("#caps").click( function(){color("caps", 0) });
 	$("#shift").click( function(){color("shift", 1) });
+	$("#clear").click( function(){ clear()  });
 	
 	//prints out the value of the pressed button to the p tag with id "text"
 	let print = ele => {
@@ -132,10 +139,9 @@
 		$("#text").value = brd.join("");
 	};
 	
-	let clear = () => {
-		brd = [];
-		$("#text").value = "";
-	}
+	
+	
+	
 </script>
 
 </body>
