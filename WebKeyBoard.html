@@ -140,6 +140,16 @@
 		
 	}
 	
+	
+	
+	//prints out the value of the pressed button to the p tag with id "text"
+	let print = ele => {
+		brd += $("#" + ele).text();
+		
+		
+		$("#text").value = brd.join("");
+	};
+	
 	let btnVal = e => {
 		let chr = e.target.value;
 		
@@ -153,13 +163,7 @@
 	
 	$("#text").click( function(){ btnVal(event) });
 	
-	//prints out the value of the pressed button to the p tag with id "text"
-	let print = ele => {
-		brd += $("#" + ele).text();
-		
-		
-		$("#text").value = brd.join("");
-	};
+	
 	
 	
 	
