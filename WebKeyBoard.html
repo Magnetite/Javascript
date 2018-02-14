@@ -151,8 +151,8 @@
 	};
 	
 	let btnVal = e => {
-		let chr = e.target.text;
-		
+		let chr = $(e.target).text();
+		console.log(chr);
 		print(chr);
 	}
 	
