@@ -133,7 +133,7 @@
 	
 	let clear = () => {
 		brd = [];
-		$("#text").text(".");
+		$("#board").text(".");
 	}
 	
 	let attach = id => {
@@ -152,7 +152,7 @@
 	
 	let btnVal = e => {
 		let chr = $(e.target).text();
-		console.log(chr);
+		console.log(chr);  //debugging
 		print(chr);
 	}
 	
