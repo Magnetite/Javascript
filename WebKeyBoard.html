@@ -55,7 +55,7 @@
 
 
 
-	<div class="board">
+	<div class="board" id="board">
 	
 	<p id="text">
 	test string
@@ -133,7 +133,7 @@
 	
 	let clear = () => {
 		brd = [];
-		$("#board").text(".");
+		$("#text").text(".");
 	}
 	
 	let attach = id => {
@@ -144,14 +144,14 @@
 	
 	//prints out the value of the pressed button to the p tag with id "text"
 	let print = ele => {
-		brd += $("#" + ele).text();
+		brd.unshift( $("#" + ele).text() );
 		
 		
 		$("#text").value = brd.join("");
 	};
 	
-	let btnVal = e => {
-		let chr = $(e.target).text();
+	let btnVal = () => {
+		let chr = $(event.target).text();
 		console.log(chr);  //debugging
 		print(chr);
 	}
@@ -161,7 +161,7 @@
 	$("#shift").click( function(){color("shift", 1) });
 	$("#clear").click( function(){ clear()  });
 	
-	$("#text").click( function(){ btnVal(event) });
+	$("#board").click( function(){ btnVal() });
 	
 	
 	
