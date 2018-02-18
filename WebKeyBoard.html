@@ -143,11 +143,11 @@
 	
 	
 	//prints out the value of the pressed button to the p tag with id "text"
-	let print = ele => {
-		brd.unshift( $("#" + ele).text() );
+	let print = (out) => {
+		brd.unshift( out );
 		
 		
-		$("#text").value = brd.join("");
+		$("#text").value = brd;
 	};
 	
 	let btnVal = () => {
