@@ -144,10 +144,10 @@
 	
 	//prints out the value of the pressed button to the p tag with id "text"
 	let print = (out) => {
-		brd.unshift( out );
+		brd.push( out );
 		
 		
-		$("#text").value = brd;
+		$("#text").text(brd);
 	};
 	
 	let btnVal = () => {
