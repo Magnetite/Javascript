@@ -55,7 +55,7 @@
 
 
 
-	<div class="board" id="board">
+	<div class="board" >
 	
 	<p id="text">
 	test string
@@ -152,7 +152,7 @@
 	
 	let btnVal = () => {
 		let chr = $(event.target).text();
-		console.log(chr);  //debugging
+		
 		print(chr);
 	}
 	
@@ -161,7 +161,7 @@
 	$("#shift").click( function(){color("shift", 1) });
 	$("#clear").click( function(){ clear()  });
 	
-	$("#board").click( function(){ btnVal() });
+	$(".board").click( function(){ btnVal() });
 	
 	
 	
