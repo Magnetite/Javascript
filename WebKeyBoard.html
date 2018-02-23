@@ -95,7 +95,7 @@
 		
 		<div class="row col-lg-12">
 		
-		<div id="clear" class="btn btn-default">Clear Screen</div> 
+		<div id="clear" class="btn btn-default" value=".">Clear Screen</div> 
 		<div class="btn btn-default">Size++</div> 
 		<div class="btn btn-default">Size--</div>
 		
@@ -152,8 +152,16 @@
 	
 	let btnVal = () => {
 		let chr = $(event.target).text();
+		let val = $(event.target).val();
 		
-		print(chr);
+		if (val){
+			print(val);
+		} else {
+			print(chr);
+		}
+		
+		
+		
 	}
 	
 	
