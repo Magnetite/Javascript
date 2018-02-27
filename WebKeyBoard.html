@@ -155,11 +155,17 @@
 		let chr = $(event.target).text();
 		//let val = $(event.target).val();
 		
+		
 		if (chr === "Clear Screen"){
 			
 			print(" ");
 		} else {
-			print(chr);
+		
+			if (chr.length < 10){
+				print(chr);
+			}
+		
+			
 		}
 		
 		
