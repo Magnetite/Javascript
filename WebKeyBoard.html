@@ -31,6 +31,7 @@
 		width: 680px;
 		background-color: black;  // Not making the background black!
 		margin: auto;
+		border: 5px black;
 	}
 	
 	
@@ -97,8 +98,8 @@
 		<div class="row col-lg-12">
 		
 		<div id="clear" class="btn btn-default" value="kk">Clear Screen</div> 
-		<div class="btn btn-default">Size++</div> 
-		<div class="btn btn-default">Size--</div>
+		<div id="minus" class="btn btn-default">Size++</div> 
+		<div id="plus"  class="btn btn-default">Size--</div>
 		
 		</div>
 	</div>
@@ -153,7 +154,7 @@
 	
 	let btnVal = () => {
 		let chr = $(event.target).text();
-		//let val = $(event.target).val();
+		
 		
 		
 		if (chr === "Clear Screen"){
@@ -172,12 +173,17 @@
 		
 	}
 	
+	let size = a => {
+		
+	}
+	
 	
 	$("#caps").click( function(){color("caps", 0) });
 	$("#shift").click( function(){color("shift", 1) });
 	$("#clear").click( function(){ clear()  });
 	
 	$(".board").click( function(){ btnVal() });
+	
 	
 	
 	
