@@ -49,6 +49,7 @@
 		font-weight: bold;
 		background-color: black;
 	}
+	}
 	
 	</style>
 
@@ -173,8 +174,14 @@
 		
 	}
 	
-	let size = a => {
+	let size = (id, a) => {
+		let fontSize = 20;
 		
+		fontSize += a;
+		
+		$(id).css({
+			height: fontSize;
+		});
 	}
 	
 	
