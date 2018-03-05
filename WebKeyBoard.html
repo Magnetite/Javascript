@@ -10,7 +10,7 @@
 	
 	<style>
 	
-	.board div{
+	.board div {
 		float: left;
 		//height: 30px;
 		//width: 30px;
@@ -49,6 +49,7 @@
 		font-weight: bold;
 		background-color: black;
 	}
+	
 	}
 	
 	</style>
@@ -174,12 +175,12 @@
 		
 	}
 	
-	let size = (id, a) => {
+	let size = (a) => {
 		let fontSize = 20;
 		
 		fontSize += a;
 		
-		$(id).css({
+		$("#text").css({
 			height: fontSize;
 		});
 	}
