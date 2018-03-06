@@ -100,8 +100,8 @@
 		<div class="row col-lg-12">
 		
 		<div id="clear" class="btn btn-default" value="kk">Clear Screen</div> 
-		<div id="minus" class="btn btn-default">Size++</div> 
-		<div id="plus"  class="btn btn-default">Size--</div>
+		<div id="plus" class="btn btn-default">Size++</div> 
+		<div id="minus"  class="btn btn-default">Size--</div>
 		
 		</div>
 	</div>
@@ -174,15 +174,15 @@
 		
 		
 	}
+	//Variable here !!!!!!!!!  todo: change this.
+	let fontSize = 20;
 	
 	let size = (a) => {
-		let fontSize = 20;
+		
 		
 		fontSize += a;
 		
-		$("#text").css({
-			height: fontSize;
-		});
+		$("#text").css(  { height: fontSize} );
 	}
 	
 	
@@ -191,6 +191,8 @@
 	$("#clear").click( function(){ clear()  });
 	
 	$(".board").click( function(){ btnVal() });
+	$("#plus").click( function(){ size(1) });
+	$("#minus").click( function(){ size(-1) });
 	
 	
 	
