@@ -15,7 +15,25 @@
 		
 		
 	<script>
-		let inpt = $("#input").text().split(" ");
+		
+		
+		let nextWord = (function(){
+		
+			let mSec = 500;
+			let next = 0;
+			
+			//put words into an array.
+			let inpt = $("#input").text().split(" ");
+			let len = inpt.length; //todo: check for errors
+			
+			//closure that gets assigned to nextWord
+			return function(){
+				if ( next < len ){
+					return inpt[next];
+					next++;
+				}
+			}
+		})();
 		
 		
 	</script>
