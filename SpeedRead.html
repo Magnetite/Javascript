@@ -16,24 +16,36 @@
 		
 	<script>
 		
+		let mSec = 500;
 		
 		let nextWord = (function(){
 		
-			let mSec = 500;
+			
 			let next = 0;
 			
 			//put words into an array.
-			let inpt = $("#input").text().split(" ");
+			let inpt1 = $("#input").val();
+			let inpt = inpt1.split(" ");
 			let len = inpt.length; //todo: check for errors
 			
 			//closure that gets assigned to nextWord
 			return function(){
 				if ( next < len ){
-					return inpt[next];
 					next++;
+					console.log(inpt1);
+					return;
 				}
 			}
 		})();
+		
+		
+		
+		function outputText(){
+			//$(".jumbotron").text( nextWord() );
+			nextWord() ;
+		}
+		
+		setInterval(nextWord, mSec);
 		
 		
 	</script>
@@ -43,7 +55,7 @@
 
 <h1 class="jumbotron"></h1>
 
-<textarea id="input"> </textarea>
+<textarea id="input">Four score and seven years ago, our fathers brought fourth on this continent, a new nation.. </textarea>
 
 
 </body>
