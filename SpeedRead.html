@@ -18,7 +18,7 @@
 </head>
 <body>
 
-<h1 class="jumbotron"></h1>
+<h1 id="out" class="jumbotron"></h1>
 
 <textarea id="input">Four score and seven years ago, our fathers brought fourth on this continent, a new nation.. </textarea>
 
@@ -34,13 +34,13 @@
 		//put words into an array.
 		let inpt1 = $("#input").val();
 		let inpt = inpt1.split(" ");
-		let len = inpt.length; //todo: check for errors
+		let len = inpt.length; 
 		
 		//closure that gets assigned to nextWord
 		return function(){
 			if ( next < len ){
 				next++;
-				console.log(inpt1);
+				console.log(inpt[next - 1]);
 				return;
 			}
 		}
@@ -49,11 +49,12 @@
 	
 	
 	function outputText(){
-		//$(".jumbotron").text( nextWord() );
-		nextWord() ;
+		let tmp = nextWord();
+		$("#out").text( tmp );
+		//nextWord() ;
 	}
 	
-	setInterval(nextWord, mSec);
+	setInterval(outputText, mSec);
 	
 	
 </script>
