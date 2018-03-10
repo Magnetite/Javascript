@@ -40,8 +40,7 @@
 		return function(){
 			if ( next < len ){
 				next++;
-				console.log(inpt[next - 1]);
-				return;
+				return inpt[next - 1];
 			}
 		}
 	})();
@@ -49,9 +48,9 @@
 	
 	
 	function outputText(){
-		let tmp = nextWord();
-		$("#out").text( tmp );
-		//nextWord() ;
+	
+		$("#out").text( nextWord() );
+	
 	}
 	
 	setInterval(outputText, mSec);
