@@ -38,11 +38,13 @@
 		//let inpt1 = document.getElementById("input").innerText;
 		let inpt = inpt1.split(" ");
 		let len = inpt.length; 
+		this.len = len;
 		
 		//closure that gets assigned to nextWord
 		return function(){
 			if ( next < len ){
 				next++;
+				$("#out").text( inpt[next - 1] );
 				return inpt[next - 1];
 			}
 		}
@@ -51,16 +53,28 @@
 	
 	
 	function outputText(){
-	
-		$("#out").text( nextWord() );
+		len = nextWord.len;
+		for (var i = 0; i < len; i++ ){
+		    //$("#out").text( nextWord() );
+			setInterval(nextWord, mSec);
+		}
 	
 	}
 
+/*
 	function startReading(){
-		setInterval(outputText, mSec);
+		var len = nextWord().len;
+		console.log(len);
+		var read;
+
+		for (var i = 0; i < len; i++){
+			read= setTimeout(outputText, mSec);
+			console.log(i);
+		}
+		clearTimeout(read);
 	}
-	
-	$("#start").click( function(){ setInterval(outputText, mSec); } );
+	*/
+	$("#start").click(function(){ nextWord()  });
 	
 	
 </script>
