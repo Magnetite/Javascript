@@ -27,9 +27,12 @@
 <script>
 		
 	let mSec = 500;
+	let times = 0;
+	let interval;
 	
 	let nextWord = (function(){
 	
+		
 		
 		let next = 0;
 		
@@ -39,6 +42,11 @@
 		let inpt = inpt1.split(" ");
 		let len = inpt.length; 
 		this.len = len;
+
+		if (times > len - 1){
+			delete interval;
+
+		}
 		
 		//closure that gets assigned to nextWord
 		return function(){
@@ -56,7 +64,7 @@
 		len = nextWord.len;
 		for (var i = 0; i < len; i++ ){
 		    //$("#out").text( nextWord() );
-			setInterval(nextWord, mSec);
+			interval = setInterval(nextWord, mSec);
 		}
 	
 	}
