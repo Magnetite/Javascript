@@ -37,6 +37,7 @@
 	mSec: 300,
 	next: 0,
 	inpt: [],
+	stop: 1,
 	//len: d.inpt.length
 	}
 
@@ -53,12 +54,14 @@
 	function nextWord(){
 		
 		setTimeout(function(){
-			if ( d.next < d.len ){
+			if ( d.next < d.len && d.stop > 0 ){
 				d.next++;
 				$("#out").text( d.inpt[d.next - 1] );
 				//return d.inpt[d.next - 1];
 			} else {
 				d.next = 0;
+				d.stop *= -1;
+				$("#out").text(" ");
 				return;
 			}
 			nextWord();
@@ -70,6 +73,7 @@
 	
 	$("#start").click(function(){ nextWord()  });
 	$("#input").change(function(){ initVars() });
+	$("#stop").click(function(){ d.stop *= -1; });
 	
 	
 </script>
