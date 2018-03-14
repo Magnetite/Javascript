@@ -62,9 +62,10 @@
 	
 	function outputText(){
 		len = nextWord.len;
+		interval = setInterval(nextWord, mSec);
 		for (var i = 0; i < len; i++ ){
 		    //$("#out").text( nextWord() );
-			interval = setInterval(nextWord, mSec);
+			interval;
 		}
 	
 	}
@@ -82,7 +83,7 @@
 		clearTimeout(read);
 	}
 	*/
-	$("#start").click(function(){ nextWord()  });
+	$("#start").click(function(){ outputText()  });
 	
 	
 </script>
