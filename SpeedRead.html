@@ -20,7 +20,7 @@
 
 <h1 id="out" class="jumbotron text-center"></h1>
 
-<textarea id="input">Four score and seven years ago, our fathers brought fourth on this continent, a new nation.. </textarea>
+<textarea id="input">Four score and seven years ago, </textarea>
 
 <button id="start">Start Reading</button>
 
@@ -39,10 +39,9 @@
 		let inpt1 = $("#input").val();
 
 		inpt = inpt1.split(" ");
+		inpt.push(" ");         //<= Ensure the last word does not show when done.
 		len = inpt.length;
 	}
-	
-	initVars();
 
 	function nextWord(){
 		
@@ -60,7 +59,7 @@
 	};
 	
 	
-	
+	initVars();
 	
 	$("#start").click(function(){ nextWord()  });
 	$("#input").change(function(){ initVars() });
