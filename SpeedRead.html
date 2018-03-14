@@ -27,15 +27,22 @@
 <script>
 		
 	let mSec = 500;
-	let times = 0;
 
 	let next = 0;
-		
+
+		let inpt;
+		let len;
+
+	function initVars(){
+
 		//put words into an array.
 		let inpt1 = $("#input").val();
 
-		let inpt = inpt1.split(" ");
-		let len = inpt.length; 
+		inpt = inpt1.split(" ");
+		len = inpt.length;
+	}
+	
+	initVars();
 	
 	function nextWord(){
 		
