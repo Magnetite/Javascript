@@ -20,42 +20,49 @@
 
 <h1 id="out" class="jumbotron text-center"></h1>
 
-<textarea id="input">Four score and seven years ago, </textarea>
+
 
 <button id="start">Start Reading</button>
+<button id="pause">Pause</button>
+<button id="stop">Stop</button>
+
+<br>
+
+<textarea id="input">Four score and seven years ago, </textarea>
 
 <script>
-		
-	let mSec = 500;
 
-	let next = 0;
-
-		let inpt;
-		let len;
+	//Data Object for app
+	let d = {	
+	mSec: 300,
+	next: 0,
+	inpt: [],
+	//len: d.inpt.length
+	}
 
 	function initVars(){
 
 		//put words into an array.
 		let inpt1 = $("#input").val();
 
-		inpt = inpt1.split(" ");
-		inpt.push(" ");         //<= Ensure the last word does not show when done.
-		len = inpt.length;
+		d.inpt = inpt1.split(" ");
+		d.inpt.push(" ");         //<= Ensure the last word does not show when done.
+		d.len = d.inpt.length;
 	}
 
 	function nextWord(){
 		
 		setTimeout(function(){
-			if ( next < len ){
-				next++;
-				$("#out").text( inpt[next - 1] );
-				//return inpt[next - 1];
+			if ( d.next < d.len ){
+				d.next++;
+				$("#out").text( d.inpt[d.next - 1] );
+				//return d.inpt[d.next - 1];
 			} else {
-				next = 0;
+				d.next = 0;
 				return;
 			}
 			nextWord();
-		}, mSec);
+		}, d.mSec);
 	};
 	
 	
