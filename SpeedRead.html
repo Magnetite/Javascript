@@ -28,62 +28,34 @@
 		
 	let mSec = 500;
 	let times = 0;
-	let interval;
-	
-	let nextWord = (function(){
-	
-		
-		
-		let next = 0;
+
+	let next = 0;
 		
 		//put words into an array.
 		let inpt1 = $("#input").val();
-		//let inpt1 = document.getElementById("input").innerText;
+
 		let inpt = inpt1.split(" ");
 		let len = inpt.length; 
-		this.len = len;
-
-		if (times > len - 1){
-			delete interval;
-
-		}
+	
+	function nextWord(){
 		
-		//closure that gets assigned to nextWord
-		return function(){
+		setTimeout(function(){
 			if ( next < len ){
 				next++;
 				$("#out").text( inpt[next - 1] );
-				return inpt[next - 1];
+				//return inpt[next - 1];
+			} else {
+				next = 0;
+				return;
 			}
-		}
-	})();
+			nextWord();
+		}, mSec);
+	};
 	
 	
 	
-	function outputText(){
-		len = nextWord.len;
-		interval = setInterval(nextWord, mSec);
-		for (var i = 0; i < len; i++ ){
-		    //$("#out").text( nextWord() );
-			interval;
-		}
 	
-	}
-
-/*
-	function startReading(){
-		var len = nextWord().len;
-		console.log(len);
-		var read;
-
-		for (var i = 0; i < len; i++){
-			read= setTimeout(outputText, mSec);
-			console.log(i);
-		}
-		clearTimeout(read);
-	}
-	*/
-	$("#start").click(function(){ outputText()  });
+	$("#start").click(function(){ nextWord()  });
 	
 	
 </script>
