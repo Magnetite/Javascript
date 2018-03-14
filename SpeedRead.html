@@ -43,7 +43,7 @@
 	}
 	
 	initVars();
-	
+
 	function nextWord(){
 		
 		setTimeout(function(){
@@ -63,6 +63,7 @@
 	
 	
 	$("#start").click(function(){ nextWord()  });
+	$("#input").change(function(){ initVars() });
 	
 	
 </script>
