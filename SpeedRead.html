@@ -48,6 +48,11 @@
 		d.stop = 1;
 		d.time = 0;
 		d.time2 = 0;
+	},
+	duration: function(){
+		var a = (d.time2.getTime() - d.time.getTime() ) / 100;
+		var b = parseInt(a)/10;
+		return b;
 	}
 	}
 
@@ -75,11 +80,9 @@
 			} else {
 				
 				d.time2 = new Date();
-				var output = (d.time2.getTime() - d.time.getTime() ) / 100
-				$("#out").text( "Time to read: " +  parseInt(output)/10 + " seconds." );
+				$("#out").text( "Time to read: " +  d.duration() + " seconds." );
 				
 				d.reset(); //<= clears state of d Object
-				output = " "
 				initVars();
 				return;
 			}
