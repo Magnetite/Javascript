@@ -34,24 +34,38 @@
 
 	//Data Object for app
 	let d = {	
-	mSec: 300,
+	mSec: 280,
 	next: 0,
 	inpt: [],
 	stop: 1,
 	//len: d.inpt.length
+	time: 0,
+	time2: 0,
+	reset: function(){
+		d.mSec = 280;
+		d.next = 0;
+		d.inpt = [];
+		d.stop = 1;
+		d.time = 0;
+		d.time2 = 0;
+	}
 	}
 
 	function initVars(){
 
 		//put words into an array.
 		let inpt1 = $("#input").val();
-
 		d.inpt = inpt1.split(" ");
 		d.inpt.push(" ");         //<= Ensure the last word does not show when done.
 		d.len = d.inpt.length;
+		
 	}
 
 	function nextWord(){
+		console.log("nextWord excuting...");
+		if (d.time === 0){
+			d.time = new Date();
+		}
 		
 		setTimeout(function(){
 			if ( d.next < d.len && d.stop > 0 ){
@@ -59,9 +73,14 @@
 				$("#out").text( d.inpt[d.next - 1] );
 				//return d.inpt[d.next - 1];
 			} else {
-				d.next = 0;
-				d.stop *= -1;
-				$("#out").text(" ");
+				
+				d.time2 = new Date();
+				var output = (d.time2.getTime() - d.time.getTime() ) / 100
+				$("#out").text( "Time to read: " +  parseInt(output)/10 + " seconds." );
+				
+				d.reset(); //<= clears state of d Object
+				output = " "
+				initVars();
 				return;
 			}
 			nextWord();
