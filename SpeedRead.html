@@ -4,6 +4,8 @@
 
 	<title>Speed Reader</title>
 
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -22,9 +24,9 @@
 
 
 
-<button id="start">Start Reading</button>
-<button id="pause">Pause</button>
-<button id="stop">Stop</button>
+<button id="start"><span class="fa fa-play"></span></button>
+<button id="pause"><span class="fa fa-pause"></span></button>
+<button id="stop"><span class="fa fa-stop"></span></button>
 
 <br>
 
@@ -38,7 +40,6 @@
 	next: 0,
 	inpt: [],
 	stop: 1,
-	
 	time: 0,
 	time2: 0,
 	reset: function(){
@@ -48,6 +49,7 @@
 		d.stop = 1;
 		d.time = 0;
 		d.time2 = 0;
+		initVars();
 	},
 	duration: function(){
 		var a = (d.time2.getTime() - d.time.getTime() ) / 100;
@@ -73,7 +75,8 @@
 	}
 
 	function nextWord(){
-		console.log("nextWord excuting...");
+
+		//Get start time in milliseconds, if this is not a recursive call
 		if (d.time === 0){
 			d.time = new Date();
 		}
@@ -82,21 +85,21 @@
 			if ( d.next < d.len && d.stop > 0 ){
 				d.next++;
 				$("#out").text( d.inpt[d.next - 1] );
-				//return d.inpt[d.next - 1];
+				
 			} else {
 				
+				//Get time of end, in milliseconds
 				d.time2 = new Date();
 				$("#out").text( "Time to read: " +  d.duration() );
 				
 				d.reset(); //<= clears state of d Object
-				initVars();
 				return;
 			}
 			nextWord();
 		}, d.mSec);
 	};
 	
-	
+	//Initalize variables
 	initVars();
 	
 	$("#start").click(function(){ nextWord()  });
