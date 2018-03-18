@@ -24,7 +24,7 @@
 
 
 
-<button id="start"><span class="fa fa-play"></span></button>
+<button id="start"><span class="fa fa-play" id="play"></span></button>
 <button id="pause"><span class="fa fa-pause"></span></button>
 <!-- <button id="stop"><span class="fa fa-stop"></span></button> -->
 
@@ -101,6 +101,12 @@
 
 	function start(){
 		d.stop *= -1;
+		if (d.stop === 1){
+			$("#play").addClass("fa-play").removeClass("fa-stop");	
+		} else {
+			$("#play").addClass("fa-stop").removeClass("fa-play");
+		}
+
 		nextWord();
 	}
 	
