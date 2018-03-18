@@ -26,7 +26,7 @@
 
 <button id="start"><span class="fa fa-play"></span></button>
 <button id="pause"><span class="fa fa-pause"></span></button>
-<button id="stop"><span class="fa fa-stop"></span></button>
+<!-- <button id="stop"><span class="fa fa-stop"></span></button> -->
 
 <br>
 
@@ -82,7 +82,7 @@
 		}
 		
 		setTimeout(function(){
-			if ( d.next < d.len && d.stop > 0 ){
+			if ( d.next < d.len && d.stop < 0 ){
 				d.next++;
 				$("#out").text( d.inpt[d.next - 1] );
 				
@@ -98,13 +98,18 @@
 			nextWord();
 		}, d.mSec);
 	};
+
+	function start(){
+		d.stop *= -1;
+		nextWord();
+	}
 	
 	//Initalize variables
 	initVars();
 	
-	$("#start").click(function(){ nextWord()  });
+	$("#start").click(function(){ start()  });
 	$("#input").change(function(){ initVars() });
-	$("#stop").click(function(){ d.stop *= -1; });
+	//$("#stop").click(function(){ d.stop *= -1; });
 	
 	
 </script>
