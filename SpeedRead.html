@@ -51,8 +51,9 @@
 		d.time2 = 0;
 		initVars();
 	},
-	duration: function(){
-		var a = (d.time2.getTime() - d.time.getTime() ) / 100;
+
+	duration: function(a){
+		var a = (a - d.time.getTime() ) / 100;
 		var b = parseInt(a)/10;
 		var min = parseInt(b/60);
 		var cln = ":";
@@ -90,7 +91,7 @@
 				
 				//Get time of end, in milliseconds
 				d.time2 = new Date();
-				$("#out").text( "Time to read: " +  d.duration() );
+				$("#out").text( "Time to read: " +  d.duration(d.time2.getTime() ) );
 				
 				d.reset(); //<= clears state of d Object
 				return;
