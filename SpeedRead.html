@@ -71,9 +71,9 @@
 
 	wpm: function(){
 
-		//time to read in milliseconds,
-		d.dif = d.time2.getTime() - d.time.getTime();
-		return ( d.dif * 60 ) / (d.len * 1000);
+		//time to read in seconds,
+		d.dif = ( d.time2.getTime() - d.time.getTime() ) / 1000;
+		return 60 * (d.len - 1) / d.dif ; //<= subtract 1 because of space at end of array
 	}
 	}
 
@@ -104,7 +104,7 @@
 				//Get time of end, in milliseconds
 				d.time2 = new Date();
 				$("#out").text( "Time to read: " +  d.duration(d.time2.getTime(), d.time.getTime() ) +
-				 " <br/> Rate:" + d.wpm() + " wpm");
+				 ",   Rate:" + d.wpm() + " wpm");
 				
 				d.reset(); //<= clears state of d Object
 				return;
