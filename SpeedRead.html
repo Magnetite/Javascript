@@ -39,9 +39,12 @@
 	mSec: 280,
 	next: 0,
 	inpt: [],
+	len: 0,
 	stop: 1,
 	time: 0,
 	time2: 0,
+	dif: 0,
+	pause: -1,
 	reset: function(){
 		d.mSec = 280;
 		d.next = 0;
@@ -49,11 +52,13 @@
 		d.stop = 1;
 		d.time = 0;
 		d.time2 = 0;
+		d.pause = -1;
+		d.dif = 0;
 		initVars();
 	},
 
-	duration: function(a){
-		var a = (a - d.time.getTime() ) / 100;
+	duration: function(x, y){
+		var a = (x - y ) / 100;
 		var b = parseInt(a)/10;
 		var min = parseInt(b/60);
 		var cln = ":";
@@ -62,6 +67,13 @@
 		} 
 
 		return min + cln + ( b % 60);
+	},
+
+	wpm: function(){
+
+		//time to read in milliseconds,
+		d.dif = d.time2.getTime() - d.time.getTime();
+		return ( d.dif * 60 ) / (d.len * 1000);
 	}
 	}
 
@@ -91,7 +103,8 @@
 				
 				//Get time of end, in milliseconds
 				d.time2 = new Date();
-				$("#out").text( "Time to read: " +  d.duration(d.time2.getTime() ) );
+				$("#out").text( "Time to read: " +  d.duration(d.time2.getTime(), d.time.getTime() ) +
+				 " <br/> Rate:" + d.wpm() + " wpm");
 				
 				d.reset(); //<= clears state of d Object
 				return;
