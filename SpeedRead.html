@@ -73,7 +73,8 @@
 
 		//time to read in seconds,
 		d.dif = ( d.time2.getTime() - d.time.getTime() ) / 1000;
-		return 60 * (d.next - 1) / d.dif ; //<= subtract 1 because of space at end of array
+		var result = 60 * (d.next - 1) / d.dif;
+		return  result.toFixed(1); //<= subtract 1 because of space at end of array
 	}
 	}
 
