@@ -101,6 +101,7 @@
 				$("#out").text( d.inpt[d.next - 1] );
 				
 			} else if (d.pause > 0){
+				playStop();
 				return;
 			} else {
 				
@@ -117,14 +118,21 @@
 	};
 
 	function start(){
+		
+		
+		playStop();
+
+		nextWord();
+	}
+
+	function playStop(){
 		d.stop *= -1;
+		
 		if (d.stop === 1){
 			$("#play").addClass("fa-play").removeClass("fa-stop");	
 		} else {
 			$("#play").addClass("fa-stop").removeClass("fa-play");
 		}
-
-		nextWord();
 	}
 	
 	//Initalize variables
