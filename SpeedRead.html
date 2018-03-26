@@ -122,6 +122,17 @@
 		
 		playStop();
 
+		//If d.stop or d.pause is positive, make negative, so the loop in nextWord can continue
+		
+		if (d.stop > 0){
+			d.stop *= -1;
+		}
+		
+		if (d.pause > 0){
+			d.pause *= -1;
+		}
+		
+		
 		nextWord();
 	}
 
