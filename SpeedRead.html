@@ -23,15 +23,14 @@
 <h1 id="out" class="jumbotron text-center"></h1>
 
 
-
+<div class="form-group">
 <button id="start"><span class="fa fa-play" id="play"></span></button>
 <button id="pause"><span class="fa fa-pause"></span></button>
-<!-- <button id="stop"><span class="fa fa-stop"></span></button> -->
 
 <br>
 
-<textarea id="input">Four score and seven years ago, </textarea>
-
+<textarea id="input" class="form-control">Four score and seven years ago, </textarea>
+</div>
 <script>
 
 	//Data Object for app
@@ -152,7 +151,6 @@
 	$("#start").click(function(){ start()  });
 	$("#input").change(function(){ initVars() });
 	$("#pause").click(function(){ d.pause *= -1; });
-	//$("#stop").click(function(){ d.stop *= -1; });
 	
 	
 </script>
