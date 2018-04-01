@@ -17,8 +17,19 @@ var b = {
         //todo: replace is to replace a word, with a word from replaceList
     },
 
-    asterisk: function(){
+    asterisk: function(a){
         //todo: asterisk is to replace the middle letter with asterisks
+        var out = "";
+        out += a.charAt(0);
+        var len = a.length;
+
+        for (var i = 0; i < a - 1; i++){
+            out += "*";
+        }
+
+        out += a.charAt(len - 1);
+
+        return out;
     },
 
     del: function(ele){
