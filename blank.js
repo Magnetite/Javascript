@@ -13,12 +13,15 @@ var b = {
         //todo: to scan selected elements for words 
     },
 
-    replace: function(){
-        //todo: replace is to replace a word, with a word from replaceList
+    replace: function(a){
+        //replace is to replace a word, with a word from replaceList
+
+        //todo: finish this
+        return replaceList[a];
     },
 
     asterisk: function(a){
-        //todo: asterisk is to replace the middle letter with asterisks
+        //asterisk is to replace the middle letter with asterisks
         var out = "";
         out += a.charAt(0);
         var len = a.length;
