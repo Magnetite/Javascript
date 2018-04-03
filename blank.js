@@ -35,7 +35,8 @@ var b = {
         return out;
     },
 
-    del: function(ele){
+    delId: function(id){
         //todo: to delete posts 
+        document.getElementById(id);
     }
 }
