@@ -8,9 +8,14 @@ var replaceList = {};
 
 //Main program object
 var b = {
+    id: function(id){
+        return document.getElementById(id);
+    },
 
-    scan: function(ele){
-        //todo: to scan selected elements for words 
+    scan: function(id){
+        //todo: to scan selected elements for words
+        var ele = b.id(id);
+
     },
 
     replace: function(a){
@@ -37,7 +42,7 @@ var b = {
 
     delId: function(id){
         //todo: to delete posts 
-        var ele = document.getElementById(id);
+        var ele = b.id(id);
         ele.parentNode.removeChild(ele);
         return;
     }
