@@ -13,8 +13,13 @@ var b = {
     },
 
     scan: function(id){
-        //todo: to scan selected elements for words
+        //todo: to scan selected element for words
         var ele = b.id(id);
+        var elem = ele.textContent;
+
+        for (var i = 0, len = blockList.length; i < len; i++){
+            
+        }
 
     },
 
