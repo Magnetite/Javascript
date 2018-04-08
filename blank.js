@@ -18,7 +18,10 @@ var b = {
         var elem = ele.textContent;
 
         for (var i = 0, len = blockList.length; i < len; i++){
-            
+            if (elem.search(blockList[i]) !== -1){
+                //todo: add code to replace text
+                elem.replace(blockList[i], replaceList[ blockList[i] ]); //<= todo make this work for all instances of word in string
+            }
         }
 
     },
