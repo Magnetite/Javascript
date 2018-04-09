@@ -4,7 +4,7 @@
 
 //The only Globals in this program
 var blockList = [];
-var replaceList = {};
+var replaceList = []; //<= List of Regular Expressions
 
 //Main program object
 var b = {
@@ -20,17 +20,17 @@ var b = {
         for (var i = 0, len = blockList.length; i < len; i++){
             if (elem.search(blockList[i]) !== -1){
                 //todo: add code to replace text
-                elem.replace(blockList[i], replaceList[ blockList[i] ]); //<= todo make this work for all instances of word in string
+                
+                b.replace(elem, i); 
             }
         }
 
     },
 
-    replace: function(a){
+    replace: function(ele, index){
         //replace is to replace a word, with a word from replaceList
 
-        //todo: finish this
-        return replaceList[a];
+        ele.replace( blockList[index], replaceList[index] );
     },
 
     asterisk: function(a){
