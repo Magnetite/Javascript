@@ -19,7 +19,6 @@ var b = {
 
         for (var i = 0, len = blockList.length; i < len; i++){
             if (elem.search(blockList[i]) !== -1){
-                //todo: add code to replace text
                 
                 b.replace(elem, i); 
             }
@@ -39,7 +38,7 @@ var b = {
         out += a.charAt(0);
         var len = a.length;
 
-        for (var i = 0; i < a - 1; i++){
+        for (var i = 0; i < len - 1; i++){
             out += "*";
         }
 
