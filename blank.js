@@ -47,6 +47,15 @@ var b = {
         return out;
     },
 
+    block: function(word, char){
+
+        var out ="";
+
+        for ( var i = 0, len = word.length; i < len; i++ ){
+            out += char;
+        }
+    },
+
     delId: function(id){
         //todo: to delete posts 
         var ele = b.id(id);
