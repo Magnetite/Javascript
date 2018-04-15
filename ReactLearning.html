@@ -30,8 +30,32 @@
     <script type="text/babel">
 
     class Hello extends React.Component{
+
+        constructor(){
+            super();
+            this.state = {
+                message: "The temp is 77 F"
+            };  //semicolon here?
+
+            this.update = this.update.bind(this);
+        }
+
+        update(){
+            this.setState({
+                message: "The temp is 78 F"
+            });
+        }
+
+
         render(){
-            return <h1> Hello World!</h1>;
+            return (
+            <div>    
+            <h1> {this.state.message}</h1>
+
+            <button onClick={this.update}>New Temp</button>
+
+            </div>
+        );
         }
     }
 
