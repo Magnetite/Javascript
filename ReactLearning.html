@@ -31,18 +31,26 @@
 
     class Hello extends React.Component{
 
+        temp = 77;
         constructor(){
             super();
             this.state = {
-                message: "The temp is 77 F"
+                message: "The temp is " + this.temp + " F"
             };  //semicolon here?
 
             this.update = this.update.bind(this);
         }
 
+        tempUpdate(){
+            this.temp++;
+        }
+
         update(){
+
+            this.tempUpdate();
+
             this.setState({
-                message: "The temp is 78 F"
+                message: "The temp is " + this.temp + " F"
             });
         }
 
